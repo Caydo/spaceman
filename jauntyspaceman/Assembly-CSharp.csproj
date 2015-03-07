@@ -50,6 +50,8 @@
      <Compile Include="Assets\Code\PlayerController.cs" />
      <Compile Include="Assets\Code\PlayerInteractionTrigger.cs" />
      <Compile Include="Assets\Code\ScrollingItem.cs" />
+     <Compile Include="Assets\Code\SpriteLoader.cs" />
+     <Compile Include="Assets\Code\SpriteType.cs" />
      <Compile Include="Assets\Code\TextCrawl.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
