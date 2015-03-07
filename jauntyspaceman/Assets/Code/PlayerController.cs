@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
   public bool CanBoost = true;
   public float TopHeight;
   public NPCFollower Follower;
+  public float FuelDepletionRateOnActivate;
 
   float StartingJumpY;
   Rigidbody2D body2D;
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour
     if(Input.GetKey(KeyCode.Space) && jetFuelMeter.value > 0)
     {
       body2D.velocity += new Vector2(body2D.velocity.x, JumpSpeed);
-      jetFuelMeter.value -= 0.03f;
+      jetFuelMeter.value -= FuelDepletionRateOnActivate;
       isGrounded = false;
     }
     
