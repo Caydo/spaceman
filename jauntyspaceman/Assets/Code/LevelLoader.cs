@@ -38,6 +38,7 @@ public class LevelLoader : MonoBehaviour {
 
 				XmlNode data = layer.SelectSingleNode("data");
 				IEnumerator tiles = data.SelectNodes("tile").GetEnumerator();
+				List<List<int>> yLists = new List<List<int>>(); 
 				for(int y = height; y > 0; y--) {
 					List<int> tilesThisYLayer = new List<int>();
 					for(int x = 0; x < width; ++x) { 
@@ -45,8 +46,17 @@ public class LevelLoader : MonoBehaviour {
 						XmlNode tile = (XmlNode) tiles.Current;
 						tilesThisYLayer.Add(int.Parse(tile.Attributes.GetNamedItem("gid").Value));
 					}
-					levelGrid.Add(tilesThisYLayer);
+					yLists.Add(tilesThisYLayer);
 				}
+
+				for(int x = 0; x < width; x++) { 
+					List<int> nextList = new List<int>();
+					foreach(List<int> yList in yLists) { 
+						nextList.Add (yList[x]);
+					}
+					levelGrid.Add(nextList);
+				}
+
 				levelGridSize += width;
 			}
 		}
@@ -70,8 +80,7 @@ public class LevelLoader : MonoBehaviour {
 					if(baseX + x >= levelGridSize) { 
 						LoadChunk("Teeth");
 					}
-					List<int> theList = levelGrid[y];
-					int thisTileType = theList[(int)baseX + x];
+					int thisTileType = levelGrid[(int)baseX + x][y];
 					if(thisTileType != 0) { 					
 						Transform spriteLoader = null; 
 						if(spriteTypes.tryGetSpriteAsset(thisTileType, out spriteLoader)) { 
