@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Code\DestroyOnInvisible.cs" />
      <Compile Include="Assets\Code\PlayerController.cs" />
+     <Compile Include="Assets\Code\PlayerInteractionTrigger.cs" />
      <Compile Include="Assets\Code\ScrollingItem.cs" />
      <Compile Include="Assets\Code\TextCrawl.cs" />
  <Reference Include="UnityEngine.UI">

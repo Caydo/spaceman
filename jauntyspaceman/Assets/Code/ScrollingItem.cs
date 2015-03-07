@@ -7,6 +7,6 @@ public class ScrollingItem : MonoBehaviour
 
   void Update()
   {
-    gameObject.transform.Translate(new Vector3(0.01f, 0, 0));
+    gameObject.transform.Translate(new Vector3(scrollSpeedPerFrame, 0, 0));
   }
 }
