@@ -50,6 +50,7 @@
      <Compile Include="Assets\Code\OxygenBarController.cs" />
      <Compile Include="Assets\Code\PlayerController.cs" />
      <Compile Include="Assets\Code\PlayerInteractionTrigger.cs" />
+     <Compile Include="Assets\Code\Powerup.cs" />
      <Compile Include="Assets\Code\ScrollingItem.cs" />
      <Compile Include="Assets\Code\SpriteLoader.cs" />
      <Compile Include="Assets\Code\SpriteType.cs" />
