@@ -10,13 +10,16 @@ public class SpriteLoader : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+	}
+
+	public void initSprite() { 
 		string spriteAsset = "";
 		if(SpriteTypes.tryGetSpriteAsset(type, out spriteAsset)) { 		
 			Texture2D texture = (Texture2D) Resources.LoadAssetAtPath(texturePath + tileset + "/" + spriteAsset + textureSuffix, typeof(Texture2D));
 			if(texture != null) { 
 				gameObject.AddComponent<SpriteRenderer>();
 				SpriteRenderer newSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-				Sprite newSprite = Sprite.Create(texture, new Rect(0f, 0f, 70f, 70f), new Vector2(0f, 0f), 128f);
+				Sprite newSprite = Sprite.Create(texture, new Rect(0f, 0f, 70f, 70f), new Vector2(.5f,.5f), 70f);
 				newSpriteRenderer.sprite = newSprite;
 			}
 		} else { 
