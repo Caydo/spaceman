@@ -16,13 +16,12 @@ public class SpriteLoader : MonoBehaviour {
 			if(texture != null) { 
 				gameObject.AddComponent<SpriteRenderer>();
 				SpriteRenderer newSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-				Sprite newSprite = Sprite.Create(texture, new Rect(0f, 0f, 32f, 32f), new Vector2(0f, 0f), 128f);
+				Sprite newSprite = Sprite.Create(texture, new Rect(0f, 0f, 70f, 70f), new Vector2(0f, 0f), 128f);
 				newSpriteRenderer.sprite = newSprite;
 			}
 		} else { 
 			// TODO delete this object, type unknown
 		}
-		this.transform.position = new Vector3(5,2,0);
 	}
 	
 	// Update is called once per frame
