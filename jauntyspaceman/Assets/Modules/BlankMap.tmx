@@ -94,6 +94,9 @@
   <tile id="30">
    <image width="70" height="45" source="../Art/Tileset/water.png"/>
   </tile>
+  <tile id="31">
+   <image width="70" height="70" source="../Art/Tileset/water_block.png"/>
+  </tile>
  </tileset>
  <layer name="Tile Layer 1" width="50" height="10">
   <data>
