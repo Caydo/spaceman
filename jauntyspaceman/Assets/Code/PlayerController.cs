@@ -33,12 +33,10 @@ public class PlayerController : MonoBehaviour
       jetFuelMeter.value -= 0.03f;
       isGrounded = false;
     }
-    else
+    
+    if(jetFuelMeter.value < 1 && isGrounded)
     {
-      if(isGrounded && jetFuelMeter.value <= 0)
-      {
-        jetFuelMeter.value = 1;
-      }
+      jetFuelMeter.value = 1;
     }
 
     if(gameObject.transform.position.y >= StartingJumpY + TopHeight)

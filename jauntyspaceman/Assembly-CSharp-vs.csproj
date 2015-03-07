@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Code\BubblePowerup.cs" />
+     <Compile Include="Assets\Code\ClickableItem.cs" />
      <Compile Include="Assets\Code\DestroyOnInvisible.cs" />
      <Compile Include="Assets\Code\ExpandingItem.cs" />
      <Compile Include="Assets\Code\HarmfulElement.cs" />
