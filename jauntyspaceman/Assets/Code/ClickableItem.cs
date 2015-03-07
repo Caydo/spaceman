@@ -9,6 +9,5 @@ public class ClickableItem : MonoBehaviour
 
   protected virtual void doAction()
   {
-    // do a thing on click
   }
 }
