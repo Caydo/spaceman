@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
   public float MoveSpeed;
   public bool CanBoost = true;
   public float TopHeight;
+  public NPCFollower Follower;
+
   float StartingJumpY;
   Rigidbody2D body2D;
   Slider jetFuelMeter;
