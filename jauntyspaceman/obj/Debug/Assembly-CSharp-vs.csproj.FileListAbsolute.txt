@@ -1,0 +1,13 @@
+C:\Users\Caydo\Documents\spaceman2dtest\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Caydo\Documents\spaceman2dtest\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Caydo\Documents\spaceman2dtest\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Caydo\Documents\spaceman2dtest\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Caydo\Documents\spaceman2dtest\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\Caydo\Documents\spaceman2dtest\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Caydo\Documents\spaceman2dtest\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\Caydo\Documents\spaceman2dtest\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Caydo\Documents\spaceman2dtest\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Caydo\Documents\spaceman2dtest\Temp\bin\Debug\Unity.CecilTools.dll
+C:\Users\Caydo\Documents\spaceman2dtest\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+C:\Users\Caydo\Documents\spaceman2dtest\obj\Debug\Assembly-CSharp.dll
+C:\Users\Caydo\Documents\spaceman2dtest\obj\Debug\Assembly-CSharp.pdb
