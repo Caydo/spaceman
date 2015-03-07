@@ -1,17 +1,39 @@
-﻿using UnityEngine;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
   public float JumpSpeed;
   public float MoveSpeed;
-  public bool IsGrounded = true;
+  public bool CanBoost = true;
+  Rigidbody2D body2D;
+  Slider jetFuelMeter;
+  bool isGrounded;
+
+  void Awake()
+  {
+    body2D = gameObject.GetComponent<Rigidbody2D>();
+  }
+
+  void Start()
+  {
+    jetFuelMeter = GameObject.FindGameObjectWithTag("JetFuelMeter").GetComponent<Slider>();
+  }
 
   void Update()
   {
-    if(IsGrounded && Input.GetKey(KeyCode.Space))
+    if(Input.GetKey(KeyCode.Space) && jetFuelMeter.value > 0)
     {
-      gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * JumpSpeed);
-      IsGrounded = false;
+      body2D.velocity += new Vector2(body2D.velocity.x, JumpSpeed);
+      jetFuelMeter.value -= 0.05f;
+      isGrounded = false;
+    }
+    else
+    {
+      if(isGrounded && jetFuelMeter.value <= 0)
+      {
+        jetFuelMeter.value = 1;
+      }
     }
 
     // Unneeded but just commenting out to maybe use later
@@ -32,7 +54,7 @@ public class PlayerController : MonoBehaviour
   {
     if(coll.gameObject.tag == "GroundObject")
     {
-      IsGrounded = true;
+      isGrounded = true;
     }
   }
 }

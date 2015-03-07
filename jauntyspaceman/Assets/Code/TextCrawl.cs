@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
@@ -9,7 +9,8 @@ public class TextCrawl : MonoBehaviour
   public float TimeBetweenNextCrawl;
   public bool FullySetText = false;
   public float DelayBeforeCrawl;
-  
+  public bool AllowClickSkip;
+
   Text textToCrawl;
 
   void Awake()
@@ -50,7 +51,7 @@ public class TextCrawl : MonoBehaviour
 
   void Update()
   {
-    if (Input.GetButtonUp("Fire1") || Input.GetButtonUp("Fire2"))
+    if(AllowClickSkip && Input.GetButtonUp("Fire1") || Input.GetButtonUp("Fire2"))
     {
       if (!FullySetText)
       {
