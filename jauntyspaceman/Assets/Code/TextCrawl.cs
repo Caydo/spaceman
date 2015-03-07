@@ -8,7 +8,6 @@ public class TextCrawl : MonoBehaviour
   public string TextToAdd;
   public float TimeBetweenNextCrawl;
   public bool FullySetText = false;
-  public Button ButtonToProgress;
   public float DelayBeforeCrawl;
   
   Text textToCrawl;
@@ -65,6 +64,5 @@ public class TextCrawl : MonoBehaviour
     FullySetText = true;
     StopCoroutine(addTextThenWait());
     textToCrawl.text = TextToAdd;
-    ButtonToProgress.interactable = true;
   }
 }
