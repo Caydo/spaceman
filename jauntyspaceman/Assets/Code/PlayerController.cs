@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
   public float JumpSpeed;
   public float MoveSpeed;
   public bool CanBoost = true;
+  public float TopHeight;
+  float StartingJumpY;
   Rigidbody2D body2D;
   Slider jetFuelMeter;
   bool isGrounded;
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
   void Start()
   {
     jetFuelMeter = GameObject.FindGameObjectWithTag("JetFuelMeter").GetComponent<Slider>();
+    StartingJumpY = gameObject.transform.position.y;
   }
 
   void Update()
@@ -25,7 +28,7 @@ public class PlayerController : MonoBehaviour
     if(Input.GetKey(KeyCode.Space) && jetFuelMeter.value > 0)
     {
       body2D.velocity += new Vector2(body2D.velocity.x, JumpSpeed);
-      jetFuelMeter.value -= 0.05f;
+      jetFuelMeter.value -= 0.03f;
       isGrounded = false;
     }
     else
@@ -34,6 +37,12 @@ public class PlayerController : MonoBehaviour
       {
         jetFuelMeter.value = 1;
       }
+    }
+
+    if(gameObject.transform.position.y >= StartingJumpY + TopHeight)
+    {
+      body2D.velocity = Vector2.zero;
+      gameObject.transform.position = new Vector3(gameObject.transform.position.x, StartingJumpY + TopHeight, gameObject.transform.position.z);
     }
 
     // Unneeded but just commenting out to maybe use later
@@ -54,6 +63,7 @@ public class PlayerController : MonoBehaviour
   {
     if(coll.gameObject.tag == "GroundObject")
     {
+      StartingJumpY = gameObject.transform.position.y;
       isGrounded = true;
     }
   }
