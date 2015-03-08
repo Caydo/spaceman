@@ -23,12 +23,17 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 		textPanel = GameObject.FindWithTag("TextCrawl").GetComponent<TextCrawl>();
 		o2Controller = GameObject.FindWithTag ("OxygenController").GetComponent<OxygenBarController>();
 		textPanelExpander = GameObject.FindWithTag("TextPanel").GetComponent<ExpandingItem>();
+		LoadRandomNpcEncounter ();
 	}
 
-  
+	private XmlNode pendingPoint = null; 
 	protected override void doTriggeredAction()
 	{	
-		LoadRandomNpcEncounter();
+		if(pendingPoint != null) { 
+			var thePoint = pendingPoint; 
+			pendingPoint = null;
+			parsePoint (thePoint);
+		}
 	}
 
 	public void LoadRandomNpcEncounter() {
@@ -70,7 +75,8 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 			}
 
 			XmlNode point = currentTrigger.SelectSingleNode ("//point[@id=0]");
-			parsePoint (point);
+			pendingPoint = point;
+
 		}
 	}
 	
