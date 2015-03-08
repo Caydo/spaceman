@@ -18,7 +18,7 @@ public class LevelLoader : MonoBehaviour {
 	private const string modulePath = "Assets/Modules/";
 	private const string moduleSuffix = ".xml";
 
-	private List<List<int>> levelGrid = new List<List<int>>(); // x, y index
+	private List<List<List<int>>> levelGrid = new List<List<List<int>>>(); // x, y index
 	private int levelGridSize = 0; 
 
 	private List<string> possibleLevels = new List<string>();
@@ -61,33 +61,50 @@ public class LevelLoader : MonoBehaviour {
 			int width = 0; 
 			int height = 0; 
 			XmlNodeList layers = xmlDoc.SelectNodes ("//layer");
+			List<List<List<int>>> yLists = new List<List<List<int>>>(); 
 			foreach(XmlNode layer in layers) { 
 				width = int.Parse(layer.Attributes.GetNamedItem("width").Value);
 				height = int.Parse(layer.Attributes.GetNamedItem ("height").Value);
 
 				XmlNode data = layer.SelectSingleNode("data");
 				IEnumerator tiles = data.SelectNodes("tile").GetEnumerator();
-				List<List<int>> yLists = new List<List<int>>(); 
-				for(int y = height; y > 0; y--) {
-					List<int> tilesThisYLayer = new List<int>();
+
+				for(int y = height - 1; y >= 0; y--) {
+					List<List<int>> tilesThisYLayer;
+					Debug.Log ("y list size {" + yLists.Count + "}{" + y + "}");
+					if(yLists.Count < y) { 
+						for(int i = 0; i <= y; ++i) { 
+							yLists.Add (new List<List<int>>());
+						}
+					} 
+
+					tilesThisYLayer = yLists[y];				
+					 
 					for(int x = 0; x < width; ++x) { 
+						List<int> miniXList;
+						if(tilesThisYLayer.Count <= x) {
+							for(int i = 0; i <= x; ++i) { 
+								tilesThisYLayer.Add (new List<int>());
+							}
+						}
+						miniXList = tilesThisYLayer[x];
 						tiles.MoveNext();
 						XmlNode tile = (XmlNode) tiles.Current;
-						tilesThisYLayer.Add(int.Parse(tile.Attributes.GetNamedItem("gid").Value));
+						miniXList.Add(int.Parse(tile.Attributes.GetNamedItem("gid").Value));
 					}
 					yLists.Add(tilesThisYLayer);
-				}
-
-				for(int x = 0; x < width; x++) { 
-					List<int> nextList = new List<int>();
-					foreach(List<int> yList in yLists) { 
-						nextList.Add (yList[x]);
-					}
-					levelGrid.Add(nextList);
-				}
-
-				levelGridSize += width;
+				}			
 			}
+
+			for(int x = 0; x < width; x++) { 
+				List<List<int>> nextList = new List<List<int>>();
+				foreach(List<List<int>> yList in yLists) { 
+					nextList.Add (yList[x]);
+				}
+				levelGrid.Add(nextList);
+			}
+			
+			levelGridSize += width;
 		}
 	}
 	
@@ -106,17 +123,19 @@ public class LevelLoader : MonoBehaviour {
 					if(baseX + x >= levelGridSize) { 
 						LoadRandomLevel();
 					}
-					int thisTileType = levelGrid[(int)baseX + x][y];
-					if(thisTileType != 0) { 					
-						Transform spriteLoader = null; 
-						if(spriteTypes.tryGetSpriteAsset(thisTileType, out spriteLoader)) { 
-							Transform newItem = (Transform) Instantiate(
-								spriteLoader, 
-								gameObject.transform.position,
-								Quaternion.identity
-							);
-							newItem.transform.parent = gameObject.transform;
-							newItem.Translate(new Vector3(baseX + x , VERTICAL_SIZE - y, 0));
+					List<int> thisTileTypes = levelGrid[(int)baseX + x][y];
+					foreach(int thisTileType in thisTileTypes) { 
+						if(thisTileType != 0) { 					
+							Transform spriteLoader = null; 
+							if(spriteTypes.tryGetSpriteAsset(thisTileType, out spriteLoader)) { 
+								Transform newItem = (Transform) Instantiate(
+									spriteLoader, 
+									gameObject.transform.position,
+									Quaternion.identity
+								);
+								newItem.transform.parent = gameObject.transform;
+								newItem.Translate(new Vector3(baseX + x , y, 0));
+							}
 						}
 					}
 				}

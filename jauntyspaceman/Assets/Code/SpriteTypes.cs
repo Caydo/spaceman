@@ -23,11 +23,13 @@ public class SpriteTypes : MonoBehaviour {
 		dict.Add (2, basicBlock); 
 		dict.Add (8, ceilingDown1);
 		dict.Add (9, ceilingUp);
-		dict.Add (27, slopeDown); 
-		dict.Add (28, slopeUp); 
-		dict.Add (29, spikes); 
-		dict.Add (30, water); 
+		dict.Add (28, slopeDown); 
+		dict.Add (29, slopeUp); 
+		dict.Add (30, spikes); 
+		dict.Add (31, water); 
 		dict.Add (32, waterBlock);
+		dict.Add (20, basicBlock);
+		dict.Add (6, powerUp);
 	}
 	IDictionary<int, Transform> dict = null; // new Dictionary<int, string>();
 
