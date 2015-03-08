@@ -32,12 +32,26 @@ public class PlayerInteractionTrigger : MonoBehaviour
     }
   }
 
+  void OnTriggerStay(Collider other)
+  {
+    if(other.attachedRigidbody)
+    {
+      doTriggerStayAction();
+    }
+  }
+
+
   protected virtual void doCollidedAction()
   {
 
   }
 
   protected virtual void doTriggeredAction()
+  {
+
+  }
+
+  protected virtual void doTriggerStayAction()
   {
 
   }

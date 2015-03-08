@@ -11,14 +11,8 @@ public class DrainingHarmfulElement : PlayerInteractionTrigger
     oxygenController = GameObject.FindGameObjectWithTag("OxygenController").GetComponent<OxygenBarController>();
   }
 
-  protected override void doTriggeredAction()
+  protected override void doTriggerStayAction()
   {
-    StartCoroutine(eachStepDepleteOxygen());
-  }
-
-  IEnumerator eachStepDepleteOxygen()
-  {
-    yield return null;
     oxygenController.LoseOxygen(OxygenToLose);
   }
 }
