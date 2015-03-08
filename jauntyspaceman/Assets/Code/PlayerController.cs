@@ -54,8 +54,7 @@ public class PlayerController : MonoBehaviour
 
       jetFuelMeter.value = 1;
     }
-
-    if(oxygenController.OxygenSlider.value <= 0)
+    else
     {
       Application.LoadLevel("GameOver");
     }
@@ -63,6 +62,11 @@ public class PlayerController : MonoBehaviour
 
   void Update()
   {
+    if (oxygenController.OxygenSlider.value <= 0)
+    {
+      Application.LoadLevel("GameOver");
+    }
+
     // let go of space bar and we're flying so we're falling
     if (Input.GetKeyUp(KeyCode.Space) && !isGrounded)
     {
