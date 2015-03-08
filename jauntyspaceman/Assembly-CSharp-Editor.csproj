@@ -47,41 +47,81 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Art\Effects\Scripts\Editor\SortingLayerExposedEditor.cs" />
+     <Compile Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Art\Effects\Scripts\Editor\SortingLayerExposedEditor.cs" />
+     <Compile Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Code\Editor\RenameModules.cs" />
      <Compile Include="Assets\Code\Editor\RenameModules.cs" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\1_Easy Split.xml" />
      <None Include="Assets\Resources\Modules\2_Dragon.xml" />
      <None Include="Assets\Resources\Modules\3_Islands.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\3_Deadly.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\1_Simple 3.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\1_Simple 4.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\3_Cubeville.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\2_The Lie.xml" />
      <None Include="Assets\Resources\Modules\2_Up and Down.xml" />
      <None Include="Assets\Resources\NPCs\Angel.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\3_Retro.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\2_Corridors.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\2_Spike Pit.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\3_Precarious.xml" />
      <None Include="Assets\Resources\Modules\1_Mario.xml" />
      <None Include="Assets\Resources\Modules\3_Falls Hard.xml" />
      <None Include="Assets\Resources\Modules\2_Underhill.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\1_The Town.xml" />
      <None Include="Assets\Resources\Modules\3_Decision.xml" />
      <None Include="Assets\Resources\Modules\1_Simple 3.xml" />
      <None Include="Assets\Resources\Modules\1_Uphill Slope.xml" />
      <None Include="Assets\Resources\Modules\3_Hills Hard.xml" />
      <None Include="Assets\Resources\Modules\1_Sky Bridge.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\1_Simple 5.xml" />
      <None Include="Assets\Resources\Modules\1_Hills Easy.xml" />
      <None Include="Assets\Resources\Modules\1_Cat Bridge.xml" />
      <None Include="Assets\Resources\Modules\3_Retro.xml" />
      <None Include="Assets\Resources\Modules\2_The Lie.xml" />
      <None Include="Assets\Resources\Modules\1_Easy Slopes.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\1_Simple.xml" />
      <None Include="Assets\Resources\Modules\3_Deadly.xml" />
      <None Include="Assets\Resources\Modules\3_Precarious.xml" />
      <None Include="Assets\Resources\Modules\0_STARTER.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\2_Dragon.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\2_Dire Wolves.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\1_Hills Easy.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\1_Mario.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\1_Sky Bridge.xml" />
      <None Include="Assets\Resources\Modules\3_Cubeville.xml" />
      <None Include="Assets\Resources\NPCs\Angel2.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\3_Decision.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\1_Uphill Slope.xml" />
      <None Include="Assets\Resources\Modules\1_Falls Easy.xml" />
      <None Include="Assets\Resources\Modules\1_Simple.xml" />
      <None Include="Assets\Resources\Modules\2_Sand Castle.xml" />
      <None Include="Assets\Resources\Modules\1_Easy Split.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\3_Hills Hard.xml" />
      <None Include="Assets\Resources\Modules\1_Simple 5.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\obj\Debug\Assembly-CSharp-vs.csproj.FileListAbsolute.txt" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\1_Simple 2.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\3_Islands.xml" />
      <None Include="Assets\Resources\Modules\2_Corridors.xml" />
      <None Include="Assets\Resources\Modules\2_Downhill Slope.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\3_Falls Hard.xml" />
      <None Include="Assets\Resources\Modules\1_Simple 4.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\NPCs\Angel2.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\2_Underhill.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\2_Sand Castle.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\ProjectSettings\ProjectVersion.txt" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\2_Downhill Slope.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\0_STARTER.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\1_Easy Slopes.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\2_Falls Med.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\obj\Debug\Assembly-CSharp.csproj.FileListAbsolute.txt" />
      <None Include="Assets\Resources\Modules\2_Falls Med.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\1_Falls Easy.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Art\Effects\Shaders\flowMap.shader" />
      <None Include="Assets\Resources\Modules\1_Simple 2.xml" />
      <None Include="Assets\Resources\Modules\1_The Town.xml" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\NPCs\Angel.xml" />
      <None Include="Assets\Art\Effects\Shaders\flowMap.shader" />
+     <None Include="Assets\Art\tilesets\trunk\jauntyspaceman\Assets\Resources\Modules\2_Up and Down.xml" />
      <None Include="Assets\Resources\Modules\2_Dire Wolves.xml" />
      <None Include="Assets\Resources\Modules\2_Spike Pit.xml" />
  <Reference Include="UnityEngine.UI">
@@ -116,6 +156,9 @@
  </Reference>
  <Reference Include="UnityEditor.OSXStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/macstandalonesupport/UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+ </Reference>
+ <Reference Include="Assembly-CSharp">
+ <HintPath>C:/Users/nmorath/Desktop/SVNSpaceman/trunk/jauntyspaceman/Assets/Art/tilesets/trunk/jauntyspaceman/obj/Debug/Assembly-CSharp.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
