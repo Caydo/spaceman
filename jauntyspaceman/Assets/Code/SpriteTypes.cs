@@ -18,6 +18,8 @@ public class SpriteTypes : MonoBehaviour {
 	public Transform waterBlock; 
 	public Transform invisBlock; 
 	public Transform respawnPoint;
+	public Transform bridge;
+	public Transform cat;
 
 	private void initDict() 
 	{ 
@@ -34,7 +36,9 @@ public class SpriteTypes : MonoBehaviour {
 		dict.Add (32, waterBlock);
 		dict.Add (20, basicBlock);
 		dict.Add (21, invisBlock);
+		dict.Add (5, bridge);
 		dict.Add (6, powerUp);
+		dict.Add (3, cat);
 	}
 	IDictionary<int, Transform> dict = null; // new Dictionary<int, string>();
 
