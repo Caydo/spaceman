@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
   public float RespawnWaitTime;
   public Transform MostRecentSpawnPoint;
 
+  OxygenBarController oxygenController;
   FollowersController followerController;
   Animator animator;
   Rigidbody2D body2D;
@@ -28,21 +29,24 @@ public class PlayerController : MonoBehaviour
   void Start()
   {
     jetFuelMeter = GameObject.FindGameObjectWithTag("JetFuelMeter").GetComponent<Slider>();
+    oxygenController = GameObject.FindGameObjectWithTag("OxygenController").GetComponent<OxygenBarController>();
   }
 
   void OnBecameInvisible()
   {
-    Debug.Log("became invisible");
     StartCoroutine(WaitThenRespawn());
   }
 
   IEnumerator WaitThenRespawn()
   {
-    Debug.Log("About to wait");
     yield return new WaitForSeconds(RespawnWaitTime);
     followerController.DisableFollower();
-    transform.localPosition = MostRecentSpawnPoint.position;
+    gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+    transform.position = MostRecentSpawnPoint.position;
     PlayerDead = false;
+    
+    jetFuelMeter.value = 1;
+    oxygenController.OxygenSlider.value = 1;
   }
 
   void Update()
