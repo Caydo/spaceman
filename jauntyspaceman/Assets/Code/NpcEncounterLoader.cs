@@ -97,6 +97,10 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 		Debug.Log ("parsePoint entereted {" + mainPoint.Attributes + "}");
 
 		textPanel.Reset();
+
+		string name = currentTrigger.SelectSingleNode("//npc").Attributes.GetNamedItem ("name").Value;
+		textPanel.TextToAdd += name + " says:\n";
+
 		string text = mainPoint.Attributes.GetNamedItem("text").InnerText;
 		textPanel.TextToAdd += text; 
 
