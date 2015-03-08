@@ -1,6 +1,7 @@
+using System.Collections;
 using UnityEngine;
 
-public class HarmfulElement : PlayerInteractionTrigger
+public class DrainingHarmfulElement : PlayerInteractionTrigger
 {
   public float OxygenToLose;
   OxygenBarController oxygenController;
@@ -10,8 +11,14 @@ public class HarmfulElement : PlayerInteractionTrigger
     oxygenController = GameObject.FindGameObjectWithTag("OxygenController").GetComponent<OxygenBarController>();
   }
 
-  protected override void doCollidedAction()
+  protected override void doTriggeredAction()
   {
+    StartCoroutine(eachStepDepleteOxygen());
+  }
+
+  IEnumerator eachStepDepleteOxygen()
+  {
+    yield return null;
     oxygenController.LoseOxygen(OxygenToLose);
   }
 }

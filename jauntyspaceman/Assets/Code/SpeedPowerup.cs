@@ -10,7 +10,7 @@ public class SpeedPowerup : PlayerInteractionTrigger
     oxygenController = GameObject.FindGameObjectWithTag("OxygenController").GetComponent<OxygenBarController>();
   }
 
-  protected override void doAction()
+  protected override void doCollidedAction()
   {
     oxygenController.GainOxygen(OxygenToGain);
   }

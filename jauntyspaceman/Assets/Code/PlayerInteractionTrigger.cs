@@ -7,11 +7,12 @@ using UnityEngine;
 public class PlayerInteractionTrigger : MonoBehaviour
 {
   public bool DestroyOnCollide;
+  public bool DestroyOnTrigger;
   void OnCollisionEnter2D(Collision2D coll)
   {
     if(coll.gameObject.tag == "Player")
     {
-      doAction();
+      doCollidedAction();
       if(DestroyOnCollide)
       {
         GameObject.Destroy(gameObject);
@@ -19,7 +20,24 @@ public class PlayerInteractionTrigger : MonoBehaviour
     }
   }
 
-  protected virtual void doAction()
+  void OnTriggerEnter2D(Collider2D coll)
+  {
+    if(coll.gameObject.tag == "Player")
+    {
+      doTriggeredAction();
+      if (DestroyOnTrigger)
+      {
+        GameObject.Destroy(gameObject);
+      }
+    }
+  }
+
+  protected virtual void doCollidedAction()
+  {
+
+  }
+
+  protected virtual void doTriggeredAction()
   {
 
   }
