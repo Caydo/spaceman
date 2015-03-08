@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +75,7 @@
      <None Include="Assets\Modules\Simple.xml" />
      <None Include="Assets\Resources\Modules\Hills Hard.xml" />
      <None Include="Assets\Modules\Slopes.xml" />
+     <None Include="Assets\Resources\Modules\STARTER.xml" />
      <None Include="Assets\Resources\Modules\Falls Hard.xml" />
      <None Include="Assets\Modules\Teeth2.xml" />
      <None Include="Assets\Resources\Modules\Uphill Slope.xml" />
@@ -99,6 +100,7 @@
      <None Include="Assets\Resources\Modules\Corridors.xml" />
      <None Include="Assets\Modules\Precarious.xml" />
      <None Include="Assets\Modules\Deadly.xml" />
+     <None Include="Assets\Modules\Up and Down.xml" />
      <None Include="Assets\Resources\NPCs\Angel2.xml" />
      <None Include="Assets\NpcScripts\Angel2.xml" />
      <None Include="Assets\Modules\Hills Easy.xml" />
@@ -122,6 +124,7 @@
      <None Include="Assets\Resources\Modules\The Lie.xml" />
      <None Include="Assets\Modules\Hills Hard.xml" />
      <None Include="Assets\Modules\Simple 2.xml" />
+     <None Include="Assets\Modules\STARTER.xml" />
      <None Include="Assets\Modules\Sand Castle.xml" />
      <None Include="Assets\Modules\Simple 5.xml" />
      <None Include="Assets\Modules\Simple 3.xml" />
@@ -130,7 +133,7 @@
      <None Include="Assets\Resources\Modules\BlankMap.xml" />
      <None Include="Assets\Modules\Sky Bridge.xml" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
