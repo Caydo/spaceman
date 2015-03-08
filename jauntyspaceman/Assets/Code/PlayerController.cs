@@ -34,7 +34,10 @@ public class PlayerController : MonoBehaviour
 
   void OnBecameInvisible()
   {
-    StartCoroutine(WaitThenRespawn());
+    if(gameObject.activeInHierarchy)
+    {
+      StartCoroutine(WaitThenRespawn());
+    }
   }
 
   IEnumerator WaitThenRespawn()

@@ -24,11 +24,24 @@ public class TextCrawl : MonoBehaviour
 
   void Start()
   {
-    textToCrawl.text = string.Empty;
-    StartCoroutine(addTextThenWait());
+
   }
 
-  IEnumerator addTextThenWait()
+	public void Reset() 
+	{
+		Debug.Log ("reset");
+		TextToAdd = "";
+		FullySetText = false;
+		textToCrawl.text = string.Empty;	
+	}
+
+	public void StartCrawl() 
+	{
+		Debug.Log ("start crawl [" + TextToAdd + "]");
+		StartCoroutine(addTextThenWait());
+	}
+	
+	IEnumerator addTextThenWait()
   {
     yield return new WaitForSeconds(DelayBeforeCrawl);
     if (CrawlOnStart)
@@ -62,6 +75,7 @@ public class TextCrawl : MonoBehaviour
 
   void progress()
   {
+		Debug.Log ("finished");
     FullySetText = true;
     StopCoroutine(addTextThenWait());
     textToCrawl.text = TextToAdd;
