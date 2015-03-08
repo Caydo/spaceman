@@ -22,12 +22,9 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 	void Start() { 
 		textPanel = GameObject.FindWithTag("TextCrawl").GetComponent<TextCrawl>();
 		o2Controller = GameObject.FindWithTag ("OxygenController").GetComponent<OxygenBarController>();
+    textPanelExpander = GameObject.FindWithTag("TextPanel").GetComponent<ExpandingItem>();
 	}
 
-  void Start()
-  {
-    textPanelExpander = GameObject.FindWithTag("TextPanel").GetComponent<ExpandingItem>();
-  }
 
 	protected override void doTriggeredAction()
 	{	
