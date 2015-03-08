@@ -86,6 +86,7 @@ public class LevelLoader : MonoBehaviour {
 						if(spriteTypes.tryGetSpriteAsset(thisTileType, out spriteLoader)) { 
 							Transform newItem = (Transform) Instantiate(
 								spriteLoader, 
+//								new Vector3(0,0,0),
 								gameObject.transform.position,
 								Quaternion.identity
 							);
