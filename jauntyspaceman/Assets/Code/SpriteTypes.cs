@@ -16,6 +16,7 @@ public class SpriteTypes : MonoBehaviour {
 	public Transform spikes; 
 	public Transform water; 
 	public Transform waterBlock; 
+	public Transform respawnPoint;
 
 	private void initDict() 
 	{ 
@@ -24,6 +25,7 @@ public class SpriteTypes : MonoBehaviour {
 		dict.Add (2, basicBlock); 
 		dict.Add (8, ceilingDown1);
 		dict.Add (9, ceilingUp);
+		dict.Add (27, respawnPoint);
 		dict.Add (28, slopeDown); 
 		dict.Add (29, slopeUp); 
 		dict.Add (30, spikes); 

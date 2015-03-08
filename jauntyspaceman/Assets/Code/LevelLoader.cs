@@ -133,6 +133,9 @@ public class LevelLoader : MonoBehaviour {
 									gameObject.transform.position,
 									Quaternion.identity
 								);
+								if(thisTileType == 27) { 
+									newItem.gameObject.tag = "Respawn";
+								}
 								newItem.transform.parent = gameObject.transform;
 								newItem.Translate(new Vector3(baseX + x , y, 0));
 							}
