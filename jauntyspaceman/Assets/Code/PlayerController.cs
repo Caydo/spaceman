@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
   public float RespawnWaitTime;
   public float AmountToDepleteOnRespawn;
   public Transform MostRecentSpawnPoint;
+  public bool ShouldRespawn = true;
 
   OxygenBarController oxygenController;
   FollowersController followerController;

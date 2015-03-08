@@ -6,9 +6,12 @@ class GameOverOnInvis : MonoBehaviour
 
   void OnBecameInvisible()
   {
-    if (gameObject.activeInHierarchy)
+    if(gameObject.activeInHierarchy)
     {
-      StartCoroutine(Player.WaitThenRespawn());
+      if(Player.ShouldRespawn)
+      {
+        StartCoroutine(Player.WaitThenRespawn());
+      }
     }
   }
 }
