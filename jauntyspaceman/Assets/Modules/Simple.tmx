@@ -1054,6 +1054,8 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="31"/>
    <tile gid="31"/>
    <tile gid="31"/>
@@ -1100,10 +1102,8 @@
    <tile gid="31"/>
    <tile gid="31"/>
    <tile gid="31"/>
-   <tile gid="31"/>
-   <tile gid="31"/>
-   <tile gid="31"/>
-   <tile gid="31"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
   </data>
  </layer>
 </map>
