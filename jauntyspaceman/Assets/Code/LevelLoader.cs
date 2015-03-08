@@ -8,6 +8,7 @@ using System.Linq;
 
 public class LevelLoader : MonoBehaviour {
 	public SpriteTypes spriteTypes; 
+	public Transform playerRef; 
 
 //	public Transform spriteLoader;
 	private int spritesMade = 0;
@@ -92,7 +93,7 @@ public class LevelLoader : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		int desiredSprites = Mathf.FloorToInt(Mathf.Abs(gameObject.transform.position.x));
+		int desiredSprites = Mathf.FloorToInt(Mathf.Abs(playerRef.transform.position.x));
 		if(SPRITES_RIGHT_OFFSET + desiredSprites > spritesMade){
 			int numSprites = SPRITES_RIGHT_OFFSET + desiredSprites - spritesMade;
 			if(numSprites > 1000) { 
