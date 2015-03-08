@@ -47,6 +47,3 @@ C:\Users\jsmits\Desktop\spaceman\trunk\jauntyspaceman\obj\Debug\Assembly-CSharp.
 C:\Users\jsmits\Desktop\spaceman\trunk\jauntyspaceman\obj\Debug\Assembly-CSharp.dll
 C:\Users\jsmits\Desktop\spaceman\trunk\jauntyspaceman\obj\Debug\Assembly-CSharp.pdb
 C:\Users\jsmits\Desktop\Spaceman\trunk\jauntyspaceman\Temp\bin\Debug\Assembly-CSharp.dll
-C:\Users\jsmits\Desktop\Spaceman\trunk\jauntyspaceman\Temp\bin\Debug\UnityEditor.dll
-C:\Users\jsmits\Desktop\Spaceman\trunk\jauntyspaceman\Temp\bin\Debug\UnityEngine.dll
-C:\Users\jsmits\Desktop\Spaceman\trunk\jauntyspaceman\Temp\bin\Debug\UnityEngine.UI.dll

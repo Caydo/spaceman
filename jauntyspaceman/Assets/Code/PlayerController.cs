@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
       // Move the character
       body2D.velocity = new Vector2(MoveSpeed * Time.deltaTime, body2D.velocity.y);
 
-      if(jetFuelMeter.value <= 0)
+      if(jetFuelMeter.value <= 0 && !isGrounded)
       {
         animator.SetBool("Jump", false);
         animator.SetTrigger("Fall");
