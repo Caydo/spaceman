@@ -66,6 +66,7 @@
      <None Include="Assets\Modules\Decision.xml" />
      <None Include="Assets\Modules\Corridors.xml" />
      <None Include="Assets\Modules\Deadly.xml" />
+     <None Include="Assets\Modules\Up and Down.xml" />
      <None Include="Assets\NpcScripts\Angel2.xml" />
      <None Include="Assets\Modules\Mario.xml" />
      <None Include="Assets\Modules\Underhill.xml" />
@@ -78,6 +79,7 @@
      <None Include="Assets\Modules\Downhill Slope.xml" />
      <None Include="Assets\Modules\The Lie.xml" />
      <None Include="Assets\Modules\Simple 2.xml" />
+     <None Include="Assets\Modules\STARTER.xml" />
      <None Include="Assets\Modules\Sand Castle.xml" />
      <None Include="Assets\Modules\Simple 5.xml" />
      <None Include="Assets\Modules\Simple 3.xml" />
