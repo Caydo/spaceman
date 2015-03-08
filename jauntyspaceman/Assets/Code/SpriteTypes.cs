@@ -6,7 +6,6 @@ using System.Collections.Generic;
 
 public class SpriteTypes : MonoBehaviour {
 	public Transform harmfulElement;
-	public Transform terrainPiece; 
 	public Transform powerUp;
 
 	public Transform basicBlock; 
@@ -21,9 +20,6 @@ public class SpriteTypes : MonoBehaviour {
 	private void initDict() 
 	{ 
 		dict = new Dictionary<int, Transform>();
-//		dict.Add(2, terrainPiece); 
-//		dict.Add(29, terrainPiece); 
-//		dict.Add(16, powerUp);
 		dict.Add (2, basicBlock); 
 		dict.Add (8, ceilingDown1);
 		dict.Add (9, ceilingUp);

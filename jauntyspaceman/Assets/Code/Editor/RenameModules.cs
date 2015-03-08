@@ -31,7 +31,7 @@ public class FindScriptReferences : MonoBehaviour
 				try { 
 					System.IO.File.Copy (path, newPath);
 				} catch (Exception e) { 
-					Debug.Log ("info: xml file already exists");
+					Debug.Log ("info: xml file already exists " + e.ToString());
 				}
 			}
 //				var assets = AssetDatabase.LoadAllAssetsAtPath(path);
