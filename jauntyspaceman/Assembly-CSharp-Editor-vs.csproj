@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Art\Effects\Scripts\Editor\SortingLayerExposedEditor.cs" />
      <Compile Include="Assets\Code\Editor\RenameModules.cs" />
      <None Include="Assets\Modules\Hills Hard.xml" />
      <None Include="Assets\Modules\Falls Hard.xml" />
