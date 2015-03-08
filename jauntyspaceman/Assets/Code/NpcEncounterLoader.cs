@@ -13,7 +13,8 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 	private List<string> possibleLevels = new List<string>();
 
 	public TextCrawl textPanel; 
-	public OxygenBarController o2Controller; 
+	public OxygenBarController o2Controller;
+  ExpandingItem textPanelExpander;
 
 	private IDictionary<string, string> responseTriggers = new Dictionary<string, string>();
 	private XmlDocument currentTrigger; 
@@ -22,6 +23,11 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 		textPanel = GameObject.FindWithTag("TextCrawl").GetComponent<TextCrawl>();
 		o2Controller = GameObject.FindWithTag ("OxygenController").GetComponent<OxygenBarController>();
 	}
+
+  void Start()
+  {
+    textPanelExpander = GameObject.FindWithTag("TextPanel").GetComponent<ExpandingItem>();
+  }
 
 	protected override void doTriggeredAction()
 	{	
@@ -62,11 +68,13 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 			yield return new WaitForSeconds(1);
 		}
 		Debug.Log ("trigger point coroutine finishing");
+
 		ProcessTrigger (null, coroutineTrigger);
 	}
 
 	public void parsePoint(XmlNode mainPoint) { 
 		Debug.Log ("parsePoint entereted {" + mainPoint.Attributes + "}");
+
 		textPanel.Reset();
 		string text = mainPoint.Attributes.GetNamedItem("text").InnerText;
 		textPanel.TextToAdd += text; 
@@ -85,6 +93,8 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 				textPanel.TextToAdd += "\n <fancy markup here for bold? >" + responseKey + "</markup>  " + responseText; 
 			}
 		}
+
+    textPanelExpander.DoExpand();
 		textPanel.StartCrawl();
 	}
 	

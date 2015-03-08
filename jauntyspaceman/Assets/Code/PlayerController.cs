@@ -32,16 +32,8 @@ public class PlayerController : MonoBehaviour
     jetFuelMeter = GameObject.FindGameObjectWithTag("JetFuelMeter").GetComponent<Slider>();
     oxygenController = GameObject.FindGameObjectWithTag("OxygenController").GetComponent<OxygenBarController>();
   }
-
-  void OnBecameInvisible()
-  {
-    if(gameObject.activeInHierarchy)
-    {
-      StartCoroutine(WaitThenRespawn());
-    }
-  }
-
-  IEnumerator WaitThenRespawn()
+  
+  public IEnumerator WaitThenRespawn()
   {
     yield return new WaitForSeconds(RespawnWaitTime);
     followerController.DisableFollower();

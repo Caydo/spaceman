@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class DestroyOnInvisible : MonoBehaviour
 {
@@ -8,7 +8,8 @@ public class DestroyOnInvisible : MonoBehaviour
 	private bool wasVisible = false;
 
 	public PlayerController player; 
-	void Awake() { 
+	void Start()
+  { 
 		player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
 	}
 	void OnBecameVisible() 
@@ -19,10 +20,15 @@ public class DestroyOnInvisible : MonoBehaviour
   void OnBecameInvisible()
   {
 		bool respectRespawnOk = true; 
-		if (respectRespawn) { 
-			if(player.MostRecentSpawnPoint != null) { 
-				respectRespawnOk = (player.MostRecentSpawnPoint.transform.position.x - SHOW_TILES_X_TO_LEFT_OF_PLAYER) > gameObject.transform.position.x;
-			}
+		if(respectRespawn)
+    {
+      if (player != null)
+      {
+        if (player.MostRecentSpawnPoint != null)
+        {
+          respectRespawnOk = (player.MostRecentSpawnPoint.transform.position.x - SHOW_TILES_X_TO_LEFT_OF_PLAYER) > gameObject.transform.position.x;
+        }
+      }
 		}
 		if((!respectRespawnOk) || (!destroyOnlyAfterVisible) || wasVisible) { 
     		GameObject.Destroy(gameObject);

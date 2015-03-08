@@ -1,10 +1,9 @@
 using UnityEngine;
 
-public class NPCFollower : MonoBehaviour
+public class NPCFollower : PlayerInteractionTrigger
 {
   SpriteRenderer NPCSprite;
   Animator NPCAnimator;
-  public GameObject PlayerObject;
 
   void Awake()
   {
@@ -12,17 +11,18 @@ public class NPCFollower : MonoBehaviour
     NPCAnimator = GetComponent<Animator>();
   }
 
-  void FixedUpdate()
+  protected override void doTriggeredAction()
   {
-    //transform.position = Vector3.Lerp()
+    onTriggerEnterObject.gameObject.GetComponent<FollowersController>().EnableFollower("jim");
+    GameObject.Destroy(gameObject);
   }
-
-  public void ChangeSprite(Sprite changeSprite)
+  
+  void ChangeSprite(Sprite changeSprite)
   {
     NPCSprite.sprite = changeSprite;
   }
 
-  public void ChangeAnimator(Animator changeAnimator)
+  void ChangeAnimator(Animator changeAnimator)
   {
     NPCAnimator = changeAnimator;
   }
