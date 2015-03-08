@@ -2,7 +2,7 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\SpriteTypes.cs">
     <Files>
-      <File FileName="Assets\Code\SpriteTypes.cs" Line="23" Column="4" />
+      <File FileName="Assets\Code\SpriteTypes.cs" Line="31" Column="27" />
       <File FileName="Assets\Code\LevelLoader.cs" Line="21" Column="46" />
       <File FileName="Assets\Code\Editor\RenameModules.cs" Line="14" Column="3" />
     </Files>
