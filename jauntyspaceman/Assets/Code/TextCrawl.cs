@@ -11,13 +11,13 @@ public class TextCrawl : MonoBehaviour
   public float DelayBeforeCrawl;
   public bool AllowClickSkip;
 
-  Text textToCrawl;
+  public Text textToCrawl;
 
   void Awake()
   {
-    TextToAdd = "The smell of pine does little to ease your fears of this place. The sight of the dead body doesn't really help either. The mission to check out the weird forest's taken a bad turn."
-      + "\n\nAlthough, a wizard wielding an enchanted baseball bat should be okay here, right?\n\n Who's that person in front of you though? They don't look familiar. "
-     + "\n\nMaybe exploring the forest for clues is a good option? It's late and magic's definitely around here. You don't think you'll be eaten by a grue. What do you do now?\n\nClick To Continue";
+//    TextToAdd = "The smell of pine does little to ease your fears of this place. The sight of the dead body doesn't really help either. The mission to check out the weird forest's taken a bad turn."
+//      + "\n\nAlthough, a wizard wielding an enchanted baseball bat should be okay here, right?\n\n Who's that person in front of you though? They don't look familiar. "
+//     + "\n\nMaybe exploring the forest for clues is a good option? It's late and magic's definitely around here. You don't think you'll be eaten by a grue. What do you do now?\n\nClick To Continue";
 
     textToCrawl = GetComponent<Text>();
   }

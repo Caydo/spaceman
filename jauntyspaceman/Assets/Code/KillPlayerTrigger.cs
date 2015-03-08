@@ -10,7 +10,7 @@ namespace Assets.Code
   class KillPlayerTrigger : PlayerInteractionTrigger
   {
     int time = 0;
-    public int TimeToWaitForStuck;
+    public int TimeToWaitForStuck = 0;
     
     protected override void doTriggerStayAction()
     {
