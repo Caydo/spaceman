@@ -42,6 +42,8 @@ public class PlayerController : MonoBehaviour
       isFlying = true;
 
       // not grounded, not falling, so we're flying
+      animator.SetBool("Run", false);
+      animator.SetBool("Jump", true);
     }
 
     if (!PlayerDead)
@@ -52,7 +54,17 @@ public class PlayerController : MonoBehaviour
       if (Input.GetKeyUp(KeyCode.Space) && !isGrounded)
       {
         // not grounded but not flying, so falling
+        animator.SetBool("Run", false);
+        animator.SetBool("Jump", false);
+        animator.SetBool("Fall", true);
         isFlying = false;
+      }
+
+      if(jetFuelMeter.value <= 0)
+      {
+        animator.SetBool("Run", false);
+        animator.SetBool("Jump", false);
+        animator.SetBool("Fall", true);
       }
 
       if (jetFuelMeter.value < 1 && isGrounded)
@@ -83,6 +95,8 @@ public class PlayerController : MonoBehaviour
       isFlying = false;
       jetFuelMeter.value = 1;
       // running
+      animator.SetBool("Jump", false);
+      animator.SetBool("Run", true);
     }
   }
 }
