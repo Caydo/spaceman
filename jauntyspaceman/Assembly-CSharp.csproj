@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +60,7 @@
      <Compile Include="Assets\Code\KillPlayerTrigger.cs" />
      <Compile Include="Assets\Code\LevelLoader.cs" />
      <Compile Include="Assets\Code\NPCFollower.cs" />
+     <Compile Include="Assets\Code\NpcEncounterLoader.cs" />
      <Compile Include="Assets\Code\OxygenBarController.cs" />
      <Compile Include="Assets\Code\PlayerController.cs" />
      <Compile Include="Assets\Code\PlayerInteractionTrigger.cs" />
@@ -71,6 +72,7 @@
      <None Include="Assets\Modules\Hills Hard.xml" />
      <None Include="Assets\Modules\Falls Hard.xml" />
      <None Include="Assets\Modules\Uphill Slope.xml" />
+     <None Include="Assets\NpcScripts\Angel.xml" />
      <None Include="Assets\Modules\The Town.xml" />
      <None Include="Assets\Modules\Falls Easy.xml" />
      <None Include="Assets\Modules\Islands.xml" />
@@ -89,7 +91,7 @@
      <None Include="Assets\Modules\Falls Med.xml" />
      <None Include="Assets\Modules\BlankMap.xml" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
