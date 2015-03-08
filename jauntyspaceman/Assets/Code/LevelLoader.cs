@@ -4,6 +4,7 @@ using System.Xml;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 public class LevelLoader : MonoBehaviour {
 	public SpriteTypes spriteTypes; 
@@ -14,6 +15,7 @@ public class LevelLoader : MonoBehaviour {
 	private int spritesMade = 0;
 	private const int SPRITES_RIGHT_OFFSET = 10; // how many sprites we should show to the right of our character
 	private const int VERTICAL_SIZE = 10; // number of vertical sprites 
+	private const int ARBITRARY_LEVEL_DIFFICULTY_CUTOFF = 20; 
 
 	private const string modulePath = "Modules/";
 	private const string moduleSuffix = ".xml";
@@ -22,6 +24,7 @@ public class LevelLoader : MonoBehaviour {
 	private int levelGridSize = 0; 
 
 	private List<string> possibleLevels = new List<string>();
+	public int levelDifficulty = 0; 
 	public bool loadRandomLevels = true;
 	public string loadSpecificLevel = "";
 
@@ -29,34 +32,50 @@ public class LevelLoader : MonoBehaviour {
 	void Start () {
 	}
 
+	private Regex levelNameRegex = new Regex("^(?<difficulty>\\d+)_");
 	void LoadRandomLevel() {
-    if (possibleLevels.Count <= 0)
-    {
-      var paths = Resources.LoadAll(modulePath);
+	    if (possibleLevels.Count <= 0)
+	    {
+	      var paths = Resources.LoadAll(modulePath);
 
-      foreach (var path in paths)
-      {
-        string randomPath = path.name.Replace(moduleSuffix, "").Replace(modulePath, "");
+	      foreach (var path in paths)
+	      {
+	        string randomPath = path.name.Replace(moduleSuffix, "").Replace(modulePath, "");
 
-        Debug.Log("Found item in path {" + path + "}{" + randomPath + "}");
-        possibleLevels.Add(randomPath);
-      }
-    }
+	        Debug.Log("Found item in path {" + path + "}{" + randomPath + "}");
+	        possibleLevels.Add(randomPath);
+	      }
+	    }
 
-    if (loadSpecificLevel != "")
-    {
-      Debug.Log("loadspecific level!!");
-      Debug.Log(loadSpecificLevel);
-      LoadChunk(loadSpecificLevel);
-    }
-    else if (loadRandomLevels)
-    {
-      LoadChunk(possibleLevels[Random.Range(0, possibleLevels.Count)]);
-    }
-    else
-    {
-      LoadChunk("Teeth");
-    }
+	    if (loadSpecificLevel != "")
+	    {
+	      Debug.Log("loadspecific level!!");
+	      Debug.Log(loadSpecificLevel);
+	      LoadChunk(loadSpecificLevel);
+	    }
+	    else if (loadRandomLevels)
+	    {
+			List<string> levels; 
+			do { 
+				var things = possibleLevels.Where (levelName => { 
+					Match m = levelNameRegex.Match(levelName);
+					if (m.Success) { 
+						int difficulty = int.Parse (m.Groups["difficulty"].Value);
+						return difficulty == levelDifficulty;
+					} else { 
+						return false;
+					}
+				});
+				levels = new List<string>(things);
+			} while ((levels.Count <= 0) && (++levelDifficulty < ARBITRARY_LEVEL_DIFFICULTY_CUTOFF));
+			int selectedLevel = Random.Range (0, levels.Count);
+			possibleLevels.Remove(levels[selectedLevel]);
+			LoadChunk(levels[selectedLevel]);
+	    }
+	    else
+	    {
+	      LoadChunk("Teeth");
+	    }
 	}
 
 	void LoadChunk(string filename) { 
