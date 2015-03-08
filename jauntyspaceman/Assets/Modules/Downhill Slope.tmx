@@ -89,10 +89,10 @@
    <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/SlopeUp.png"/>
   </tile>
   <tile id="29">
-   <image width="70" height="35" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/spikes.png"/>
+   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/spikes.png"/>
   </tile>
   <tile id="30">
-   <image width="70" height="45" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/water.png"/>
+   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/water.png"/>
   </tile>
   <tile id="31">
    <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/water_block.png"/>
@@ -300,7 +300,7 @@
    <tile gid="30"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="27"/>
    <tile gid="29"/>
    <tile gid="20"/>
    <tile gid="20"/>
