@@ -49,8 +49,8 @@ public class PlayerController : MonoBehaviour
         jetFuelMeter.value -= FuelDepletionRateOnActivate;
         isGrounded = false;
         // not grounded, not falling, so we're flying
-        
-        animator.SetTrigger("Jump");
+
+        animator.SetBool("Jump", true);
       }
     }
 
