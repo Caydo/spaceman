@@ -3,6 +3,8 @@ using System.Collections;
 using System.Xml;
 using System.IO;
 using System.Collections.Generic;
+using UnityEditor;
+using System.Linq;
 
 public class LevelLoader : MonoBehaviour {
 	public SpriteTypes spriteTypes; 
@@ -15,11 +17,37 @@ public class LevelLoader : MonoBehaviour {
 	private const string modulePath = "Assets/Modules/";
 	private const string moduleSuffix = ".xml";
 
-	private List<List<int>> levelGrid = new List<List<int>>(); // y, x index
+	private List<List<int>> levelGrid = new List<List<int>>(); // x, y index
 	private int levelGridSize = 0; 
+
+	private List<string> possibleLevels = new List<string>();
+	public bool loadRandomLevels = true;
+	public string loadSpecificLevel = "";
 
 	// Use this for initialization
 	void Start () {
+	}
+
+	void LoadRandomLevel() { 
+		if(possibleLevels.Count <= 0) { 
+			var paths = AssetDatabase.GetAllAssetPaths().Where(x => x.EndsWith("xml"));
+			
+			foreach (var path in paths)
+			{
+				string randomPath = path.Replace(".xml", "").Replace("Assets/Modules/", ""); 
+
+				Debug.Log ("Found item in path {" + path + "}{" + randomPath + "}");
+				possibleLevels.Add (randomPath);
+			}
+		}
+
+		if(loadSpecificLevel != "") { 
+			LoadChunk (loadSpecificLevel);
+		} else if(loadRandomLevels) { 
+			LoadChunk(possibleLevels[Random.Range (0, possibleLevels.Count)]);
+		} else { 
+			LoadChunk("Teeth");
+		}
 	}
 
 	void LoadChunk(string filename) { 
@@ -66,19 +94,16 @@ public class LevelLoader : MonoBehaviour {
 	void Update () {
 		int desiredSprites = Mathf.FloorToInt(Mathf.Abs(gameObject.transform.position.x));
 		if(SPRITES_RIGHT_OFFSET + desiredSprites > spritesMade){
-			Debug.Log ("We should draw some sprites {" + (SPRITES_RIGHT_OFFSET + desiredSprites) + "} {" + spritesMade + "}");
 			int numSprites = SPRITES_RIGHT_OFFSET + desiredSprites - spritesMade;
-			Debug.Log ("we should draw {" + numSprites + "} sprites");
 			if(numSprites > 1000) { 
 				throw new UnityException("bad things!");
 			}
 			float baseX = spritesMade;
 			spritesMade += numSprites;
-			Debug.Log ("Base X {" + baseX + "}");
 			for (int x = 0; x < numSprites; ++x) { 
 				for (int y = 0; y < VERTICAL_SIZE; ++y) { 
 					if(baseX + x >= levelGridSize) { 
-						LoadChunk("Teeth");
+						LoadRandomLevel();
 					}
 					int thisTileType = levelGrid[(int)baseX + x][y];
 					if(thisTileType != 0) { 					
@@ -86,7 +111,6 @@ public class LevelLoader : MonoBehaviour {
 						if(spriteTypes.tryGetSpriteAsset(thisTileType, out spriteLoader)) { 
 							Transform newItem = (Transform) Instantiate(
 								spriteLoader, 
-//								new Vector3(0,0,0),
 								gameObject.transform.position,
 								Quaternion.identity
 							);

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HarmfulElement : PlayerInteractionTrigger
 {
-  public float OxygenToGain;
+  public float OxygenToLose;
   OxygenBarController oxygenController;
 
   void Awake()
@@ -10,8 +10,8 @@ public class HarmfulElement : PlayerInteractionTrigger
     oxygenController = GameObject.FindGameObjectWithTag("OxygenController").GetComponent<OxygenBarController>();
   }
 
-  protected override void doAction()
+  protected override void doCollidedAction()
   {
-    oxygenController.LoseOxygen(OxygenToGain);
+    oxygenController.LoseOxygen(OxygenToLose);
   }
 }
