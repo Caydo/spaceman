@@ -19,6 +19,7 @@ public class SpriteTypes : MonoBehaviour {
 
 	private void initDict() 
 	{ 
+		// TODO we were gonna try to make these strings referencing the art assets instead of ids?
 		dict = new Dictionary<int, Transform>();
 		dict.Add (2, basicBlock); 
 		dict.Add (8, ceilingDown1);
