@@ -2,10 +2,15 @@
 
 public class DestroyOnInvisible : MonoBehaviour
 {
-
+	private const int SHOW_TILES_X_TO_LEFT_OF_PLAYER = 10;
 	public bool destroyOnlyAfterVisible = true;
+	public bool respectRespawn = true;
 	private bool wasVisible = false;
 
+	public PlayerController player; 
+	void Awake() { 
+		player = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
+	}
 	void OnBecameVisible() 
 	{
 		wasVisible = true;
@@ -13,7 +18,13 @@ public class DestroyOnInvisible : MonoBehaviour
 
   void OnBecameInvisible()
   {
-		if((!destroyOnlyAfterVisible) || wasVisible) { 
+		bool respectRespawnOk = true; 
+		if (respectRespawn) { 
+			if(player.MostRecentSpawnPoint != null) { 
+				respectRespawnOk = (player.MostRecentSpawnPoint.transform.position.x - SHOW_TILES_X_TO_LEFT_OF_PLAYER) > gameObject.transform.position.x;
+			}
+		}
+		if((!respectRespawnOk) || (!destroyOnlyAfterVisible) || wasVisible) { 
     		GameObject.Destroy(gameObject);
 		}
   }
