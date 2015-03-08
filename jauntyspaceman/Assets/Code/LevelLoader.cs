@@ -21,6 +21,7 @@ public class LevelLoader : MonoBehaviour {
 	private int levelGridSize = 0; 
 
 	private List<string> possibleLevels = new List<string>();
+	public bool loadRandomLevels = true;
 
 	// Use this for initialization
 	void Start () {
@@ -39,7 +40,11 @@ public class LevelLoader : MonoBehaviour {
 			}
 		}
 
-		LoadChunk(possibleLevels[Random.Range (0, possibleLevels.Count)]);
+		if(loadRandomLevels) { 
+			LoadChunk(possibleLevels[Random.Range (0, possibleLevels.Count)]);
+		} else { 
+			LoadChunk("Teeth");
+		}
 	}
 
 	void LoadChunk(string filename) { 
@@ -92,7 +97,6 @@ public class LevelLoader : MonoBehaviour {
 			}
 			float baseX = spritesMade;
 			spritesMade += numSprites;
-			Debug.Log ("Base X {" + baseX + "}");
 			for (int x = 0; x < numSprites; ++x) { 
 				for (int y = 0; y < VERTICAL_SIZE; ++y) { 
 					if(baseX + x >= levelGridSize) { 
