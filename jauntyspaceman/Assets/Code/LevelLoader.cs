@@ -22,6 +22,7 @@ public class LevelLoader : MonoBehaviour {
 
 	private List<string> possibleLevels = new List<string>();
 	public bool loadRandomLevels = true;
+	public string loadSpecificLevel = "";
 
 	// Use this for initialization
 	void Start () {
@@ -40,7 +41,9 @@ public class LevelLoader : MonoBehaviour {
 			}
 		}
 
-		if(loadRandomLevels) { 
+		if(loadSpecificLevel != "") { 
+			LoadChunk (loadSpecificLevel);
+		} else if(loadRandomLevels) { 
 			LoadChunk(possibleLevels[Random.Range (0, possibleLevels.Count)]);
 		} else { 
 			LoadChunk("Teeth");
