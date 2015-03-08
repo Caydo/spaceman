@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +72,7 @@
      <Compile Include="Assets\Code\SetRespawnPoint.cs" />
      <Compile Include="Assets\Code\SpeedPowerup.cs" />
      <Compile Include="Assets\Code\SpriteTypes.cs" />
+     <Compile Include="Assets\Code\StartGameOnPress.cs" />
      <Compile Include="Assets\Code\TextCrawl.cs" />
      <None Include="Assets\Resources\Modules\3_Islands.xml" />
      <None Include="Assets\Resources\Modules\2_Dire Wolves.xml" />
@@ -109,7 +110,7 @@
      <None Include="Assets\Resources\Modules\2_Falls Med.xml" />
      <None Include="Assets\Resources\Modules\1_Sky Bridge.xml" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
