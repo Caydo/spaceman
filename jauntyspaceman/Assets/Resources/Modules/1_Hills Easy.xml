@@ -80,10 +80,10 @@
    <image width="70" height="70" source="../../Art/Tileset/SlopeUp.png"/>
   </tile>
   <tile id="26">
-   <image width="70" height="35" source="../../Art/Tileset/spikes.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/spikes.png"/>
   </tile>
   <tile id="27">
-   <image width="70" height="45" source="../../Art/Tileset/water.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/water.png"/>
   </tile>
   <tile id="28">
    <image width="69" height="112" source="../../Art/Tileset/PlaceholderAngel.png"/>
@@ -294,7 +294,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="24"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>

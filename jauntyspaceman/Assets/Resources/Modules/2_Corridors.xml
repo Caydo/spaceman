@@ -89,10 +89,10 @@
    <image width="70" height="70" source="../../Art/Tileset/SlopeUp.png"/>
   </tile>
   <tile id="29">
-   <image width="70" height="35" source="../../Art/Tileset/spikes.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/spikes.png"/>
   </tile>
   <tile id="30">
-   <image width="70" height="45" source="../../Art/Tileset/water.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/water.png"/>
   </tile>
   <tile id="31">
    <image width="70" height="70" source="../../Art/Tileset/water_block.png"/>
@@ -148,6 +148,7 @@
    <tile gid="6"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="3"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -157,7 +158,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="20"/>
    <tile gid="20"/>
    <tile gid="20"/>
@@ -197,9 +197,9 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="20"/>
+   <tile gid="20"/>
+   <tile gid="20"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -247,9 +247,9 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="8"/>
+   <tile gid="20"/>
+   <tile gid="9"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="6"/>
@@ -300,7 +300,7 @@
    <tile gid="6"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="27"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
