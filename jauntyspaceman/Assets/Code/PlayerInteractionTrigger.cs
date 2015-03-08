@@ -11,6 +11,7 @@ public class PlayerInteractionTrigger : MonoBehaviour
   protected Collision2D onCollisionObject;
   protected Collider2D onTriggerEnterObject;
   protected Collider onTriggerStayObject;
+
   void OnCollisionEnter2D(Collision2D coll)
   {
     if(coll.gameObject.tag == "Player")

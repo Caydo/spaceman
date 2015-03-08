@@ -14,5 +14,12 @@ namespace Assets.Code
       onTriggerEnterObject.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
       onTriggerEnterObject.gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0;
     }
+
+    protected override void doTriggerStayAction()
+    {
+      onTriggerStayObject.gameObject.GetComponent<PlayerController>().PlayerDead = true;
+      onTriggerStayObject.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+      onTriggerStayObject.gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0;
+    }
   }
 }
