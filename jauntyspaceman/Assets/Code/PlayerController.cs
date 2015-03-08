@@ -29,15 +29,6 @@ public class PlayerController : MonoBehaviour
 
   void Update()
   {
-    if(gameObject.transform.position.x == cachedLastX)
-    {
-      //PlayerDead = true;
-    }
-    else
-    {
-      cachedLastX = gameObject.transform.position.x;
-    }
-
     // pressing space and grounded, so we're flying and not grounded
     if(Input.GetKey(KeyCode.Space) && jetFuelMeter.value > 0)
     {

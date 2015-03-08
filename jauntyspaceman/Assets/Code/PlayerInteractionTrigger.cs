@@ -9,6 +9,7 @@ public class PlayerInteractionTrigger : MonoBehaviour
   public bool DestroyOnCollide;
   public bool DestroyOnTrigger;
   protected Collision2D onCollisionObject;
+  protected Collider2D onTriggerEnterObject;
   protected Collider onTriggerStayObject;
   void OnCollisionEnter2D(Collision2D coll)
   {
@@ -27,6 +28,7 @@ public class PlayerInteractionTrigger : MonoBehaviour
   {
     if(coll.gameObject.tag == "Player")
     {
+      onTriggerEnterObject = coll;
       doTriggeredAction();
       if (DestroyOnTrigger)
       {

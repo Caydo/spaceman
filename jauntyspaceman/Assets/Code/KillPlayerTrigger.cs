@@ -8,7 +8,7 @@ namespace Assets.Code
 {
   class KillPlayerTrigger : PlayerInteractionTrigger
   {
-    protected override void doCollidedAction()
+    protected override void doTriggeredAction()
     {
       onCollisionObject.gameObject.GetComponent<PlayerController>().PlayerDead = true;
       onCollisionObject.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
