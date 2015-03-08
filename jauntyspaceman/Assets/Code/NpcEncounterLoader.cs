@@ -8,7 +8,7 @@ using System.Collections;
 
 public class NpcEncounterLoader : MonoBehaviour {
 
-	private const string modulePath = "Assets/NpcScripts/";
+	private const string modulePath = "NPCs/";
 	private const string moduleSuffix = ".xml";
 	private List<string> possibleLevels = new List<string>();
 
@@ -19,7 +19,6 @@ public class NpcEncounterLoader : MonoBehaviour {
 	private XmlDocument currentTrigger; 
 
 	void Start() { 
-//		LoadNpcEncounter("Angel");
 		LoadRandomNpcEncounter();
 	}
 
@@ -70,6 +69,7 @@ public class NpcEncounterLoader : MonoBehaviour {
 		if(trigger != null) { 
 			StartCoroutine(TriggerPointCoroutine(trigger.InnerText));
 		} else { 
+			Debug.Log ("Looking for responses");
 			XmlNodeList responses = mainPoint.SelectNodes("response");
 			foreach(XmlNode response in responses) { 
 				string responseKey = response.Attributes.GetNamedItem("key").InnerText;
