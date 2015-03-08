@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Collections;
 
-public class NpcEncounterLoader : MonoBehaviour {
+public class NpcEncounterLoader : PlayerInteractionTrigger {
 
 	private const string modulePath = "NPCs/";
 	private const string moduleSuffix = ".xml";
@@ -18,7 +18,13 @@ public class NpcEncounterLoader : MonoBehaviour {
 	private IDictionary<string, string> responseTriggers = new Dictionary<string, string>();
 	private XmlDocument currentTrigger; 
 
-	void Start() { 
+	void Awake() { 
+		textPanel = GameObject.FindWithTag("TextCrawl").GetComponent<TextCrawl>();
+		o2Controller = GameObject.FindWithTag ("OxygenController").GetComponent<OxygenBarController>();
+	}
+
+	protected override void doTriggeredAction()
+	{	
 		LoadRandomNpcEncounter();
 	}
 

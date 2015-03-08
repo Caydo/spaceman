@@ -8,6 +8,7 @@ using System.Linq;
 public class LevelLoader : MonoBehaviour {
 	public SpriteTypes spriteTypes; 
 	public Transform playerRef; 
+	public NpcEncounterLoader npcLoader; 
 
 //	public Transform spriteLoader;
 	private int spritesMade = 0;

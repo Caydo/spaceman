@@ -20,6 +20,7 @@ public class SpriteTypes : MonoBehaviour {
 	public Transform respawnPoint;
 	public Transform bridge;
 	public Transform cat;
+	public Transform npc; 
 
 	private void initDict() 
 	{ 
@@ -39,6 +40,7 @@ public class SpriteTypes : MonoBehaviour {
 		dict.Add (5, bridge);
 		dict.Add (6, powerUp);
 		dict.Add (3, cat);
+		dict.Add (24, npc);
 	}
 	IDictionary<int, Transform> dict = null; // new Dictionary<int, string>();
 
