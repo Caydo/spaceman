@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -74,43 +74,43 @@
      <Compile Include="Assets\Code\SpriteTypes.cs" />
      <Compile Include="Assets\Code\StartGameOnPress.cs" />
      <Compile Include="Assets\Code\TextCrawl.cs" />
+     <None Include="Assets\Resources\Modules\2_Dragon.xml" />
      <None Include="Assets\Resources\Modules\3_Islands.xml" />
-     <None Include="Assets\Resources\Modules\2_Dire Wolves.xml" />
-     <None Include="Assets\Resources\Modules\1_Simple 3.xml" />
-     <None Include="Assets\Resources\Modules\2_Sand Castle.xml" />
-     <None Include="Assets\Resources\Modules\2_Underhill.xml" />
-     <None Include="Assets\Resources\Modules\1_Simple 4.xml" />
-     <None Include="Assets\Resources\Modules\1_Uphill Slope.xml" />
+     <None Include="Assets\Resources\Modules\2_Up and Down.xml" />
      <None Include="Assets\Resources\NPCs\Angel.xml" />
+     <None Include="Assets\Resources\Modules\1_Mario.xml" />
+     <None Include="Assets\Resources\Modules\3_Falls Hard.xml" />
+     <None Include="Assets\Resources\Modules\2_Underhill.xml" />
+     <None Include="Assets\Resources\Modules\3_Decision.xml" />
+     <None Include="Assets\Resources\Modules\1_Simple 3.xml" />
+     <None Include="Assets\Resources\Modules\1_Uphill Slope.xml" />
+     <None Include="Assets\Resources\Modules\3_Hills Hard.xml" />
+     <None Include="Assets\Resources\Modules\1_Sky Bridge.xml" />
+     <None Include="Assets\Resources\Modules\1_Hills Easy.xml" />
+     <None Include="Assets\Resources\Modules\3_Retro.xml" />
+     <None Include="Assets\Resources\Modules\2_The Lie.xml" />
+     <None Include="Assets\Resources\Modules\1_Easy Slopes.xml" />
+     <None Include="Assets\Resources\Modules\3_Deadly.xml" />
+     <None Include="Assets\Resources\Modules\3_Precarious.xml" />
+     <None Include="Assets\Resources\Modules\0_STARTER.xml" />
+     <None Include="Assets\Resources\Modules\3_Cubeville.xml" />
+     <None Include="Assets\Resources\NPCs\Angel2.xml" />
+     <None Include="Assets\Resources\Modules\1_Falls Easy.xml" />
+     <None Include="Assets\Resources\Modules\1_Simple.xml" />
+     <None Include="Assets\Resources\Modules\2_Sand Castle.xml" />
+     <None Include="Assets\Resources\Modules\1_Easy Split.xml" />
+     <None Include="Assets\Resources\Modules\1_Simple 5.xml" />
+     <None Include="Assets\Resources\Modules\2_Corridors.xml" />
+     <None Include="Assets\Resources\Modules\2_Downhill Slope.xml" />
+     <None Include="Assets\Resources\Modules\1_Simple 4.xml" />
+     <None Include="Assets\Resources\Modules\2_Falls Med.xml" />
      <None Include="Assets\Resources\Modules\1_Simple 2.xml" />
      <None Include="Assets\Resources\Modules\1_The Town.xml" />
-     <None Include="Assets\Resources\Modules\3_Hills Hard.xml" />
-     <None Include="Assets\Resources\Modules\1_Easy Slopes.xml" />
-     <None Include="Assets\Resources\Modules\2_The Lie.xml" />
-     <None Include="Assets\Resources\Modules\2_Dragon.xml" />
-     <None Include="Assets\Resources\Modules\2_Spike Pit.xml" />
-     <None Include="Assets\Resources\Modules\3_Retro.xml" />
-     <None Include="Assets\Resources\Modules\0_STARTER.xml" />
-     <None Include="Assets\Resources\Modules\3_Decision.xml" />
-     <None Include="Assets\Resources\Modules\1_Simple 5.xml" />
-     <None Include="Assets\Resources\NPCs\Angel2.xml" />
-     <None Include="Assets\Resources\Modules\1_Easy Split.xml" />
-     <None Include="Assets\Resources\Modules\1_Hills Easy.xml" />
-     <None Include="Assets\Resources\Modules\2_Up and Down.xml" />
-     <None Include="Assets\Resources\Modules\3_Deadly.xml" />
-     <None Include="Assets\Resources\Modules\3_Falls Hard.xml" />
-     <None Include="Assets\Resources\Modules\1_Simple.xml" />
-     <None Include="Assets\Resources\Modules\3_Cubeville.xml" />
-     <None Include="Assets\Resources\Modules\2_Downhill Slope.xml" />
-     <None Include="Assets\Resources\Modules\3_Precarious.xml" />
-     <None Include="Assets\Resources\Modules\1_Mario.xml" />
-     <None Include="Assets\Resources\Modules\2_Corridors.xml" />
-     <None Include="Assets\Resources\Modules\1_Falls Easy.xml" />
      <None Include="Assets\Art\Effects\Shaders\flowMap.shader" />
-     <None Include="Assets\Resources\Modules\2_Falls Med.xml" />
-     <None Include="Assets\Resources\Modules\1_Sky Bridge.xml" />
+     <None Include="Assets\Resources\Modules\2_Dire Wolves.xml" />
+     <None Include="Assets\Resources\Modules\2_Spike Pit.xml" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
