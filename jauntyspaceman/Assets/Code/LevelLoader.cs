@@ -31,11 +31,11 @@ public class LevelLoader : MonoBehaviour {
 
 	void LoadRandomLevel() { 
 		if(possibleLevels.Count <= 0) { 
-			var paths = AssetDatabase.GetAllAssetPaths().Where(x => x.EndsWith("xml"));
+			var paths = AssetDatabase.GetAllAssetPaths().Where(x => x.EndsWith("xml") && x.Contains(modulePath));
 			
 			foreach (var path in paths)
 			{
-				string randomPath = path.Replace(".xml", "").Replace("Assets/Modules/", ""); 
+				string randomPath = path.Replace(moduleSuffix, "").Replace(modulePath, ""); 
 
 				Debug.Log ("Found item in path {" + path + "}{" + randomPath + "}");
 				possibleLevels.Add (randomPath);

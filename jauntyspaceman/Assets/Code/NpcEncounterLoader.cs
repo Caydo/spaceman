@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Xml;
 using System.IO;
 using System.Linq; 
+using UnityEditor;
 
 public class NpcEncounterLoader : MonoBehaviour {
 
 	private const string modulePath = "Assets/NpcScripts/";
 	private const string moduleSuffix = ".xml";
+	private List<string> possibleLevels = new List<string>();
 
 	public TextCrawl textPanel; 
 
@@ -15,7 +17,23 @@ public class NpcEncounterLoader : MonoBehaviour {
 	private XmlDocument currentTrigger; 
 
 	void Start() { 
-		LoadNpcEncounter("Angel");
+//		LoadNpcEncounter("Angel");
+		LoadRandomNpcEncounter();
+	}
+
+	public void LoadRandomNpcEncounter() { 
+		if(possibleLevels.Count <= 0) { 
+			var paths = AssetDatabase.GetAllAssetPaths().Where(x => x.EndsWith("xml") && x.Contains(modulePath));
+			
+			foreach (var path in paths)
+			{
+				string randomPath = path.Replace(moduleSuffix, "").Replace(modulePath, ""); 
+				
+				Debug.Log ("Found item in path {" + path + "}{" + randomPath + "}");
+				possibleLevels.Add (randomPath);
+			}
+		}
+		LoadNpcEncounter(possibleLevels[Random.Range (0, possibleLevels.Count)]);
 	}
 
 	public void LoadNpcEncounter(string npcName) {
