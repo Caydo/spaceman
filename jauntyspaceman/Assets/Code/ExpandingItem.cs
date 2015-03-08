@@ -6,7 +6,6 @@ public class ExpandingItem : MonoBehaviour
   // how quickly the item should expands. Smaller is slower.
   public float scaleSpeedPerFrame;
   RectTransform rect;
-  float scaleAmount;
   bool doneScaling;
 
   void Awake()
@@ -14,12 +13,22 @@ public class ExpandingItem : MonoBehaviour
     rect = GetComponent<RectTransform>();
   }
 
+  public void DoExpand()
+  {
+    StartCoroutine(Expand());
+  }
+
+  public void DoShrink()
+  {
+    StartCoroutine(Shrink());
+  }
+
   IEnumerator Expand()
   {
-    while(rect.localScale.x <= 0)
+    while(rect.localScale.x < 1)
     {
+      rect.localScale += new Vector3(scaleSpeedPerFrame, scaleSpeedPerFrame, scaleSpeedPerFrame);
       yield return null;
-      rect.localScale += new Vector3(scaleAmount, scaleAmount, scaleAmount);
     }
   }
 
@@ -28,7 +37,7 @@ public class ExpandingItem : MonoBehaviour
     while (rect.localScale.x > 0)
     {
       yield return null;
-      rect.localScale -= new Vector3(scaleAmount, scaleAmount, scaleAmount);
+      rect.localScale -= new Vector3(scaleSpeedPerFrame, scaleSpeedPerFrame, scaleSpeedPerFrame);
     }
   }
 }

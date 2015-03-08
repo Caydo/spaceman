@@ -60,6 +60,7 @@
      <Compile Include="Assets\Code\KillPlayerTrigger.cs" />
      <Compile Include="Assets\Code\LevelLoader.cs" />
      <Compile Include="Assets\Code\NPCFollower.cs" />
+     <Compile Include="Assets\Code\NPCInteractable.cs" />
      <Compile Include="Assets\Code\NpcEncounterLoader.cs" />
      <Compile Include="Assets\Code\OxygenBarController.cs" />
      <Compile Include="Assets\Code\PlayerController.cs" />

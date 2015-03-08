@@ -33,10 +33,8 @@ public class PlayerController : MonoBehaviour
     if (Input.GetKeyUp(KeyCode.Space) && !isGrounded)
     {
       //// not grounded, not falling, so we're flying
-      Debug.Log("Falling");
       animator.SetBool("Jump", false);
       animator.SetTrigger("Fall");
-      //isFlying = false;
     }
 
     else
