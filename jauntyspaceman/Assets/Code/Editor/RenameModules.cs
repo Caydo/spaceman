@@ -27,13 +27,19 @@ public class FindScriptReferences : MonoBehaviour
 		{
 			Debug.Log ("Found item in path {" + path + "}");
 			string newPath = path.Replace ("tmx", "xml");
-			if(!System.IO.File.Exists(newPath)) { 
+			if(System.IO.File.Exists(newPath)) {
 				try { 
-					System.IO.File.Copy (path, newPath);
+					System.IO.File.Delete (newPath);
 				} catch (Exception e) { 
-					Debug.Log ("info: xml file already exists " + e.ToString());
+					Debug.Log ("info: couldn't delete existing xml file! " + e.ToString ());
 				}
 			}
+			try { 
+				System.IO.File.Copy (path, newPath);
+			} catch (Exception e) { 
+				Debug.Log ("info: xml file already exists " + e.ToString());
+			}
+
 		}
 	}
 }

@@ -14,7 +14,7 @@
    <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/bonus_used.png"/>
   </tile>
   <tile id="4">
-   <image width="71" height="24" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/bridge.png"/>
+   <image width="71" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/bridge.png"/>
   </tile>
   <tile id="5">
    <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/Bubble.png"/>
@@ -89,10 +89,10 @@
    <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/SlopeUp.png"/>
   </tile>
   <tile id="29">
-   <image width="70" height="35" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/spikes.png"/>
+   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/spikes.png"/>
   </tile>
   <tile id="30">
-   <image width="70" height="45" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/water.png"/>
+   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/water.png"/>
   </tile>
   <tile id="31">
    <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/water_block.png"/>
@@ -184,6 +184,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="24"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -200,6 +201,16 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="24"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="30"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -221,17 +232,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="30"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="30"/>
    <tile gid="20"/>
@@ -300,7 +300,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="27"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -350,17 +350,6 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="16"/>
-   <tile gid="28"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="20"/>
-   <tile gid="20"/>
-   <tile gid="20"/>
    <tile gid="20"/>
    <tile gid="28"/>
    <tile gid="0"/>
@@ -379,6 +368,17 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="20"/>
+   <tile gid="20"/>
+   <tile gid="20"/>
+   <tile gid="20"/>
+   <tile gid="28"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="20"/>
    <tile gid="20"/>
    <tile gid="20"/>
@@ -399,7 +399,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="16"/>
+   <tile gid="20"/>
    <tile gid="20"/>
    <tile gid="20"/>
    <tile gid="0"/>
@@ -454,19 +454,19 @@
    <tile gid="20"/>
    <tile gid="28"/>
    <tile gid="0"/>
+   <tile gid="6"/>
+   <tile gid="0"/>
+   <tile gid="20"/>
+   <tile gid="20"/>
+   <tile gid="20"/>
+   <tile gid="20"/>
+   <tile gid="20"/>
+   <tile gid="20"/>
+   <tile gid="20"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="20"/>
-   <tile gid="20"/>
-   <tile gid="20"/>
-   <tile gid="20"/>
-   <tile gid="20"/>
-   <tile gid="20"/>
-   <tile gid="20"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="6"/>
    <tile gid="29"/>
    <tile gid="20"/>
    <tile gid="20"/>
@@ -496,7 +496,7 @@
    <tile gid="20"/>
    <tile gid="20"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="6"/>
    <tile gid="0"/>
    <tile gid="20"/>
    <tile gid="20"/>
@@ -526,7 +526,7 @@
    <tile gid="20"/>
    <tile gid="20"/>
    <tile gid="28"/>
-   <tile gid="0"/>
+   <tile gid="6"/>
    <tile gid="29"/>
    <tile gid="20"/>
    <tile gid="20"/>
@@ -602,12 +602,4 @@
    <tile gid="20"/>
   </data>
  </layer>
- <objectgroup name="Object Layer 1">
-  <object id="1" gid="6" x="280" y="560"/>
-  <object id="4" gid="6" x="1820" y="630"/>
-  <object id="6" gid="6" x="3220" y="560"/>
-  <object id="8" gid="24" x="2380" y="140"/>
-  <object id="10" gid="6" x="1120" y="560"/>
-  <object id="11" gid="24" x="280" y="210"/>
- </objectgroup>
 </map>

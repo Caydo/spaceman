@@ -73,7 +73,7 @@ public class NpcEncounterLoader : MonoBehaviour {
 		var iter = responseTriggers.GetEnumerator();
 		while(!done && iter.MoveNext ()) {
 			KeyValuePair<string, string> curPair = iter.Current;
-			bool displayedToUser = textPanel.textToCrawl.text.Contains(curPair.Key + "</markup>");
+			bool displayedToUser = textPanel.FullySetText;
 			bool keyPressed = Input.GetKeyDown (curPair.Key.ToLower ());
 			if(displayedToUser && keyPressed) { 
 				done = true; 
