@@ -1,5 +1,5 @@
 <npc  name="Angel">
-<spriteset file="Angel.PNG"/>
+<spriteset file="Angel.png"/>
 <dialog>
 <point id="0" text="You look like you could use a guide to the afterlife.">
 	<response key="A" text="Huh? No, I’m doing just fine, thanks." trigger="Go To 1"/>

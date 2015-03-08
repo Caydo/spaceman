@@ -19,7 +19,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 	private IDictionary<string, string> responseTriggers = new Dictionary<string, string>();
 	private XmlDocument currentTrigger; 
 
-	void Awake() { 
+	void Start() { 
 		textPanel = GameObject.FindWithTag("TextCrawl").GetComponent<TextCrawl>();
 		o2Controller = GameObject.FindWithTag ("OxygenController").GetComponent<OxygenBarController>();
 	}
@@ -52,10 +52,25 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 
 	public void LoadNpcEncounter(string npcName) {
 		Debug.Log ("loading npc chunk @ " + "NPCs/" + npcName);
-    TextAsset asset = Resources.Load("NPCs/" + npcName) as TextAsset;
+ 	    TextAsset asset = Resources.Load("NPCs/" + npcName) as TextAsset;
 		if ( asset != null) {
 			currentTrigger = new XmlDocument(); 
 			currentTrigger.LoadXml(asset.text);
+
+			SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>(); 
+			if (sr != null) { 
+
+				XmlNode spriteFile = currentTrigger.SelectSingleNode("//spriteset");
+				string spriteFileName = spriteFile.Attributes.GetNamedItem("file").Value;
+				Texture2D texture = (Texture2D) Resources.Load ("Assets/tilesets/npcs/" + spriteFileName, typeof(Texture2D));
+				Sprite newSprite = Sprite.Create (
+					texture, 
+					new Rect(0f, 0f, 70f, 70f),  // use whole sprite
+					new Vector2(.5f, .5f),   // pivot = center
+					70f);                    // 70 pixels per unity unit 
+				Debug.Log ("Assigning sprite " + newSprite + " :: " + texture);
+				sr.sprite = newSprite;
+			}
 
 			XmlNode point = currentTrigger.SelectSingleNode ("//point[@id=0]");
 			parsePoint (point);
@@ -90,7 +105,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 				string responseText = response.Attributes.GetNamedItem ("text").InnerText;
 				string triggerText = response.Attributes.GetNamedItem ("trigger").InnerText;
 				ParseTrigger(responseKey, triggerText);
-				textPanel.TextToAdd += "\n <fancy markup here for bold? >" + responseKey + "</markup>  " + responseText; 
+				textPanel.TextToAdd += "\n " + responseKey + ":  " + responseText; 
 			}
 		}
 
