@@ -13,7 +13,8 @@ public class NPCFollower : PlayerInteractionTrigger
 
   protected override void doTriggeredAction()
   {
-    onTriggerEnterObject.gameObject.GetComponent<FollowersController>().EnableFollower("jim");
+    Sprite followerSprite = gameObject.GetComponent<NpcEncounterLoader>().FollowerSprite;
+    onTriggerEnterObject.gameObject.GetComponent<FollowersController>().EnableFollower("jim", followerSprite);
     GameObject.Destroy(gameObject);
   }
   

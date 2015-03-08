@@ -12,6 +12,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 	private const string moduleSuffix = ".xml";
 	private List<string> possibleLevels = new List<string>();
 
+  public Sprite FollowerSprite;
 	public TextCrawl textPanel; 
 	public OxygenBarController o2Controller;
   ExpandingItem textPanelExpander;
@@ -72,6 +73,8 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 					70f);                    // 70 pixels per unity unit 
 				Debug.Log ("Assigning sprite " + newSprite + " :: " + texture + " :: " + spriteFileName);
 				sr.sprite = newSprite;
+
+        FollowerSprite = newSprite;
 			}
 
 			XmlNode point = currentTrigger.SelectSingleNode ("//point[@id=0]");

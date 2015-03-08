@@ -3,11 +3,12 @@ using UnityEngine;
 public class FollowersController : MonoBehaviour
 {
   public GameObject FollowerObject;
-  SpriteRenderer followerSprite;
+  public SpriteRenderer followerSprite;
 
-  public void EnableFollower(string followerName)
+  public void EnableFollower(string followerName, Sprite newSprite)
   {
     FollowerObject.SetActive(true);
+    followerSprite.sprite = newSprite;
   }
 
   public void DisableFollower()

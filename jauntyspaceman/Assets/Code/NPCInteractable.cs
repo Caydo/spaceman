@@ -9,6 +9,6 @@ public class NPCInteractable : PlayerInteractionTrigger
     textPanel = GameObject.FindGameObjectWithTag("TextPanel").GetComponent<ExpandingItem>();
     textPanel.DoExpand();
 
-    onTriggerEnterObject.GetComponent<FollowersController>().EnableFollower(FollowerName);
+    //onTriggerEnterObject.GetComponent<FollowersController>().EnableFollower(FollowerName);
   }
 }
