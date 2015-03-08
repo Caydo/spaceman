@@ -1,9 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Xml;
 using System.IO;
 using System.Collections.Generic;
-using UnityEditor;
 using System.Linq;
 
 public class LevelLoader : MonoBehaviour {
@@ -15,7 +14,7 @@ public class LevelLoader : MonoBehaviour {
 	private const int SPRITES_RIGHT_OFFSET = 10; // how many sprites we should show to the right of our character
 	private const int VERTICAL_SIZE = 10; // number of vertical sprites 
 
-	private const string modulePath = "Assets/Modules/";
+	private const string modulePath = "Modules/";
 	private const string moduleSuffix = ".xml";
 
 	private List<List<List<int>>> levelGrid = new List<List<List<int>>>(); // x, y index
@@ -29,31 +28,40 @@ public class LevelLoader : MonoBehaviour {
 	void Start () {
 	}
 
-	void LoadRandomLevel() { 
-		if(possibleLevels.Count <= 0) { 
-			var paths = AssetDatabase.GetAllAssetPaths().Where(x => x.EndsWith("xml") && x.Contains(modulePath));
-			
-			foreach (var path in paths)
-			{
-				string randomPath = path.Replace(moduleSuffix, "").Replace(modulePath, ""); 
+	void LoadRandomLevel() {
+    if (possibleLevels.Count <= 0)
+    {
+      var paths = Resources.LoadAll(modulePath);
 
-				Debug.Log ("Found item in path {" + path + "}{" + randomPath + "}");
-				possibleLevels.Add (randomPath);
-			}
-		}
+      foreach (var path in paths)
+      {
+        string randomPath = path.name.Replace(moduleSuffix, "").Replace(modulePath, "");
 
-		if(loadSpecificLevel != "") { 
-			LoadChunk (loadSpecificLevel);
-		} else if(loadRandomLevels) { 
-			LoadChunk(possibleLevels[Random.Range (0, possibleLevels.Count)]);
-		} else { 
-			LoadChunk("Teeth");
-		}
+        Debug.Log("Found item in path {" + path + "}{" + randomPath + "}");
+        possibleLevels.Add(randomPath);
+      }
+    }
+
+    if (loadSpecificLevel != "")
+    {
+      Debug.Log("loadspecific level!!");
+      Debug.Log(loadSpecificLevel);
+      LoadChunk(loadSpecificLevel);
+    }
+    else if (loadRandomLevels)
+    {
+      LoadChunk(possibleLevels[Random.Range(0, possibleLevels.Count)]);
+    }
+    else
+    {
+      LoadChunk("Teeth");
+    }
 	}
 
 	void LoadChunk(string filename) { 
-		Debug.Log ("loading chunk @ " + modulePath + filename + moduleSuffix);
-		TextAsset asset = (TextAsset) Resources.LoadAssetAtPath (modulePath + filename + moduleSuffix, typeof(TextAsset));
+		Debug.Log ("loading chunk @ " + modulePath + filename);
+    TextAsset asset = Resources.Load(modulePath + filename) as TextAsset;
+    Debug.Log((asset == null));
 		if ( asset != null) {
 			XmlDocument xmlDoc = new XmlDocument(); 
 			xmlDoc.LoadXml(asset.text);
@@ -123,6 +131,7 @@ public class LevelLoader : MonoBehaviour {
 					if(baseX + x >= levelGridSize) { 
 						LoadRandomLevel();
 					}
+
 					List<int> thisTileTypes = levelGrid[(int)baseX + x][y];
 					foreach(int thisTileType in thisTileTypes) { 
 						if(thisTileType != 0) { 					

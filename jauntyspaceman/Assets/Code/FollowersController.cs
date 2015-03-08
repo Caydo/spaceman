@@ -9,4 +9,9 @@ public class FollowersController : MonoBehaviour
   {
     FollowerObject.SetActive(true);
   }
+
+  public void DisableFollower()
+  {
+    FollowerObject.SetActive(false);
+  }
 }

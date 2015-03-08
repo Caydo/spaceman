@@ -9,7 +9,10 @@ public class PlayerController : MonoBehaviour
   public NPCFollower Follower;
   public float FuelDepletionRateOnActivate;
   public bool PlayerDead = false;
+  public float RespawnWaitTime;
+  public Transform MostRecentSpawnPoint;
 
+  FollowersController followerController;
   Animator animator;
   Rigidbody2D body2D;
   Slider jetFuelMeter;
@@ -19,6 +22,7 @@ public class PlayerController : MonoBehaviour
   {
     body2D = gameObject.GetComponent<Rigidbody2D>();
     animator = GetComponent<Animator>();
+    followerController = GetComponent<FollowersController>();
   }
 
   void Start()
@@ -26,6 +30,20 @@ public class PlayerController : MonoBehaviour
     jetFuelMeter = GameObject.FindGameObjectWithTag("JetFuelMeter").GetComponent<Slider>();
   }
 
+  void OnBecameInvisible()
+  {
+    Debug.Log("became invisible");
+    StartCoroutine(WaitThenRespawn());
+  }
+
+  IEnumerator WaitThenRespawn()
+  {
+    Debug.Log("About to wait");
+    yield return new WaitForSeconds(RespawnWaitTime);
+    followerController.DisableFollower();
+    transform.localPosition = MostRecentSpawnPoint.position;
+    PlayerDead = false;
+  }
 
   void Update()
   {

@@ -1,9 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 using System.Xml;
 using System.IO;
 using System.Linq; 
-using UnityEditor;
 
 public class NpcEncounterLoader : MonoBehaviour {
 
@@ -21,24 +20,25 @@ public class NpcEncounterLoader : MonoBehaviour {
 		LoadRandomNpcEncounter();
 	}
 
-	public void LoadRandomNpcEncounter() { 
-		if(possibleLevels.Count <= 0) { 
-			var paths = AssetDatabase.GetAllAssetPaths().Where(x => x.EndsWith("xml") && x.Contains(modulePath));
-			
-			foreach (var path in paths)
-			{
-				string randomPath = path.Replace(moduleSuffix, "").Replace(modulePath, ""); 
-				
-				Debug.Log ("Found item in path {" + path + "}{" + randomPath + "}");
-				possibleLevels.Add (randomPath);
-			}
-		}
-		LoadNpcEncounter(possibleLevels[Random.Range (0, possibleLevels.Count)]);
+	public void LoadRandomNpcEncounter() {
+    if (possibleLevels.Count <= 0)
+    {
+      var paths = Resources.LoadAll(modulePath);
+
+      foreach (var path in paths)
+      {
+        string randomPath = path.name.Replace(moduleSuffix, "").Replace(modulePath, "");
+
+        Debug.Log("Found item in path {" + path + "}{" + randomPath + "}");
+        possibleLevels.Add(randomPath);
+      }
+    }
+    LoadNpcEncounter(possibleLevels[Random.Range(0, possibleLevels.Count)]);
 	}
 
 	public void LoadNpcEncounter(string npcName) {
-		Debug.Log ("loading npc chunk @ " + modulePath + npcName + moduleSuffix);
-		TextAsset asset = (TextAsset) Resources.LoadAssetAtPath (modulePath + npcName + moduleSuffix, typeof(TextAsset));
+		Debug.Log ("loading npc chunk @ " + "NPCs/" + npcName);
+    TextAsset asset = Resources.Load("NPCs/" + npcName) as TextAsset;
 		if ( asset != null) {
 			currentTrigger = new XmlDocument(); 
 			currentTrigger.LoadXml(asset.text);
