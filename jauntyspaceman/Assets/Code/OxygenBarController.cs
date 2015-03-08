@@ -3,22 +3,22 @@ using UnityEngine.UI;
 
 public class OxygenBarController : MonoBehaviour
 {
-  Slider slider;
+  public Slider OxygenSlider;
   public float OxygenToLoseEachFrame;
 
   void Awake()
   {
-    slider = GetComponent<Slider>();
+    OxygenSlider = GetComponent<Slider>();
   }
 
   public void LoseOxygen(float amount)
   {
-    slider.value -= amount;
+    OxygenSlider.value -= amount;
   }
 
   public void GainOxygen(float amount)
   {
-    slider.value += amount;
+    OxygenSlider.value += amount;
   }
 
   void Update()

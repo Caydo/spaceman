@@ -3,23 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Assets.Code
 {
   class KillPlayerTrigger : PlayerInteractionTrigger
   {
-    protected override void doTriggeredAction()
-    {
-      onTriggerEnterObject.gameObject.GetComponent<PlayerController>().PlayerDead = true;
-      onTriggerEnterObject.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-      onTriggerEnterObject.gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0;
-    }
-
+    int time = 0;
+    public int TimeToWaitForStuck;
+    
     protected override void doTriggerStayAction()
     {
-      onTriggerStayObject.gameObject.GetComponent<PlayerController>().PlayerDead = true;
-      onTriggerStayObject.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-      onTriggerStayObject.gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0;
+      // while the player is in our collider, increment time
+      if (onTriggerStayObject != null)
+      {
+        time++;
+      }
+
+      // assume the player has tried to get out and can't, so kill them
+      if (time >= TimeToWaitForStuck)
+      {
+        onTriggerStayObject.gameObject.GetComponent<PlayerController>().PlayerDead = true;
+        GameObject.FindGameObjectWithTag("JetFuelMeter").GetComponent<Slider>().value = 0;
+        GameObject.FindGameObjectWithTag("OxygenController").GetComponent<OxygenBarController>().OxygenSlider.value = 0;
+        onTriggerStayObject.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+      }
     }
   }
 }

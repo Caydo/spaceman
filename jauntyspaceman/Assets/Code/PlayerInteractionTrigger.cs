@@ -10,7 +10,7 @@ public class PlayerInteractionTrigger : MonoBehaviour
   public bool DestroyOnTrigger;
   protected Collision2D onCollisionObject;
   protected Collider2D onTriggerEnterObject;
-  protected Collider onTriggerStayObject;
+  protected Collider2D onTriggerStayObject;
 
   void OnCollisionEnter2D(Collision2D coll)
   {
@@ -38,9 +38,9 @@ public class PlayerInteractionTrigger : MonoBehaviour
     }
   }
 
-  void OnTriggerStay(Collider other)
+  void OnTriggerStay2D(Collider2D other)
   {
-    if(other.attachedRigidbody)
+    if(other.gameObject.tag == "Player")
     {
       onTriggerStayObject = other;
       doTriggerStayAction();

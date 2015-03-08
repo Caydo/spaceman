@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
   bool isGrounded;
   bool isFlying;
   float cachedLastX = 0;
+  int sameXPosCount = 0;
 
   void Awake()
   {
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
   {
     jetFuelMeter = GameObject.FindGameObjectWithTag("JetFuelMeter").GetComponent<Slider>();
   }
+
 
   void Update()
   {
