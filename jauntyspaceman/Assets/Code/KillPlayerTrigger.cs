@@ -25,7 +25,6 @@ namespace Assets.Code
       {
         onTriggerStayObject.gameObject.GetComponent<PlayerController>().PlayerDead = true;
         GameObject.FindGameObjectWithTag("JetFuelMeter").GetComponent<Slider>().value = 0;
-        GameObject.FindGameObjectWithTag("OxygenController").GetComponent<OxygenBarController>().OxygenSlider.value = 0;
         onTriggerStayObject.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
       }
     }

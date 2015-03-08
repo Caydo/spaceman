@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
   public float FuelDepletionRateOnActivate;
   public bool PlayerDead = false;
   public float RespawnWaitTime;
+  public float AmountToDepleteOnRespawn;
   public Transform MostRecentSpawnPoint;
 
   OxygenBarController oxygenController;
@@ -45,17 +46,18 @@ public class PlayerController : MonoBehaviour
     yield return new WaitForSeconds(RespawnWaitTime);
     followerController.DisableFollower();
     gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+    oxygenController.OxygenSlider.value -= AmountToDepleteOnRespawn;
     if(MostRecentSpawnPoint != null)
     {
       transform.position = MostRecentSpawnPoint.position;
       PlayerDead = false;
 
       jetFuelMeter.value = 1;
-      oxygenController.OxygenSlider.value = 1;
     }
-    else
+
+    if(oxygenController.OxygenSlider.value <= 0)
     {
-      GameObject.Destroy(gameObject);
+      Application.LoadLevel("GameOver");
     }
   }
 
