@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Xml;
 using System.IO;
 using System.Linq; 
+using System.Text.RegularExpressions;
+using System.Collections;
 
 public class NpcEncounterLoader : MonoBehaviour {
 
@@ -11,6 +13,7 @@ public class NpcEncounterLoader : MonoBehaviour {
 	private List<string> possibleLevels = new List<string>();
 
 	public TextCrawl textPanel; 
+	public OxygenBarController o2Controller; 
 
 	private IDictionary<string, string> responseTriggers = new Dictionary<string, string>();
 	private XmlDocument currentTrigger; 
@@ -43,29 +46,86 @@ public class NpcEncounterLoader : MonoBehaviour {
 			currentTrigger = new XmlDocument(); 
 			currentTrigger.LoadXml(asset.text);
 
-			XmlNodeList points = currentTrigger.SelectNodes ("//point[@id=0]");
-			foreach(XmlNode mainPoint in points) {
-				string Text = mainPoint.Attributes.GetNamedItem("text").InnerText;
-				XmlNodeList responses = mainPoint.SelectNodes("response");
-				textPanel.TextToAdd += Text; 
-				foreach(XmlNode response in responses) { 
-					string responseKey = response.Attributes.GetNamedItem("key").InnerText;
-					string responseText = response.Attributes.GetNamedItem ("text").InnerText;
-					string trigger = response.Attributes.GetNamedItem ("trigger").InnerText;
-					ParseTrigger(responseKey, trigger);
-					textPanel.TextToAdd += "\n <fancy markup here for bold? >" + responseKey + "</markup>  " + responseText; 
-				}
-			}
+			XmlNode point = currentTrigger.SelectSingleNode ("//point[@id=0]");
+			parsePoint (point);
 		}
 	}
+	
+	IEnumerator TriggerPointCoroutine(string coroutineTrigger) { 
+		Debug.Log ("trigger point coroutine entered");
+		while(!textPanel.FullySetText) { 
+			yield return new WaitForSeconds(1);
+		}
+		Debug.Log ("trigger point coroutine finishing");
+		ProcessTrigger (null, coroutineTrigger);
+	}
 
+	public void parsePoint(XmlNode mainPoint) { 
+		Debug.Log ("parsePoint entereted {" + mainPoint.Attributes + "}");
+		textPanel.Reset();
+		string text = mainPoint.Attributes.GetNamedItem("text").InnerText;
+		textPanel.TextToAdd += text; 
+
+		XmlNode trigger = mainPoint.Attributes.GetNamedItem("trigger"); 
+		if(trigger != null) { 
+			StartCoroutine(TriggerPointCoroutine(trigger.InnerText));
+		} else { 
+			XmlNodeList responses = mainPoint.SelectNodes("response");
+			foreach(XmlNode response in responses) { 
+				string responseKey = response.Attributes.GetNamedItem("key").InnerText;
+				string responseText = response.Attributes.GetNamedItem ("text").InnerText;
+				string triggerText = response.Attributes.GetNamedItem ("trigger").InnerText;
+				ParseTrigger(responseKey, triggerText);
+				textPanel.TextToAdd += "\n <fancy markup here for bold? >" + responseKey + "</markup>  " + responseText; 
+			}
+		}
+		textPanel.StartCrawl();
+	}
+	
 	public void ParseTrigger(string responseKey, string triggerString) { 
 		responseTriggers.Add(responseKey, triggerString); 
 	}
 
+	private Regex gotoRegex = new Regex("Go To (?<point>\\w+)");
+	private Regex giveO2Regex = new Regex("Grant (?<amt>\\d+) O2");
+	private Regex takeO2Regex = new Regex("Take (?<amt>\\d+) O2");
+	private Regex endRegex = new Regex("EndDialog");
+
 	public void ProcessTrigger(string responseKey, string trigger) { 
 		Debug.Log ("hit trigger {" + responseKey + "}{" + trigger + "}"); 
 		responseTriggers.Clear();
+
+		foreach(string triggerPart in Regex.Split(trigger, "\\s+,\\s+")) {
+			Debug.Log("parse trigger part {" + triggerPart + "}");
+			Match match; 
+			match = gotoRegex.Match(triggerPart);
+			if(match.Success) { 
+				string pointId = match.Groups["point"].Value;
+				XmlNode thePoint = currentTrigger.SelectSingleNode("//point[@id=" + pointId + "]");
+				if(thePoint != null) { 
+					parsePoint (thePoint);
+				} else { 
+					Debug.LogWarning("reference to missing point [" + pointId + "]");
+				}
+			}
+
+			match = giveO2Regex.Match (triggerPart);
+			if(match.Success) { 
+				int amt = int.Parse (match.Groups["amt"].Value);
+				o2Controller.GainOxygen(amt);
+			}
+
+			match = takeO2Regex.Match (triggerPart); 
+			if(match.Success) { 
+				int amt = int.Parse (match.Groups["amt"].Value);
+				o2Controller.LoseOxygen(amt);
+			}
+
+			match = endRegex.Match (triggerPart); 
+			if(match.Success) { 
+				textPanel.Reset();
+			}
+		}
 	}
 
 	public void Update() { 
