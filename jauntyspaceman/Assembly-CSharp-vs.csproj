@@ -47,10 +47,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Code\BubblePowerup.cs" />
+     <Compile Include="Assets\Code\ClickableCat.cs" />
+     <Compile Include="Assets\Code\ClickableItem.cs" />
      <Compile Include="Assets\Code\DestroyOnInvisible.cs" />
      <Compile Include="Assets\Code\ExpandingItem.cs" />
+     <Compile Include="Assets\Code\FollowersController.cs" />
      <Compile Include="Assets\Code\HarmfulElement.cs" />
      <Compile Include="Assets\Code\HarmfulObject.cs" />
+     <Compile Include="Assets\Code\NPCFollower.cs" />
      <Compile Include="Assets\Code\OxygenBarController.cs" />
      <Compile Include="Assets\Code\PlayerController.cs" />
      <Compile Include="Assets\Code\PlayerInteractionTrigger.cs" />
