@@ -111,6 +111,7 @@ public class NpcEncounterLoader : MonoBehaviour {
 
 			match = giveO2Regex.Match (triggerPart);
 			if(match.Success) { 
+				Debug.Log ("amt" + match.Groups["amt"].Value);
 				int amt = int.Parse (match.Groups["amt"].Value);
 				o2Controller.GainOxygen(amt);
 			}
