@@ -14,7 +14,7 @@
    <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/bonus_used.png"/>
   </tile>
   <tile id="4">
-   <image width="71" height="24" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/bridge.png"/>
+   <image width="71" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/bridge.png"/>
   </tile>
   <tile id="5">
    <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/Bubble.png"/>
@@ -109,7 +109,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="6"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -271,6 +271,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="6"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -291,8 +292,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="6"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -344,7 +344,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="24"/>
    <tile gid="29"/>
    <tile gid="20"/>
    <tile gid="20"/>
@@ -427,7 +427,7 @@
    <tile gid="20"/>
    <tile gid="28"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="24"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -602,11 +602,4 @@
    <tile gid="20"/>
   </data>
  </layer>
- <objectgroup name="Object Layer 1">
-  <object id="1" gid="6" x="630" y="70"/>
-  <object id="2" gid="6" x="1470" y="280"/>
-  <object id="5" gid="24" x="1890" y="490"/>
-  <object id="7" gid="24" x="3080" y="350"/>
-  <object id="9" gid="6" x="2940" y="280"/>
- </objectgroup>
 </map>

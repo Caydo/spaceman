@@ -34,25 +34,6 @@ public class FindScriptReferences : MonoBehaviour
 					Debug.Log ("info: xml file already exists " + e.ToString());
 				}
 			}
-//				var assets = AssetDatabase.LoadAllAssetsAtPath(path);
-//				
-//				foreach (var asset in assets)
-//				{
-//					GameObject gObj = asset as GameObject;
-//					if (gObj != null)
-//					{
-//						var monos = gObj.GetComponents<MonoBehaviour>().Where(x => x != null);
-//						foreach (var m in monos)
-//						{
-//							if (m.GetType().IsAssignableFrom(monoType))
-//							{
-//								gObjs.Add(asset as GameObject);
-//							}
-//						}
-//					}
-//				}
 		}
-		string output = string.Format("Search complete, found {0} object(s) with the {1} component.");
-		Debug.Log(output);
 	}
 }
