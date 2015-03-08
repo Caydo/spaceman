@@ -1,12 +1,16 @@
 <npc  name="Angel">
 <spriteset file="Angel.PNG"/>
 <dialog>
-	<point id="0" text="Lorem Ipsum Dolor Sit Amet. ">
-	<response key="A" text="Yo soy un hombre sincero" trigger="Go To 1"/>
-	<response key="B" text="de donde crece la palma" trigger="Go To 2"/>
-	<response key="C" text="y antes de morirme quiero echar mis versos del alma?"  trigger="Go To 3"/>
+<point id="0" text="222You look like you could use a guide to the afterlife.">
+	<response key="A" text="Huh? No, I’m doing just fine, thanks." trigger="Go To 1"/>
+	<response key="B" text="Oh? Know anyone that fits that bill?" trigger="Go To 2"/>
+	<response key="C" text="Hey, baby. Wanna hook up?"  trigger="Go To 3"/>
 </point>
-<point id="1" text="If you insist" trigger="Grant 5 O2, EndDialog"/>
+<point id="1" text="Scott level 2.">
+<response key="M" text="I mock you" trigger="EndDialog"/>
+<response key="N" text = "Bananas" trigger="EndDialog"/>
+</point>
+
 <point id="2" text ="I can help, but first you’ll need to die" trigger="Take 5 O2, EndDialog"/>
 <point id="3" text="No." trigger="Take 10 O2, EndDialog"/>
 </dialog>
