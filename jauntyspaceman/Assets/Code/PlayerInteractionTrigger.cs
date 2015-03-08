@@ -8,10 +8,13 @@ public class PlayerInteractionTrigger : MonoBehaviour
 {
   public bool DestroyOnCollide;
   public bool DestroyOnTrigger;
+  protected Collision2D onCollisionObject;
+  protected Collider onTriggerStayObject;
   void OnCollisionEnter2D(Collision2D coll)
   {
     if(coll.gameObject.tag == "Player")
     {
+      onCollisionObject = coll;
       doCollidedAction();
       if(DestroyOnCollide)
       {
@@ -36,6 +39,7 @@ public class PlayerInteractionTrigger : MonoBehaviour
   {
     if(other.attachedRigidbody)
     {
+      onTriggerStayObject = other;
       doTriggerStayAction();
     }
   }

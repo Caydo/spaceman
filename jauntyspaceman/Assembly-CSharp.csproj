@@ -56,6 +56,7 @@
      <Compile Include="Assets\Code\FollowersController.cs" />
      <Compile Include="Assets\Code\HarmfulElement.cs" />
      <Compile Include="Assets\Code\HarmfulObject.cs" />
+     <Compile Include="Assets\Code\KillPlayerTrigger.cs" />
      <Compile Include="Assets\Code\LevelLoader.cs" />
      <Compile Include="Assets\Code\NPCFollower.cs" />
      <Compile Include="Assets\Code\OxygenBarController.cs" />
