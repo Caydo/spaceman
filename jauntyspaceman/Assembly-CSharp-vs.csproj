@@ -57,6 +57,7 @@
      <Compile Include="Assets\Code\DrainingHarmfulElement.cs" />
      <Compile Include="Assets\Code\ExpandingItem.cs" />
      <Compile Include="Assets\Code\FollowersController.cs" />
+     <Compile Include="Assets\Code\GameOverOnInvis.cs" />
      <Compile Include="Assets\Code\HarmfulElement.cs" />
      <Compile Include="Assets\Code\HarmfulObject.cs" />
      <Compile Include="Assets\Code\KillPlayerTrigger.cs" />

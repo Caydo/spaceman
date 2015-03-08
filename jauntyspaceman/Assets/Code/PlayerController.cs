@@ -54,10 +54,6 @@ public class PlayerController : MonoBehaviour
 
       jetFuelMeter.value = 1;
     }
-    else
-    {
-      Application.LoadLevel("GameOver");
-    }
   }
 
   void Update()
