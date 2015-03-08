@@ -51,6 +51,7 @@
      <None Include="Assets\Modules\Simple.xml" />
      <None Include="Assets\Resources\Modules\Hills Hard.xml" />
      <None Include="Assets\Modules\Slopes.xml" />
+     <None Include="Assets\Resources\Modules\STARTER.xml" />
      <None Include="Assets\Resources\Modules\Falls Hard.xml" />
      <None Include="Assets\Modules\Teeth2.xml" />
      <None Include="Assets\Resources\Modules\Uphill Slope.xml" />
