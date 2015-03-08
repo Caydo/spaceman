@@ -6,10 +6,12 @@ public class TextCrawl : MonoBehaviour
 {
   public bool CrawlOnStart;
   public string TextToAdd;
+  public string AdditionalText;
   public float TimeBetweenNextCrawl;
   public bool FullySetText = false;
   public float DelayBeforeCrawl;
   public bool AllowClickSkip;
+  public bool active = false;
 
   public Text textToCrawl;
 
@@ -31,6 +33,7 @@ public class TextCrawl : MonoBehaviour
 	{
 		Debug.Log ("reset");
 		TextToAdd = "";
+		AdditionalText = "";
 		FullySetText = false;
 		textToCrawl.text = string.Empty;	
 	}
@@ -38,6 +41,7 @@ public class TextCrawl : MonoBehaviour
 	public void StartCrawl() 
 	{
 		Debug.Log ("start crawl [" + TextToAdd + "]");
+		active = true;
 		StartCoroutine(addTextThenWait());
 	}
 	
@@ -78,6 +82,7 @@ public class TextCrawl : MonoBehaviour
 		Debug.Log ("finished");
     FullySetText = true;
     StopCoroutine(addTextThenWait());
-    textToCrawl.text = TextToAdd;
+    textToCrawl.text = TextToAdd + AdditionalText;
+		active = false;
   }
 }

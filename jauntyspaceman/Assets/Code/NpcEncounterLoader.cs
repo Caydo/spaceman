@@ -111,11 +111,11 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 				string responseText = response.Attributes.GetNamedItem ("text").InnerText;
 				string triggerText = response.Attributes.GetNamedItem ("trigger").InnerText;
 				ParseTrigger(responseKey, triggerText);
-				textPanel.TextToAdd += "\n " + responseKey + ":  " + responseText; 
+				textPanel.AdditionalText += "\n " + responseKey + ":  " + responseText; 
 			}
 		}
 
-    textPanelExpander.DoExpand();
+        textPanelExpander.DoExpand();
 		textPanel.StartCrawl();
 	}
 	
