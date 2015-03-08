@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +89,7 @@
      <None Include="Assets\Resources\Modules\3_Hills Hard.xml" />
      <None Include="Assets\Resources\Modules\1_Sky Bridge.xml" />
      <None Include="Assets\Resources\Modules\1_Hills Easy.xml" />
+     <None Include="Assets\Resources\Modules\1_Cat Bridge.xml" />
      <None Include="Assets\Resources\Modules\3_Retro.xml" />
      <None Include="Assets\Resources\Modules\2_The Lie.xml" />
      <None Include="Assets\Resources\Modules\1_Easy Slopes.xml" />
@@ -112,7 +113,7 @@
      <None Include="Assets\Resources\Modules\2_Dire Wolves.xml" />
      <None Include="Assets\Resources\Modules\2_Spike Pit.xml" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
