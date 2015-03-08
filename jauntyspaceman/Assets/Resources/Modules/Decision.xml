@@ -2,97 +2,100 @@
 <map version="1.0" orientation="orthogonal" renderorder="left-down" width="50" height="10" tilewidth="70" tileheight="70" nextobjectid="9">
  <tileset firstgid="1" name="Tileset" tilewidth="129" tileheight="112">
   <tile id="0">
-   <image width="54" height="28" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/alien_plant.png"/>
+   <image width="54" height="28" source="../../Art/Tileset/alien_plant.png"/>
   </tile>
   <tile id="1">
-   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/block.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/block.png"/>
   </tile>
   <tile id="2">
-   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/bonus.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/bonus.png"/>
   </tile>
   <tile id="3">
-   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/bonus_used.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/bonus_used.png"/>
   </tile>
   <tile id="4">
-   <image width="71" height="24" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/bridge.png"/>
+   <image width="71" height="70" source="../../Art/Tileset/bridge.png"/>
   </tile>
   <tile id="5">
-   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/Bubble.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/Bubble.png"/>
   </tile>
   <tile id="6">
-   <image width="70" height="26" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/bush.png"/>
+   <image width="70" height="26" source="../../Art/Tileset/bush.png"/>
   </tile>
   <tile id="7">
-   <image width="129" height="63" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/cloud_1.png"/>
+   <image width="129" height="63" source="../../Art/Tileset/cloud_1.png"/>
   </tile>
   <tile id="8">
-   <image width="128" height="63" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/cloud_2.png"/>
+   <image width="128" height="63" source="../../Art/Tileset/cloud_2.png"/>
   </tile>
   <tile id="9">
-   <image width="128" height="63" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/cloud_3.png"/>
+   <image width="128" height="63" source="../../Art/Tileset/cloud_3.png"/>
   </tile>
   <tile id="10">
-   <image width="35" height="35" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/coin_bronze.png"/>
+   <image width="35" height="35" source="../../Art/Tileset/coin_bronze.png"/>
   </tile>
   <tile id="11">
-   <image width="35" height="35" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/coin_gold.png"/>
+   <image width="35" height="35" source="../../Art/Tileset/coin_gold.png"/>
   </tile>
   <tile id="12">
-   <image width="35" height="35" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/coin_silver.png"/>
+   <image width="35" height="35" source="../../Art/Tileset/coin_silver.png"/>
   </tile>
   <tile id="13">
-   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/crate.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/crate.png"/>
   </tile>
   <tile id="14">
-   <image width="35" height="40" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/grass.png"/>
+   <image width="35" height="40" source="../../Art/Tileset/grass.png"/>
   </tile>
   <tile id="15">
-   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/ground.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/ground.png"/>
   </tile>
   <tile id="16">
-   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/ground_cave.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/ground_cave.png"/>
   </tile>
   <tile id="17">
-   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/ground_dirt.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/ground_dirt.png"/>
   </tile>
   <tile id="18">
-   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/ground_rock.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/ground_rock.png"/>
   </tile>
   <tile id="19">
-   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/ground_sand.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/ground_sand.png"/>
   </tile>
   <tile id="20">
-   <image width="70" height="45" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/lava.png"/>
+   <image width="70" height="45" source="../../Art/Tileset/lava.png"/>
   </tile>
   <tile id="21">
-   <image width="72" height="21" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/plank.png"/>
+   <image width="72" height="21" source="../../Art/Tileset/plank.png"/>
   </tile>
   <tile id="22">
-   <image width="70" height="41" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/rock.png"/>
+   <image width="70" height="41" source="../../Art/Tileset/rock.png"/>
   </tile>
   <tile id="23">
-   <image width="39" height="34" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/shroom.png"/>
+   <image width="39" height="34" source="../../Art/Tileset/shroom.png"/>
   </tile>
   <tile id="24">
-   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/SlopeDown.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/SlopeDown.png"/>
   </tile>
   <tile id="25">
-   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/SlopeUp.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/SlopeUp.png"/>
   </tile>
   <tile id="26">
-   <image width="70" height="35" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/spikes.png"/>
+   <image width="70" height="35" source="../../Art/Tileset/spikes.png"/>
   </tile>
   <tile id="27">
-   <image width="70" height="45" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/water.png"/>
+   <image width="70" height="45" source="../../Art/Tileset/water.png"/>
   </tile>
   <tile id="28">
-   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/CeilingDown.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/CeilingDown.png"/>
   </tile>
   <tile id="29">
-   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/CeilingUp.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/CeilingUp.png"/>
   </tile>
   <tile id="30">
-   <image width="69" height="112" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/PlaceholderAngel.png"/>
+   <image width="69" height="112" source="../../Art/Tileset/PlaceholderAngel.png"/>
+  </tile>
+  <tile id="31">
+   <image width="70" height="70" source="../../Art/Tileset/water_block.png"/>
   </tile>
  </tileset>
  <layer name="Tile Layer 1" width="50" height="10">
@@ -131,7 +134,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="6"/>
    <tile gid="0"/>
    <tile gid="18"/>
    <tile gid="18"/>
@@ -210,7 +213,7 @@
    <tile gid="18"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="6"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="18"/>
@@ -248,7 +251,7 @@
    <tile gid="25"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="6"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -326,7 +329,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="6"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -347,7 +350,7 @@
    <tile gid="29"/>
    <tile gid="18"/>
    <tile gid="25"/>
-   <tile gid="14"/>
+   <tile gid="18"/>
    <tile gid="18"/>
    <tile gid="25"/>
    <tile gid="0"/>
@@ -396,7 +399,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="29"/>
-   <tile gid="14"/>
+   <tile gid="18"/>
    <tile gid="18"/>
    <tile gid="18"/>
    <tile gid="18"/>
@@ -408,7 +411,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="31"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -419,7 +422,7 @@
    <tile gid="27"/>
    <tile gid="25"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="6"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -446,7 +449,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="18"/>
    <tile gid="18"/>
    <tile gid="18"/>
    <tile gid="18"/>
@@ -599,12 +602,4 @@
    <tile gid="0"/>
   </data>
  </layer>
- <objectgroup name="Object Layer 1">
-  <object id="1" gid="6" x="2380" y="70"/>
-  <object id="2" gid="6" x="2030" y="350"/>
-  <object id="5" gid="6" x="910" y="210"/>
-  <object id="6" gid="6" x="70" y="280"/>
-  <object id="7" gid="6" x="1540" y="490"/>
-  <object id="8" gid="31" x="770" y="490"/>
- </objectgroup>
 </map>

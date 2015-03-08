@@ -1,11 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\NpcEncounterLoader.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Editor\RenameModules.cs">
     <Files>
       <File FileName="Assets\Code\SpriteTypes.cs" Line="31" Column="27" />
-      <File FileName="Assets\Code\LevelLoader.cs" Line="135" Column="61" />
+      <File FileName="Assets\Code\LevelLoader.cs" Line="1" Column="1" />
       <File FileName="Assets\Code\Editor\RenameModules.cs" Line="1" Column="1" />
-      <File FileName="Assets\Code\NpcEncounterLoader.cs" Line="20" Column="4" />
+      <File FileName="Assets\Code\NpcEncounterLoader.cs" Line="85" Column="12" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
