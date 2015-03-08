@@ -10,9 +10,9 @@ namespace Assets.Code
   {
     protected override void doTriggeredAction()
     {
-      onCollisionObject.gameObject.GetComponent<PlayerController>().PlayerDead = true;
-      onCollisionObject.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-      onCollisionObject.gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0;
+      onTriggerEnterObject.gameObject.GetComponent<PlayerController>().PlayerDead = true;
+      onTriggerEnterObject.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+      onTriggerEnterObject.gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0;
     }
   }
 }
