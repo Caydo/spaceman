@@ -32,18 +32,30 @@ public class PlayerController : MonoBehaviour
 
   void Update()
   {
-    // pressing space and grounded, so we're flying and not grounded
-    if(Input.GetKey(KeyCode.Space) && jetFuelMeter.value > 0)
+    // let go of space bar and we're flying so we're falling
+    if (Input.GetKeyUp(KeyCode.Space) && !isGrounded)
     {
-      PlayerDead = false;
-      body2D.velocity = new Vector2(body2D.velocity.x, JumpSpeed);
-      jetFuelMeter.value -= FuelDepletionRateOnActivate;
-      isGrounded = false;
-      isFlying = true;
+      //// not grounded, not falling, so we're flying
+      Debug.Log("Falling");
+      animator.SetBool("Jump", false);
+      animator.SetTrigger("Fall");
+      //isFlying = false;
+    }
 
-      // not grounded, not falling, so we're flying
-      animator.SetBool("Run", false);
-      animator.SetBool("Jump", true);
+    else
+    {
+      // pressing space and grounded, so we're flying and not grounded
+      if (Input.GetKey(KeyCode.Space) && jetFuelMeter.value > 0)
+      {
+        PlayerDead = false;
+        body2D.velocity = new Vector2(body2D.velocity.x, JumpSpeed);
+        jetFuelMeter.value -= FuelDepletionRateOnActivate;
+        isGrounded = false;
+        isFlying = true;
+        // not grounded, not falling, so we're flying
+        
+        animator.SetTrigger("Jump");
+      }
     }
 
     if (!PlayerDead)
@@ -51,20 +63,10 @@ public class PlayerController : MonoBehaviour
       // Move the character
       body2D.velocity = new Vector2(MoveSpeed * Time.deltaTime, body2D.velocity.y);
 
-      if (Input.GetKeyUp(KeyCode.Space) && !isGrounded)
-      {
-        // not grounded but not flying, so falling
-        animator.SetBool("Run", false);
-        animator.SetBool("Jump", false);
-        animator.SetBool("Fall", true);
-        isFlying = false;
-      }
-
       if(jetFuelMeter.value <= 0)
       {
-        animator.SetBool("Run", false);
         animator.SetBool("Jump", false);
-        animator.SetBool("Fall", true);
+        animator.SetTrigger("Fall");
       }
 
       if (jetFuelMeter.value < 1 && isGrounded)
@@ -96,7 +98,7 @@ public class PlayerController : MonoBehaviour
       jetFuelMeter.value = 1;
       // running
       animator.SetBool("Jump", false);
-      animator.SetBool("Run", true);
+      animator.SetTrigger("Run");
     }
   }
 }
