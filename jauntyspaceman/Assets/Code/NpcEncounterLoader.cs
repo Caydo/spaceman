@@ -22,10 +22,10 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 	void Start() { 
 		textPanel = GameObject.FindWithTag("TextCrawl").GetComponent<TextCrawl>();
 		o2Controller = GameObject.FindWithTag ("OxygenController").GetComponent<OxygenBarController>();
-    textPanelExpander = GameObject.FindWithTag("TextPanel").GetComponent<ExpandingItem>();
+		textPanelExpander = GameObject.FindWithTag("TextPanel").GetComponent<ExpandingItem>();
 	}
 
-
+  
 	protected override void doTriggeredAction()
 	{	
 		LoadRandomNpcEncounter();
@@ -59,13 +59,13 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 
 				XmlNode spriteFile = currentTrigger.SelectSingleNode("//spriteset");
 				string spriteFileName = spriteFile.Attributes.GetNamedItem("file").Value;
-				Texture2D texture = (Texture2D) Resources.Load ("Assets/tilesets/npcs/" + spriteFileName, typeof(Texture2D));
+				Texture2D texture = Resources.Load ("tilesets/npcs/" + spriteFileName.Replace(".png", "")) as Texture2D;
 				Sprite newSprite = Sprite.Create (
 					texture, 
 					new Rect(0f, 0f, 70f, 70f),  // use whole sprite
 					new Vector2(.5f, .5f),   // pivot = center
 					70f);                    // 70 pixels per unity unit 
-				Debug.Log ("Assigning sprite " + newSprite + " :: " + texture);
+				Debug.Log ("Assigning sprite " + newSprite + " :: " + texture + " :: " + spriteFileName);
 				sr.sprite = newSprite;
 			}
 

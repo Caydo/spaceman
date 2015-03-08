@@ -2,7 +2,7 @@ using UnityEngine;
 
 class GameOverOnInvis : MonoBehaviour
 {
-  public PlayerController Player;
+  public PlayerController Player = null;
 
   void OnBecameInvisible()
   {
