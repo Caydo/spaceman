@@ -15,7 +15,7 @@ public class NPCFollower : PlayerInteractionTrigger
   {
     Sprite followerSprite = gameObject.GetComponent<NpcEncounterLoader>().FollowerSprite;
     onTriggerEnterObject.gameObject.GetComponent<FollowersController>().EnableFollower("jim", followerSprite);
-    GameObject.Destroy(gameObject);
+    gameObject.GetComponent<SpriteRenderer>().enabled = false;
   }
   
   void ChangeSprite(Sprite changeSprite)
