@@ -45,11 +45,18 @@ public class PlayerController : MonoBehaviour
     yield return new WaitForSeconds(RespawnWaitTime);
     followerController.DisableFollower();
     gameObject.GetComponent<PolygonCollider2D>().enabled = true;
-    transform.position = MostRecentSpawnPoint.position;
-    PlayerDead = false;
-    
-    jetFuelMeter.value = 1;
-    oxygenController.OxygenSlider.value = 1;
+    if(MostRecentSpawnPoint != null)
+    {
+      transform.position = MostRecentSpawnPoint.position;
+      PlayerDead = false;
+
+      jetFuelMeter.value = 1;
+      oxygenController.OxygenSlider.value = 1;
+    }
+    else
+    {
+      GameObject.Destroy(gameObject);
+    }
   }
 
   void Update()
