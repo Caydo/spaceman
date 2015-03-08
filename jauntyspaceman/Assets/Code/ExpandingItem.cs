@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class ExpandingItem : MonoBehaviour
@@ -13,14 +14,21 @@ public class ExpandingItem : MonoBehaviour
     rect = GetComponent<RectTransform>();
   }
 
-  void Update()
+  IEnumerator Expand()
   {
-    scaleAmount = scaleSpeedPerFrame * Time.deltaTime;
-    doneScaling = (rect.localScale.x >= 1);
-
-    if(!doneScaling)
+    while(rect.localScale.x <= 0)
     {
+      yield return null;
       rect.localScale += new Vector3(scaleAmount, scaleAmount, scaleAmount);
+    }
+  }
+
+  IEnumerator Shrink()
+  {
+    while (rect.localScale.x > 0)
+    {
+      yield return null;
+      rect.localScale -= new Vector3(scaleAmount, scaleAmount, scaleAmount);
     }
   }
 }

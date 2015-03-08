@@ -14,9 +14,6 @@ public class PlayerController : MonoBehaviour
   Rigidbody2D body2D;
   Slider jetFuelMeter;
   bool isGrounded;
-  bool isFlying;
-  float cachedLastX = 0;
-  int sameXPosCount = 0;
 
   void Awake()
   {
@@ -51,7 +48,6 @@ public class PlayerController : MonoBehaviour
         body2D.velocity = new Vector2(body2D.velocity.x, JumpSpeed);
         jetFuelMeter.value -= FuelDepletionRateOnActivate;
         isGrounded = false;
-        isFlying = true;
         // not grounded, not falling, so we're flying
         
         animator.SetTrigger("Jump");
@@ -94,7 +90,6 @@ public class PlayerController : MonoBehaviour
     if(coll.gameObject.tag == "GroundObject")
     {
       isGrounded = true;
-      isFlying = false;
       jetFuelMeter.value = 1;
       // running
       animator.SetBool("Jump", false);
