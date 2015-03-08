@@ -88,6 +88,9 @@
   <tile id="28">
    <image width="69" height="112" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/PlaceholderAngel.png"/>
   </tile>
+  <tile id="29">
+   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/water_block.png"/>
+  </tile>
  </tileset>
  <layer name="Tile Layer 1" width="50" height="10">
   <data>
@@ -341,7 +344,7 @@
    <tile gid="25"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="14"/>
+   <tile gid="18"/>
    <tile gid="18"/>
    <tile gid="25"/>
    <tile gid="0"/>
@@ -390,7 +393,7 @@
    <tile gid="18"/>
    <tile gid="18"/>
    <tile gid="18"/>
-   <tile gid="14"/>
+   <tile gid="18"/>
    <tile gid="18"/>
    <tile gid="18"/>
    <tile gid="18"/>

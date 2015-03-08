@@ -94,6 +94,9 @@
   <tile id="30">
    <image width="70" height="45" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/water.png"/>
   </tile>
+  <tile id="31">
+   <image width="70" height="70" source="../../spaceman/jauntyspaceman/Assets/Art/Tileset/water_block.png"/>
+  </tile>
  </tileset>
  <layer name="Tile Layer 1" width="50" height="10">
   <data>
@@ -347,7 +350,7 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="16"/>
+   <tile gid="20"/>
    <tile gid="20"/>
    <tile gid="20"/>
    <tile gid="20"/>
@@ -396,7 +399,7 @@
    <tile gid="29"/>
    <tile gid="20"/>
    <tile gid="20"/>
-   <tile gid="16"/>
+   <tile gid="20"/>
    <tile gid="20"/>
    <tile gid="20"/>
    <tile gid="20"/>
