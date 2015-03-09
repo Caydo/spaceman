@@ -90,6 +90,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 					new Vector2(.5f, .5f),   // pivot = center
 					70f);                    // 70 pixels per unity unit 
 				Debug.Log ("Assigning sprite " + newSprite + " :: " + texture + " :: " + spriteFileName);
+				newSprite.name = spriteFileName.Replace (".png", "");
 				sr.sprite = newSprite;
 
         FollowerSprite = newSprite;

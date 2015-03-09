@@ -1,31 +1,31 @@
 <npc name="Gwen">
 <spriteset file="Female.png"/>
 <dialog>
-<point id="0" text="This is bananas!">
+<point id="0" text="This &amp;#*% is bananas!">
 <response key="B" text="B!" trigger="Go To 1"/>
 <response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>
-<point id="1" text="This is bananas!">
+<point id="1" text="This &amp;#*% is bananas!">
 <response key="A" text="A!" trigger="Go To 2"/>
 <response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>
-<point id="2" text="This is bananas!">
+<point id="2" text="This &amp;#*% is bananas!">
 <response key="N" text="N!" trigger="Go To 3"/>
 <response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>
-<point id="3" text="This is bananas!">
+<point id="3" text="This &amp;#*% is bananas!">
 <response key="A" text="A!" trigger="Go To 4"/>
 <response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>
-<point id="4" text="This is bananas!">
+<point id="4" text="This &amp;#*% is bananas!">
 <response key="N" text="N!" trigger="Go To 5"/>
 <response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>
-<point id="5" text="This is bananas!">
+<point id="5" text="This &amp;#*% is bananas!">
 <response key="A" text="A!" trigger="Go To 6"/>
 <response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>
-<point id="6" text="This is bananas!">
+<point id="6" text="This &amp;#*% is bananas!">
 <response key="S" text="S!" trigger="Go To 7"/>
 <response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>
