@@ -8,7 +8,7 @@
 <point id="1" text="What is your name?">
 <response key="J" text="Jaunty Spacemin" trigger="Take 5 O2, EndDialog"/>
 <response key="T" text="John T. Spacemin" trigger="Go To 2"/>
-<response key="S" text="Jogn T. Spaceman" trigger="Go To 2"/>
+<response key="S" text="John T. Spaceman" trigger="Go To 2"/>
 <response key="(timeout)" text="" trigger="Take 5 O2, EndDialog"/>
 </point>
 <point id="2" text="What is your quest?">
