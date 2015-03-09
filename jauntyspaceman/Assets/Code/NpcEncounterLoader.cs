@@ -55,20 +55,23 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 	}
 
 	public void LoadRandomNpcEncounter() {
-    if (possibleLevels.Count <= 0)
-    {
-      var paths = Resources.LoadAll(modulePath);
+	    if (possibleLevels.Count <= 0)
+	    {
+	      var paths = Resources.LoadAll(modulePath);
 
-      foreach (var path in paths)
-      {
-        string randomPath = path.name.Replace(moduleSuffix, "").Replace(modulePath, "");
+	      foreach (var path in paths)
+	      {
+	        string randomPath = path.name.Replace(moduleSuffix, "").Replace(modulePath, "");
 
-        Debug.Log("Found item in path {" + path + "}{" + randomPath + "}");
-        possibleLevels.Add(randomPath);
-      }
-    }
-    LoadNpcEncounter(possibleLevels[Random.Range(0, possibleLevels.Count)]);
-	//	LoadNpcEncounter ("ChadBro");
+	        Debug.Log("Found item in path {" + path + "}{" + randomPath + "}");
+	        possibleLevels.Add(randomPath);
+	      }
+	    }
+		int selectedLevel = Random.Range(0, possibleLevels.Count);
+		string level = possibleLevels[selectedLevel]; 
+		possibleLevels.Remove (level);
+		LoadNpcEncounter(level);
+		//	LoadNpcEncounter ("ChadBro");
 	}
 
 	public void LoadNpcEncounter(string npcName) {

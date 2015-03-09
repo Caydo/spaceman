@@ -13,7 +13,7 @@ public class LevelLoader : MonoBehaviour {
 
 //	public Transform spriteLoader;
 	private int spritesMade = 0;
-	private const int SPRITES_RIGHT_OFFSET = 10; // how many sprites we should show to the right of our character
+	private const int SPRITES_RIGHT_OFFSET = 20; // how many sprites we should show to the right of our character
 	private const int VERTICAL_SIZE = 10; // number of vertical sprites 
 	private const int ARBITRARY_LEVEL_DIFFICULTY_CUTOFF = 20; 
 
@@ -26,6 +26,7 @@ public class LevelLoader : MonoBehaviour {
 	private List<string> possibleLevels = new List<string>();
 	public int levelDifficulty = 0; 
 	public bool loadRandomLevels = true;
+	public bool increaseDifficultyEachLevel = false;
 	public string loadSpecificLevel = "";
 
 	// Use this for initialization
@@ -68,6 +69,7 @@ public class LevelLoader : MonoBehaviour {
 				});
 				levels = new List<string>(things);
 			} while ((levels.Count <= 0) && (++levelDifficulty < ARBITRARY_LEVEL_DIFFICULTY_CUTOFF));
+			levelDifficulty++;
 			int selectedLevel = Random.Range (0, levels.Count);
 			possibleLevels.Remove(levels[selectedLevel]);
 			LoadChunk(levels[selectedLevel]);
