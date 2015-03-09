@@ -2,22 +2,22 @@
 <spriteset file="Punk.png">
 <dialog>
 <point id="0" text="You got a problem with me, space man?">
-<response key="A" text="It's pronounced 'spacemin'" trigger="Point1">
-<response key="B" text="Nope, no problem here." trigger="Point2">
-<response key="C" text="Banana." trigger="Point3">
-<response key="(timeout)" text="" trigger="Point4">
+<response key="A" text="It's pronounced 'spacemin'" trigger="Go To 1"/>
+<response key="B" text="Nope, no problem here." trigger="Go To 2"/>
+<response key="C" text="Banana." trigger="Go To 3"/>
+<response key="(timeout)" text="" trigger="Go To 4"/>
 </point>
-<point id="1" text="So you think you're clever?" trigger="+0.1 Oxygen">
-<response key="A" text="Clever like a cleaver." trigger="Point4">
-<response key="B" text="Sharp like an axe." trigger="Point4">
-<response key="C" text="Banana." trigger="Point3">
-<response key="(timeout)" text="" trigger="Point4">
+<point id="1" text="So you think you're clever?" trigger="Give 0.1 O2">
+<response key="A" text="Clever like a cleaver." trigger="Go To 4"/>
+<response key="B" text="Sharp like an axe." trigger="Go To 4"/>
+<response key="C" text="Banana." trigger="Go To 3"/>
+<response key="(timeout)" text="" trigger="Go To 4"/>
 </point>
-<point id="2" text="That's right. Know your place." trigger="+0.1 Oxygen" trigger2="EndDialog">
+<point id="2" text="That's right. Know your place." trigger="Give 0.1 O2, EndDialog">
 </point>
-<point id="3" text="Uh, what? Nevermind. Punks like you ain't worth it." trigger="" trigger2="EndDialog">
+<point id="3" text="Uh, what? Nevermind. Punks like you ain't worth it." trigger="EndDialog">
 </point>
-<point id="4" text="Screw you!" trigger="-0.1 Oxygen" trigger2="EndDialog">
+<point id="4" text="Screw you!" trigger="Take 0.1 O2, EndDialog">
 </point>
 </dialog>
 </npc>
