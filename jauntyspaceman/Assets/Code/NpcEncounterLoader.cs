@@ -30,11 +30,26 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 	private XmlNode pendingPoint = null; 
 	protected override void doTriggeredAction()
 	{	
+		foreach(GameObject go in GameObject.FindGameObjectsWithTag ("NPCTag")) { 
+			if(go.GetInstanceID() != gameObject.GetInstanceID()) { 
+				var nel = go.GetComponent<NpcEncounterLoader>();
+				if( nel != null ) { 
+					nel.Fail ();
+				}
+			}
+		}
+
 		if(pendingPoint != null) { 
 			var thePoint = pendingPoint; 
 			pendingPoint = null;
 			parsePoint (thePoint);
 		}
+	}
+
+	public void Fail() { 
+		// TODO do bad thing?
+		Debug.Log ("Hit fail case for npc encounter loader");
+		responseTriggers.Clear();
 	}
 
 	public void LoadRandomNpcEncounter() {
@@ -112,10 +127,14 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 			XmlNodeList responses = mainPoint.SelectNodes("response");
 			foreach(XmlNode response in responses) { 
 				string responseKey = response.Attributes.GetNamedItem("key").InnerText;
-				string responseText = response.Attributes.GetNamedItem ("text").InnerText;
-				string triggerText = response.Attributes.GetNamedItem ("trigger").InnerText;
-				ParseTrigger(responseKey, triggerText);
-				textPanel.AdditionalText += "\n " + responseKey + ":  " + responseText; 
+				if(responseKey.Equals("(timeout)")) { 
+					// TODO set up the bad thing that happens if you don't handle it 
+				} else { 
+					string responseText = response.Attributes.GetNamedItem ("text").InnerText;
+					string triggerText = response.Attributes.GetNamedItem ("trigger").InnerText;
+					ParseTrigger(responseKey, triggerText);
+					textPanel.AdditionalText += "\n " + responseKey + ":  " + responseText; 
+				}
 			}
 		}
 
