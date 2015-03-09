@@ -18,7 +18,7 @@
 <response key="B" text="No thanks." trigger="Go To 3"/>
 <response key="(timeout)" text="" trigger="Go To 6"/>
 </point>
-<point id="3" text="Don't you want me?" trigger="EndDialog">
+<point id="3" text="Don't you want me?" trigger="">
 <response key="A" text="It's not you, it's me." trigger="Go To 5"/>
 <response key="B" text="I just need some space." trigger="Go To 5"/>
 <response key="C" text="My zipper is stuck." trigger="Go To 5"/>

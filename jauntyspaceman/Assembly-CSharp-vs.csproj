@@ -81,6 +81,7 @@
      <None Include="Assets\Resources\Modules\2_Dragon.xml" />
      <None Include="Assets\Resources\Modules\3_Islands.xml" />
      <None Include="Assets\Resources\Modules\3_Spiky Cave.xml" />
+     <None Include="Assets\Resources\NPCs\Cheerleader.xml" />
      <None Include="Assets\Resources\NPCs\ChadBro.xml" />
      <None Include="Assets\Resources\NPCs\Ziggy.xml" />
      <None Include="Assets\Resources\Modules\2_Up and Down.xml" />
@@ -105,7 +106,6 @@
      <None Include="Assets\Resources\Modules\0_STARTER.xml" />
      <None Include="Assets\Resources\NPCs\Fenix.xml" />
      <None Include="Assets\Resources\Modules\3_Cubeville.xml" />
-     <None Include="Assets\Resources\NPCs\Angel2.xml" />
      <None Include="Assets\Resources\Modules\1_Falls Easy.xml" />
      <None Include="Assets\Resources\Modules\1_Simple.xml" />
      <None Include="Assets\Resources\Modules\2_Sand Castle.xml" />
@@ -113,6 +113,7 @@
      <None Include="Assets\Resources\NPCs\Ghost.xml" />
      <None Include="Assets\Resources\Modules\1_Simple 5.xml" />
      <None Include="Assets\Resources\Modules\2_Corridors.xml" />
+     <None Include="Assets\Resources\NPCs\Princess.xml" />
      <None Include="Assets\Resources\NPCs\Shirt.xml" />
      <None Include="Assets\Resources\Modules\2_Downhill Slope.xml" />
      <None Include="Assets\Resources\Modules\1_Simple 4.xml" />
@@ -125,6 +126,7 @@
      <None Include="Assets\Art\Effects\Shaders\flowMap.shader" />
      <None Include="Assets\Resources\NPCs\Helper.xml" />
      <None Include="Assets\Resources\Modules\2_Dire Wolves.xml" />
+     <None Include="Assets\Resources\NPCs\OldMan.xml" />
      <None Include="Assets\Resources\Modules\2_Spike Pit.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

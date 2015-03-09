@@ -2,8 +2,8 @@
 <spriteset file="Male.png"/>
 <dialog>
 <point id="0" text="(Guess what?)" trigger="">
-<response key="~" text="What is it?" trigger="Go To 2"/>
-<response key="*" text="Not right now." trigger="Go To 1"/>
+<response key="B" text="What is it?" trigger="Go To 2"/>
+<response key="Z" text="Not right now." trigger="Go To 1"/>
 <response key="(timeout)" text="" trigger="Go To 1"/>
 </point>
 <point id="1" text="(You're very rude.)" trigger="Take 0.1 O2, EndDialog">
