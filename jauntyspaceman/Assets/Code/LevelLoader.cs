@@ -69,7 +69,9 @@ public class LevelLoader : MonoBehaviour {
 				});
 				levels = new List<string>(things);
 			} while ((levels.Count <= 0) && (++levelDifficulty < ARBITRARY_LEVEL_DIFFICULTY_CUTOFF));
-			levelDifficulty++;
+			if(increaseDifficultyEachLevel) { 
+				levelDifficulty++;
+			}
 			int selectedLevel = Random.Range (0, levels.Count);
 			possibleLevels.Remove(levels[selectedLevel]);
 			LoadChunk(levels[selectedLevel]);
