@@ -50,6 +50,7 @@
      <Compile Include="Assets\Code\Editor\RenameModules.cs" />
      <None Include="Assets\Resources\Modules\2_Dragon.xml" />
      <None Include="Assets\Resources\Modules\3_Islands.xml" />
+     <None Include="Assets\Resources\Modules\3_Spiky Cave.xml" />
      <None Include="Assets\Resources\Modules\2_Up and Down.xml" />
      <None Include="Assets\Resources\NPCs\Angel.xml" />
      <None Include="Assets\Resources\Modules\1_Mario.xml" />
