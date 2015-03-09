@@ -19,7 +19,7 @@
 <response key="C" text="Meth" trigger="Go To 5"/>
 <response key="(timeout)" text="" trigger="Go To 6"/>
 </point>
-<point id="3" text="I got in one little fight and my mom got scared, she said "You're moving with _______ in Bel Air"">
+<point id="3" text="I got in one little fight and my mom got scared, she said 'You're moving with _______ in Bel Air'">
 <response key="A" text="Your auntie and uncle" trigger="Go To 4"/>
 <response key="B" text="President Nixon" trigger="Go To 5"/>
 <response key="C" text="Smaug the Tremendous, Chiefest and Greatest of Calamities" trigger="Go To 5"/>
