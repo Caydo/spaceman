@@ -97,9 +97,6 @@
   <tile id="31">
    <image width="70" height="70" source="../../Art/Tileset/water_block.png"/>
   </tile>
-  <tile id="32">
-   <image width="71" height="70" source="../../Art/Tileset/bridge.png"/>
-  </tile>
  </tileset>
  <layer name="Tile Layer 1" width="50" height="10">
   <data>
@@ -224,9 +221,9 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="20"/>
-   <tile gid="33"/>
-   <tile gid="33"/>
-   <tile gid="33"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
    <tile gid="20"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -296,9 +293,9 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="20"/>
-   <tile gid="33"/>
-   <tile gid="33"/>
-   <tile gid="33"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
    <tile gid="20"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -390,9 +387,9 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="20"/>
-   <tile gid="33"/>
-   <tile gid="33"/>
-   <tile gid="33"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
    <tile gid="20"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -427,9 +424,9 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="20"/>
-   <tile gid="33"/>
-   <tile gid="33"/>
-   <tile gid="33"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
    <tile gid="20"/>
    <tile gid="0"/>
    <tile gid="32"/>
@@ -464,18 +461,18 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="20"/>
-   <tile gid="33"/>
-   <tile gid="33"/>
-   <tile gid="33"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
    <tile gid="20"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="20"/>
-   <tile gid="33"/>
-   <tile gid="33"/>
-   <tile gid="33"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
    <tile gid="20"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -485,9 +482,9 @@
    <tile gid="32"/>
    <tile gid="0"/>
    <tile gid="20"/>
-   <tile gid="33"/>
-   <tile gid="33"/>
-   <tile gid="33"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
+   <tile gid="5"/>
    <tile gid="20"/>
    <tile gid="0"/>
    <tile gid="0"/>
