@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: 76dff5f03ddc7d142b05a15332a9dff9
+timeCreated: 1425862427
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Old man from Scene 24_0
+    21300002: Old man from Scene 24_1
+    21300004: Old man from Scene 24_2
+    21300006: Old man from Scene 24_3
+    21300008: Old man from Scene 24_4
+    21300010: Old man from Scene 24_5
+    21300012: Old man from Scene 24_6
+    21300014: Old man from Scene 24_7
+    21300016: Old man from Scene 24_8
+    21300018: Old man from Scene 24_9
+    21300020: Old man from Scene 24_10
+    21300022: Old man from Scene 24_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Old man from Scene 24_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 144
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Old man from Scene 24_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 31
+        height: 192
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Old man from Scene 24_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 144
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Old man from Scene 24_3
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 96
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Old man from Scene 24_4
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 96
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Old man from Scene 24_5
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 48
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Old man from Scene 24_6
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 48
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Old man from Scene 24_7
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Old man from Scene 24_8
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 0
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Old man from Scene 24_9
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 48
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Old man from Scene 24_10
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 144
+        width: 26
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Old man from Scene 24_11
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 144
+        width: 32
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
