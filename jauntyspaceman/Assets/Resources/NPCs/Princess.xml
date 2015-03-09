@@ -5,13 +5,13 @@
 <response key="A" text="I'm here to rescue you!" trigger="Go To 3"/>
 <response key="B" text="How about that local sports team?" trigger="Go To 1"/>
 <response key="C" text="Good day, fair lady." trigger="Go To 2"/>
-<response key="(timeout)" text="" trigger="Take 5 O2, EndDialog"/>
+<response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>
 <point id="1" text="They are... quite sporting. Uh, goodbye, strange awkward man." trigger="EndDialog">
 </point>
-<point id="2" text="Mayhap this will aid you on your journey." trigger="Give 5 O2, EndDialog">
+<point id="2" text="Mayhap this will aid you on your journey." trigger="Give 0.1 O2, EndDialog">
 </point>
-<point id="3" text="Ugh. I don't need to be rescued, especially not by a hallucinating spaceman." trigger="Take 5 O2, EndDialog">
+<point id="3" text="Ugh. I don't need to be rescued, especially not by a hallucinating spaceman." trigger="Take 0.1 O2, EndDialog">
 </point>
 </dialog>
 </npc>

@@ -29,7 +29,7 @@
 <response key="S" text="S!" trigger="Go To 7"/>
 <response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>
-<point id="7" text="Aw yeah!" trigger="Give 0.10 O2, EndDialog">
+<point id="7" text="Aw yeah!" trigger="Give 0.2 O2, EndDialog">
 </point>
 </dialog>
 </npc>
