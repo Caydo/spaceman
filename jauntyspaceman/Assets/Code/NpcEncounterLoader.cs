@@ -148,8 +148,8 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 	}
 
 	private Regex gotoRegex = new Regex("Go To (?<point>\\w+)");
-	private Regex giveO2Regex = new Regex("Grant (?<amt>\\d+) O2");
-	private Regex takeO2Regex = new Regex("Take (?<amt>\\d+) O2");
+	private Regex giveO2Regex = new Regex("Grant (?<amt>[\\.\\d]+) O2");
+	private Regex takeO2Regex = new Regex("Take (?<amt>[\\.\\d]+) O2");
 	private Regex endRegex = new Regex("EndDialog");
 
 	public void ProcessTrigger(string responseKey, string trigger) { 
@@ -173,13 +173,13 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 			match = giveO2Regex.Match (triggerPart);
 			if(match.Success) { 
 				Debug.Log ("amt" + match.Groups["amt"].Value);
-				int amt = int.Parse (match.Groups["amt"].Value);
+				float amt = float.Parse (match.Groups["amt"].Value);
 				o2Controller.GainOxygen(amt);
 			}
 
 			match = takeO2Regex.Match (triggerPart); 
 			if(match.Success) { 
-				int amt = int.Parse (match.Groups["amt"].Value);
+				float amt = float.Parse (match.Groups["amt"].Value);
 				o2Controller.LoseOxygen(amt);
 			}
 
