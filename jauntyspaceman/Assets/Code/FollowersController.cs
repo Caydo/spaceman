@@ -9,10 +9,12 @@ public class FollowersController : MonoBehaviour
   {
     if(newSprite.name.ToLower() == "male")
     {
+      FemaleFollowerObject.SetActive(false);
       MaleFollowerObject.SetActive(true);
     }
     else
     {
+      MaleFollowerObject.SetActive(false);
       FemaleFollowerObject.SetActive(true);
     }
   }
