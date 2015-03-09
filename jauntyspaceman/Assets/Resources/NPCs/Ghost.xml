@@ -1,7 +1,7 @@
 <npc name="Ghost">
 <spriteset file="Male.png"/>
 <dialog>
-<point id="0" text="(Guess what?)" trigger="">
+<point id="0" text="(Guess what?)">
 <response key="B" text="What is it?" trigger="Go To 2"/>
 <response key="Z" text="Not right now." trigger="Go To 1"/>
 <response key="(timeout)" text="" trigger="Go To 1"/>

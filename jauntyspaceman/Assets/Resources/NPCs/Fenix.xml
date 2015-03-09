@@ -7,7 +7,7 @@
 <response key="3" text="Clearly, Tassadar has failed us." trigger="Go To 2"/>
 <response key="(timeout)" text="" trigger="Go To 2"/>
 </point>
-<point id="1" text="What are your orders, Executor?" trigger="">
+<point id="1" text="What are your orders, Executor?">
 <response key="1" text="Construct additional pylons." trigger="Go To 3"/>
 <response key="2" text="We require more vespene gas." trigger="Go To 3"/>
 <response key="3" text="There is no cow level." trigger="Go To 2"/>

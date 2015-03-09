@@ -1,25 +1,25 @@
 <npc name="Prince">
 <spriteset file="Male.png"/>
 <dialog>
-<point id="0" text="This is a story all about how my life got _____ upside down" trigger="">
+<point id="0" text="This is a story all about how my life got _____ upside down">
 <response key="A" text="Flip-turned" trigger="Go To 1"/>
 <response key="B" text="Back-traced" trigger="Go To 5"/>
 <response key="C" text="Stir-fried" trigger="Go To 5"/>
 <response key="(timeout)" text="" trigger="Go To 6"/>
 </point>
-<point id="1" text="In West Philadelphia born and raised, on ____ is where I spent most of my days" trigger="">
+<point id="1" text="In West Philadelphia born and raised, on ____ is where I spent most of my days">
 <response key="A" text="The playground" trigger="Go To 2"/>
 <response key="B" text="YouTube" trigger="Go To 5"/>
 <response key="C" text="4chan" trigger="Go To 5"/>
 <response key="(timeout)" text="" trigger="Go To 6"/>
 </point>
-<point id="2" text="A couple of guys who were up to no good started making _____ in my neighborhood" trigger="">
+<point id="2" text="A couple of guys who were up to no good started making _____ in my neighborhood">
 <response key="A" text="Trouble" trigger="Go To 3"/>
 <response key="B" text="Money" trigger="Go To 5"/>
 <response key="C" text="Meth" trigger="Go To 5"/>
 <response key="(timeout)" text="" trigger="Go To 6"/>
 </point>
-<point id="3" text="I got in one little fight and my mom got scared, she said "You're moving with _______ in Bel Air"" trigger="">
+<point id="3" text="I got in one little fight and my mom got scared, she said "You're moving with _______ in Bel Air"">
 <response key="A" text="Your auntie and uncle" trigger="Go To 4"/>
 <response key="B" text="President Nixon" trigger="Go To 5"/>
 <response key="C" text="Smaug the Tremendous, Chiefest and Greatest of Calamities" trigger="Go To 5"/>

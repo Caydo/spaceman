@@ -1,7 +1,7 @@
 <npc name="Helper">
 <spriteset file="Male.png"/>
 <dialog>
-<point id="0" text="Do you need any help?" trigger="">
+<point id="0" text="Do you need any help?">
 <response key="1" text="Nothing right now." trigger="Go To 1"/>
 <response key="2" text="Just some oxygen, please." trigger="Go To 2"/>
 <response key="3" text="Tell me a secret." trigger="Go To 3"/>

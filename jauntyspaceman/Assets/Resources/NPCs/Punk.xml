@@ -7,7 +7,7 @@
 <response key="C" text="Banana." trigger="Go To 3"/>
 <response key="(timeout)" text="" trigger="Go To 4"/>
 </point>
-<point id="1" text="So you think you're clever?" trigger="">
+<point id="1" text="So you think you're clever?">
 <response key="A" text="Clever like a cleaver." trigger="Go To 4"/>
 <response key="B" text="Sharp like an axe." trigger="Go To 4"/>
 <response key="C" text="Banana." trigger="Go To 3"/>
