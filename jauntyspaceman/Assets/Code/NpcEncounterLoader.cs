@@ -148,8 +148,8 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 			}
 		} 
 
-    textPanelExpander.DoExpand();
 		textPanel.StartCrawl();
+    textPanelExpander.DoExpand();
 	}
 	
 	public void ParseTrigger(string responseKey, string triggerString) { 
@@ -195,6 +195,8 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 			match = endRegex.Match (triggerPart); 
 			if(match.Success) { 
 				textPanel.Reset();
+        textPanelExpander.DoShrink();
+        GameObject.FindWithTag("Player").GetComponent<FollowersController>().DisableFollower();
 				GameObject.Destroy(gameObject);
 			}
 		}

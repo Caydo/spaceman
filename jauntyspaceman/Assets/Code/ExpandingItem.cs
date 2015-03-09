@@ -8,8 +8,6 @@ public class ExpandingItem : MonoBehaviour
   public float scaleSpeedPerFrame;
   public Text NPCText;
 
-  bool open;
-  bool shouldUpdateExpand = false;
   RectTransform rect;
   bool doneScaling;
 
@@ -35,18 +33,8 @@ public class ExpandingItem : MonoBehaviour
       rect.localScale += new Vector3(scaleSpeedPerFrame, scaleSpeedPerFrame, scaleSpeedPerFrame);
       yield return null;
     }
-
-    open = true;
   }
-
-  void Update()
-  {
-    if(NPCText.text == string.Empty && open)
-    {
-      DoShrink();
-    }
-  }
-
+  
   IEnumerator Shrink()
   {
     while (rect.localScale.x > 0)
@@ -54,7 +42,5 @@ public class ExpandingItem : MonoBehaviour
       yield return null;
       rect.localScale -= new Vector3(scaleSpeedPerFrame, scaleSpeedPerFrame, scaleSpeedPerFrame);
     }
-
-    open = false;
   }
 }
