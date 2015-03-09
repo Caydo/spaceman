@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Powerup : PlayerInteractionTrigger
 {
@@ -13,6 +14,10 @@ public class Powerup : PlayerInteractionTrigger
   protected override void doCollidedAction()
   {
     oxygenController.GainOxygen(OxygenToGain);
-    GameObject.FindGameObjectWithTag("CrazyColors").GetComponent<RandomTint>().ShouldDoCrazy = true;
+    GameObject Colors = GameObject.FindGameObjectWithTag("CrazyColors");
+    Colors.SetActive(true);
+    Colors.GetComponent<Image>().enabled = true;
+    Colors.GetComponent<Animator>().SetTrigger("FadeIn");
+    Colors.GetComponent<RandomTint>().ShouldDoCrazy = true;
   }
 }
