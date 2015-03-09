@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +58,7 @@
      <Compile Include="Assets\Code\DrainingHarmfulElement.cs" />
      <Compile Include="Assets\Code\ExpandingItem.cs" />
      <Compile Include="Assets\Code\FollowersController.cs" />
+     <Compile Include="Assets\Code\GameOverDifficultySetter.cs" />
      <Compile Include="Assets\Code\GameOverOnInvis.cs" />
      <Compile Include="Assets\Code\HarmfulElement.cs" />
      <Compile Include="Assets\Code\HarmfulObject.cs" />
@@ -85,7 +86,6 @@
      <None Include="Assets\Resources\Modules\1_Mario.xml" />
      <None Include="Assets\Resources\Modules\3_Falls Hard.xml" />
      <None Include="Assets\Resources\Modules\2_Underhill.xml" />
-     <None Include="Assets\Resources\Modules\3_Pillars.xml" />
      <None Include="Assets\Resources\Modules\3_Decision.xml" />
      <None Include="Assets\Resources\Modules\1_Simple 3.xml" />
      <None Include="Assets\Resources\Modules\1_Uphill Slope.xml" />
@@ -115,7 +115,7 @@
      <None Include="Assets\Resources\Modules\2_Dire Wolves.xml" />
      <None Include="Assets\Resources\Modules\2_Spike Pit.xml" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
