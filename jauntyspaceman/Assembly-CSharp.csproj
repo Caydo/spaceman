@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -80,7 +80,6 @@
      <Compile Include="Assets\Code\TopScreenDontRespawn.cs" />
      <None Include="Assets\Resources\Modules\2_Dragon.xml" />
      <None Include="Assets\Resources\Modules\3_Islands.xml" />
-     <None Include="Assets\Resources\Modules\3_Spiky Cave.xml" />
      <None Include="Assets\Resources\NPCs\Cheerleader.xml" />
      <None Include="Assets\Resources\NPCs\ChadBro.xml" />
      <None Include="Assets\Resources\NPCs\Ziggy.xml" />
@@ -91,7 +90,6 @@
      <None Include="Assets\Resources\Modules\1_Mario.xml" />
      <None Include="Assets\Resources\Modules\3_Falls Hard.xml" />
      <None Include="Assets\Resources\Modules\2_Underhill.xml" />
-     <None Include="Assets\Resources\Modules\3_Pillars.xml" />
      <None Include="Assets\Resources\Modules\3_Decision.xml" />
      <None Include="Assets\Resources\Modules\1_Simple 3.xml" />
      <None Include="Assets\Resources\Modules\1_Uphill Slope.xml" />
@@ -129,7 +127,7 @@
      <None Include="Assets\Resources\NPCs\OldMan.xml" />
      <None Include="Assets\Resources\Modules\2_Spike Pit.xml" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
