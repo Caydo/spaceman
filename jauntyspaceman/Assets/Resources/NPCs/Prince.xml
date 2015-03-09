@@ -1,35 +1,35 @@
 <npc name="Prince">
-<spriteset file="Prince.png">
+<spriteset file="Prince.png"/>
 <dialog>
-<point id="0" text="This is a story all about how my life got _____ upside down">
-<response key="A" text="Flip-turned" trigger="Point1" trigger2="">
-<response key="B" text="Back-traced" trigger="Point5" trigger2="">
-<response key="C" text="Stir-fried" trigger="Point5" trigger2="">
-<response key="(timeout)" text="" trigger="Point6" trigger2="">
+<point id="0" text="This is a story all about how my life got _____ upside down" trigger="">
+<response key="A" text="Flip-turned" trigger="Go To 1"/>
+<response key="B" text="Back-traced" trigger="Go To 5"/>
+<response key="C" text="Stir-fried" trigger="Go To 5"/>
+<response key="(timeout)" text="" trigger="Go To 6"/>
 </point>
-<point id="1" text="In West Philadelphia born and raised, on ____ is where I spent most of my days">
-<response key="A" text="The playground" trigger="Point2" trigger2="">
-<response key="B" text="YouTube" trigger="Point5" trigger2="">
-<response key="C" text="4chan" trigger="Point5" trigger2="">
-<response key="(timeout)" text="" trigger="Point6" trigger2="">
+<point id="1" text="In West Philadelphia born and raised, on ____ is where I spent most of my days" trigger="">
+<response key="A" text="The playground" trigger="Go To 2"/>
+<response key="B" text="YouTube" trigger="Go To 5"/>
+<response key="C" text="4chan" trigger="Go To 5"/>
+<response key="(timeout)" text="" trigger="Go To 6"/>
 </point>
-<point id="2" text="A couple of guys who were up to no good started making _____ in my neighborhood">
-<response key="A" text="Trouble" trigger="Point3" trigger2="">
-<response key="B" text="Money" trigger="Point5" trigger2="">
-<response key="C" text="Meth" trigger="Point5" trigger2="">
-<response key="(timeout)" text="" trigger="Point6" trigger2="">
+<point id="2" text="A couple of guys who were up to no good started making _____ in my neighborhood" trigger="">
+<response key="A" text="Trouble" trigger="Go To 3"/>
+<response key="B" text="Money" trigger="Go To 5"/>
+<response key="C" text="Meth" trigger="Go To 5"/>
+<response key="(timeout)" text="" trigger="Go To 6"/>
 </point>
-<point id="3" text="I got in one little fight and my mom got scared, she said "You're moving with _______ in Bel Air"">
-<response key="A" text="Your auntie and uncle" trigger="Point4" trigger2="">
-<response key="B" text="President Nixon" trigger="Point5" trigger2="">
-<response key="C" text="Smaug the Tremendous, Chiefest and Greatest of Calamities" trigger="Point5" trigger2="">
-<response key="(timeout)" text="" trigger="Point6" trigger2="">
+<point id="3" text="I got in one little fight and my mom got scared, she said "You're moving with _______ in Bel Air"" trigger="">
+<response key="A" text="Your auntie and uncle" trigger="Go To 4"/>
+<response key="B" text="President Nixon" trigger="Go To 5"/>
+<response key="C" text="Smaug the Tremendous, Chiefest and Greatest of Calamities" trigger="Go To 5"/>
+<response key="(timeout)" text="" trigger="Go To 6"/>
 </point>
-<point id="4" text="Wicked fresh!" trigger="+0.2 Oxygen" trigger2="EndDialog">
+<point id="4" text="Wicked fresh!" trigger="Give 0.2 O2, EndDialog">
 </point>
-<point id="5" text="Hey! That's not how it goes!" trigger="-0.1 Oxygen" trigger2="EndDialog">
+<point id="5" text="Hey! That's not how it goes!" trigger="Take 0.1 O2, EndDialog">
 </point>
-<point id="6" text="Smell ya later!" trigger="-0.1 Oxygen" trigger2="EndDialog">
+<point id="6" text="Smell ya later!" trigger="Take 0.1 O2, EndDialog">
 </point>
 </dialog>
 </npc>

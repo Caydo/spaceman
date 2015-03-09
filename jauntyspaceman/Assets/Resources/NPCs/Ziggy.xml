@@ -1,17 +1,17 @@
 <npc name="Ziggy">
-<spriteset file="Ziggy.png">
+<spriteset file="Ziggy.png"/>
 <dialog>
 <point id="0" text="Ground Control to Major Tom…">
-<response key="Q" text="Commencing countdown, engines on…" trigger="Point1" trigger2="">
-<response key="W" text="Your circuit's dead, there's something wrong…" trigger="Point2" trigger2="">
-<response key="E" text="Tell my wife I love her…" trigger="Point3" trigger2="">
-<response key="(timeout)" text="" trigger="Point2" trigger2="">
+<response key="Q" text="Commencing countdown, engines on…" trigger="Go To 1"/>
+<response key="W" text="Your circuit's dead, there's something wrong…" trigger="Go To 2"/>
+<response key="E" text="Tell my wife I love her…" trigger="Go To 3"/>
+<response key="(timeout)" text="" trigger="Go To 2"/>
 </point>
-<point id="1" text="You've really made the grade!" trigger="+0.1 Oxygen" trigger2="EndDialog">
+<point id="1" text="You've really made the grade!" trigger="Give 0.1 O2, EndDialog">
 </point>
-<point id="2" text="Can you hear me, Major Tom?" trigger="-0.1 Oxygen" trigger2="EndDialog">
+<point id="2" text="Can you hear me, Major Tom?" trigger="Take 0.1 O2, EndDialog">
 </point>
-<point id="3" text="She knows…" trigger="" trigger2="EndDialog">
+<point id="3" text="She knows…" trigger="EndDialog">
 </point>
 </dialog>
 </npc>

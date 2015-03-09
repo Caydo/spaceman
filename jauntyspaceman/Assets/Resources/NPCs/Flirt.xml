@@ -1,34 +1,34 @@
 <npc name="Flirt">
-<spriteset file="Flirt.png">
+<spriteset file="Flirt.png"/>
 <dialog>
 <point id="0" text="Going my way, baby?">
-<response key="A" text="Let me show you the stars." trigger="Point1" trigger2="">
-<response key="B" text="I go wherever the action is." trigger="Point2" trigger2="">
-<response key="C" text="I'm more of a lone space ranger." trigger="Point3" trigger2="">
-<response key="(timeout)" text="" trigger="Point6" trigger2="">
+<response key="A" text="Let me show you the stars." trigger="Go To 1"/>
+<response key="B" text="I go wherever the action is." trigger="Go To 2"/>
+<response key="C" text="I'm more of a lone space ranger." trigger="Go To 3"/>
+<response key="(timeout)" text="" trigger="Go To 6"/>
 </point>
 <point id="1" text="I'm ready to blast off!" trigger="">
-<response key="A" text="I'll rock your universe." trigger="Point4" trigger2="">
-<response key="B" text="It'll be out of this world." trigger="Point4" trigger2="">
-<response key="C" text="To infinity and beyond." trigger="Point5" trigger2="">
-<response key="(timeout)" text="" trigger="Point6">
+<response key="A" text="I'll rock your universe." trigger="Go To 4"/>
+<response key="B" text="It'll be out of this world." trigger="Go To 4"/>
+<response key="C" text="To infinity and beyond." trigger="Go To 5"/>
+<response key="(timeout)" text="" trigger="Go To 6"/>
 </point>
 <point id="2" text="I'll show you some action." trigger="">
-<response key="A" text="Let's do it." trigger="Point1" trigger2="">
-<response key="B" text="No thanks." trigger="Point3" trigger2="">
-<response key="(timeout)" text="" trigger="Point6" trigger2="">
+<response key="A" text="Let's do it." trigger="Go To 1"/>
+<response key="B" text="No thanks." trigger="Go To 3"/>
+<response key="(timeout)" text="" trigger="Go To 6"/>
 </point>
-<point id="3" text="Don't you want me?" trigger="" trigger2="EndDialog">
-<response key="A" text="It's not you, it's me." trigger="Point5" trigger2="">
-<response key="B" text="I just need some space." trigger="Point5" trigger2="">
-<response key="C" text="My zipper is stuck." trigger="Point5" trigger2="">
-<response key="(timeout)" text="" trigger="Point6" trigger2="">
+<point id="3" text="Don't you want me?" trigger="EndDialog">
+<response key="A" text="It's not you, it's me." trigger="Go To 5"/>
+<response key="B" text="I just need some space." trigger="Go To 5"/>
+<response key="C" text="My zipper is stuck." trigger="Go To 5"/>
+<response key="(timeout)" text="" trigger="Go To 6"/>
 </point>
-<point id="4" text="Rock me, rocket man!" trigger="+0.2 Oxygen" trigger2="EndDialog">
+<point id="4" text="Rock me, rocket man!" trigger="Give 0.2 O2, EndDialog">
 </point>
-<point id="5" text="… That's the lamest thing I've ever heard." trigger="-0.1 Oxygen" trigger2="EndDialog">
+<point id="5" text="… That's the lamest thing I've ever heard." trigger="Take 0.1 O2, EndDialog">
 </point>
-<point id="6" text="Hey, come back!" trigger="-0.1 Oxygen" trigger2="EndDialog">
+<point id="6" text="Hey, come back!" trigger="Take 0.1 O2, EndDialog">
 </point>
 </dialog>
 </npc>

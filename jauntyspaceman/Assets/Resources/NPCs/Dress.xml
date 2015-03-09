@@ -1,15 +1,15 @@
 <npc name="Dress">
-<spriteset file="Dress.png">
+<spriteset file="Dress.png"/>
 <dialog>
-<point id="0" text="What color is this dress?">
-<response key="O" text="White and Gold." trigger="Point1" trigger2="">
-<response key="M" text="Blue and Black." trigger="Point1" trigger2="">
-<response key="G" text="I hate this meme." trigger="Point2" trigger2="">
-<response key="(timeout)" text="" trigger="Point2" trigger2="">
+<point id="0" text="What color is this dress?" trigger="">
+<response key="O" text="White and Gold." trigger="Go To 1"/>
+<response key="M" text="Blue and Black." trigger="Go To 1"/>
+<response key="G" text="I hate this meme." trigger="Go To 2"/>
+<response key="(timeout)" text="" trigger="Go To 2"/>
 </point>
-<point id="1" text="I thought so!" trigger="+0.1 Oxygen" trigger2="EndDialog">
+<point id="1" text="I thought so!" trigger="Give 0.1 O2, EndDialog">
 </point>
-<point id="2" text="Nevermind." trigger="-0.1 Oxygen" trigger2="EndDialog">
+<point id="2" text="Nevermind." trigger="Take 0.1 O2, EndDialog">
 </point>
 </dialog>
 </npc>
