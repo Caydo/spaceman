@@ -1,0 +1,29 @@
+<npc name="The old man from Scene 24">
+<spriteset file="Male.png"/>
+<dialog>
+<point id="0" text="Stop! Who would jaunt the space of death must answer me these questions three, ere the other side he see.">
+<response key="A" text="Ask me the questions, space-keeper. I'm not afraid." trigger="Go To 1"/>
+<response key="(timeout)" text="" trigger="Take 5 O2, EndDialog"/>
+</point>
+<point id="1" text="What is your name?">
+<response key="J" text="Jaunty Spacemin" trigger="Take 5 O2, EndDialog"/>
+<response key="T" text="John T. Spacemin" trigger="Go To 2"/>
+<response key="S" text="Jogn T. Spaceman" trigger="Go To 2"/>
+<response key="(timeout)" text="" trigger="Take 5 O2, EndDialog"/>
+</point>
+<point id="2" text="What is your quest?">
+<response key="O" text="To jaunt through space." trigger="Take 5 O2, EndDialog"/>
+<response key="X" text="To seek the Holy Grail." trigger="Take 5 O2, EndDialog"/>
+<response key="Y" text="To breathe another breath." trigger="Go To 3"/>
+<response key="(timeout)" text="" trigger="Take 5 O2, EndDialog"/>
+</point>
+<point id="3" text="What is the air-speed velocity of an unladen swallow?">
+<response key="1" text="One." trigger="Take 5 O2, EndDialog"/>
+<response key="W" text="What do you mean? An African or European swallow?" trigger="Go To 4"/>
+<response key="S" text="Don't you mean 'space-speed'?" trigger="Take 5 O2, EndDialog"/>
+<response key="(timeout)" text="" trigger="Take 5 O2, EndDialog"/>
+</point>
+<point id="4" text="What? I don't know that! Auuuuuuuugh!" trigger="Give  10 O2, EndDialog">
+</point>
+</dialog>
+</npc>

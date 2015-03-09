@@ -1,0 +1,26 @@
+<npc name="Cheerleader">
+<spriteset file="Female.png"/>
+<dialog>
+<point id="0" text="Give me a 'J'!">
+<response key="J" text="Y" trigger="Go To 4"/>
+<response key="U" text="J" trigger="Go To 1, Give 5 O2"/>
+<response key="Z" text="C" trigger="Go To 4"/>
+<response key="(timeout)" text="" trigger="Go To 4"/>
+</point>
+<point id="1" text="Give me a 'T'!">
+<response key="T" text="H" trigger="Go To 4"/>
+<response key="B" text="T" trigger="Go To 2, Give 5 O2"/>
+<response key="H" text="B" trigger="Go To 4"/>
+<response key="(timeout)" text="" trigger="Go To 4"/>
+</point>
+<point id="2" text="Give me a 'Spaceman'!">
+<response key="A" text="Spaceman" trigger="Go To 3"/>
+<response key="B" text="It's pronounced 'Spacemin'" trigger="Go To 4"/>
+<response key="(timeout)" text="" trigger="Go To 4"/>
+</point>
+<point id="3" text="Yay! Jaunty Spaceman!" trigger="Give 5 O2, EndDialog">
+</point>
+<point id="4" text="Aww, so sad!" trigger="Take 5 O2, EndDialog">
+</point>
+</dialog>
+</npc>
