@@ -14,6 +14,7 @@ public class TextCrawl : MonoBehaviour
   public bool active = false;
 
   public Text textToCrawl;
+  public Text textToDisplayFast;
 
   void Awake()
   {
@@ -21,7 +22,7 @@ public class TextCrawl : MonoBehaviour
 //      + "\n\nAlthough, a wizard wielding an enchanted baseball bat should be okay here, right?\n\n Who's that person in front of you though? They don't look familiar. "
 //     + "\n\nMaybe exploring the forest for clues is a good option? It's late and magic's definitely around here. You don't think you'll be eaten by a grue. What do you do now?\n\nClick To Continue";
 
-    textToCrawl = GetComponent<Text>();
+    //textToCrawl = GetComponent<Text>();
   }
 
   void Start()
@@ -35,6 +36,7 @@ public class TextCrawl : MonoBehaviour
 		TextToAdd = "";
 		AdditionalText = "";
 		FullySetText = false;
+		textToDisplayFast.text = string.Empty;
 		textToCrawl.text = string.Empty;	
 	}
 
@@ -82,7 +84,8 @@ public class TextCrawl : MonoBehaviour
 		Debug.Log ("finished");
     FullySetText = true;
     StopCoroutine(addTextThenWait());
-    textToCrawl.text = TextToAdd + AdditionalText;
+		textToCrawl.text = TextToAdd ;
+    textToDisplayFast.text = AdditionalText;
 		active = false;
   }
 }

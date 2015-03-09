@@ -65,7 +65,8 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
         possibleLevels.Add(randomPath);
       }
     }
-    LoadNpcEncounter(possibleLevels[Random.Range(0, possibleLevels.Count)]);
+    //LoadNpcEncounter(possibleLevels[Random.Range(0, possibleLevels.Count)]);
+		LoadNpcEncounter ("Angel");
 	}
 
 	public void LoadNpcEncounter(string npcName) {
