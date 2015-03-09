@@ -30,8 +30,9 @@ public class DestroyOnInvisible : MonoBehaviour
         }
       }
 		}
-		if((!respectRespawnOk) || (!destroyOnlyAfterVisible) || wasVisible) { 
-    		GameObject.Destroy(gameObject);
+		if((respectRespawnOk && wasVisible) || (!destroyOnlyAfterVisible))
+    { 
+      GameObject.Destroy(gameObject);
 		}
   }
 }
