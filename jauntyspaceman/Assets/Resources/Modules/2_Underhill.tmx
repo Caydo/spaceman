@@ -14,7 +14,7 @@
    <image width="70" height="70" source="../../Art/Tileset/bonus_used.png"/>
   </tile>
   <tile id="4">
-   <image width="71" height="70" source="../../Art/Tileset/bridge.png"/>
+   <image width="70" height="70" source="../../Art/Tileset/bridge.png"/>
   </tile>
   <tile id="5">
    <image width="70" height="70" source="../../Art/Tileset/Bubble.png"/>
@@ -333,9 +333,9 @@
    <tile gid="20"/>
    <tile gid="20"/>
    <tile gid="20"/>
+   <tile gid="5"/>
    <tile gid="20"/>
-   <tile gid="20"/>
-   <tile gid="20"/>
+   <tile gid="5"/>
    <tile gid="20"/>
    <tile gid="20"/>
    <tile gid="20"/>
@@ -367,11 +367,11 @@
    <tile gid="20"/>
    <tile gid="20"/>
    <tile gid="20"/>
+   <tile gid="5"/>
    <tile gid="20"/>
+   <tile gid="5"/>
    <tile gid="20"/>
-   <tile gid="20"/>
-   <tile gid="20"/>
-   <tile gid="20"/>
+   <tile gid="5"/>
    <tile gid="20"/>
    <tile gid="20"/>
    <tile gid="20"/>
