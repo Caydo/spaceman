@@ -22,9 +22,6 @@ C:\Users\jsmits\Desktop\Spaceman\trunk\jauntyspaceman\obj\Debug\Assembly-CSharp.
 C:\Users\jsmits\Desktop\Spaceman\trunk\jauntyspaceman\obj\Debug\Assembly-CSharp.pdb
 C:\Users\jsmits\Desktop\newspaceman\trunk\jauntyspaceman\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\jsmits\Desktop\newspaceman\trunk\jauntyspaceman\Temp\bin\Debug\Assembly-CSharp.pdb
-C:\Users\jsmits\Desktop\newspaceman\trunk\jauntyspaceman\Temp\bin\Debug\UnityEditor.dll
-C:\Users\jsmits\Desktop\newspaceman\trunk\jauntyspaceman\Temp\bin\Debug\UnityEngine.dll
-C:\Users\jsmits\Desktop\newspaceman\trunk\jauntyspaceman\Temp\bin\Debug\UnityEngine.UI.dll
 C:\Users\jsmits\Desktop\newspaceman\trunk\jauntyspaceman\Temp\bin\Debug\Mono.Cecil.dll
 C:\Users\jsmits\Desktop\newspaceman\trunk\jauntyspaceman\Temp\bin\Debug\Unity.SerializationLogic.dll
 C:\Users\jsmits\Desktop\newspaceman\trunk\jauntyspaceman\Temp\bin\Debug\Unity.DataContract.dll
@@ -33,3 +30,6 @@ C:\Users\jsmits\Desktop\newspaceman\trunk\jauntyspaceman\Temp\bin\Debug\Unity.Ce
 C:\Users\jsmits\Desktop\newspaceman\trunk\jauntyspaceman\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
 C:\Users\jsmits\Desktop\newspaceman\trunk\jauntyspaceman\obj\Debug\Assembly-CSharp.dll
 C:\Users\jsmits\Desktop\newspaceman\trunk\jauntyspaceman\obj\Debug\Assembly-CSharp.pdb
+C:\Users\jsmits\Desktop\newspaceman\trunk\jauntyspaceman\Temp\bin\Debug\UnityEditor.dll
+C:\Users\jsmits\Desktop\newspaceman\trunk\jauntyspaceman\Temp\bin\Debug\UnityEngine.dll
+C:\Users\jsmits\Desktop\newspaceman\trunk\jauntyspaceman\Temp\bin\Debug\UnityEngine.UI.dll

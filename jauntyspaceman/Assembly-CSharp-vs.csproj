@@ -39,10 +39,10 @@
 	<Reference Include="System.Core" />
 	<Reference Include="System.Xml.Linq" />
 	<Reference Include="UnityEngine">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files/Unity5/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +71,7 @@
      <Compile Include="Assets\Code\PlayerController.cs" />
      <Compile Include="Assets\Code\PlayerInteractionTrigger.cs" />
      <Compile Include="Assets\Code\Powerup.cs" />
+     <Compile Include="Assets\Code\RandomTint.cs" />
      <Compile Include="Assets\Code\ScrollingItem.cs" />
      <Compile Include="Assets\Code\SetRespawnPoint.cs" />
      <Compile Include="Assets\Code\SpeedPowerup.cs" />
@@ -79,6 +80,7 @@
      <Compile Include="Assets\Code\TextCrawl.cs" />
      <Compile Include="Assets\Code\TopScreenDontRespawn.cs" />
      <None Include="Assets\Resources\Modules\2_Dragon.xml" />
+     <None Include="Assets\Art\Effects\Shaders\UVPan.shader" />
      <None Include="Assets\Resources\Modules\3_Islands.xml" />
      <None Include="Assets\Resources\NPCs\Cheerleader.xml" />
      <None Include="Assets\Resources\NPCs\ChadBro.xml" />
@@ -129,7 +131,7 @@
      <None Include="Assets\Resources\NPCs\OldMan.xml" />
      <None Include="Assets\Resources\Modules\2_Spike Pit.xml" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

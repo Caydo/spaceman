@@ -13,5 +13,6 @@ public class Powerup : PlayerInteractionTrigger
   protected override void doCollidedAction()
   {
     oxygenController.GainOxygen(OxygenToGain);
+    GameObject.FindGameObjectWithTag("CrazyColors").GetComponent<RandomTint>().ShouldDoCrazy = true;
   }
 }
