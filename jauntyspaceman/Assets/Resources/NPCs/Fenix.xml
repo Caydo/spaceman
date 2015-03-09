@@ -1,0 +1,21 @@
+<npc name="Fenix">
+<spriteset file="Fenix.png">
+<dialog>
+<point id="0" text="En Taro Adun!">
+<response key="1" text="My life for Aiur!" trigger="Point1" trigger2="">
+<response key="2" text="En Taro your face!" trigger="Point2" trigger2="">
+<response key="3" text="Clearly, Tassadar has failed us." trigger="Point2" trigger2="">
+<response key="(timeout)" text="" trigger="Point2" trigger2="">
+</point>
+<point id="1" text="What are your orders, Executor?" trigger="">
+<response key="1" text="Construct additional pylons." trigger="Point3" trigger2="">
+<response key="2" text="We require more vespene gas." trigger="Point3" trigger2="">
+<response key="3" text="There is no cow level." trigger="Point2" trigger2="">
+<response key="(timeout)" text="" trigger="Point2" trigger2="">
+</point>
+<point id="2" text="I didn't come back for this…" trigger="-0.1 Oxygen" trigger2="EndDialog">
+</point>
+<point id="3" text="As you command." trigger="+0.1 Oxygen" trigger2="EndDialog">
+</point>
+</dialog>
+</npc>

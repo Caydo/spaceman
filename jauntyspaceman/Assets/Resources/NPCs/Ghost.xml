@@ -1,0 +1,14 @@
+<npc name="Ghost">
+<spriteset file="Ghost.png">
+<dialog>
+<point id="0" text="(Guess what?)">
+<response key="~" text="What is it?" trigger="Point2" trigger2="">
+<response key="*" text="Not right now." trigger="Point1" trigger2="">
+<response key="(timeout)" text="" trigger="Point1" trigger2="">
+</point>
+<point id="1" text="(You're very rude.)" trigger="-0.1 Oxygen" trigger2="EndDialog">
+</point>
+<point id="2" text="(You're already dead.)" trigger="-0.2 Oxygen" trigger2="EndDialog">
+</point>
+</dialog>
+</npc>

@@ -1,0 +1,17 @@
+<npc name="Helper">
+<spriteset file="Helper.png">
+<dialog>
+<point id="0" text="Do you need any help?">
+<response key="1" text="Nothing right now." trigger="Point1" trigger2="">
+<response key="2" text="Just some oxygen, please." trigger="Point2" trigger2="">
+<response key="3" text="Tell me a secret." trigger="Point3" trigger2="">
+<response key="(timeout)" text="" trigger="Point1" trigger2="">
+</point>
+<point id="1" text="Okay then!" trigger="" trigger2="EndDialog">
+</point>
+<point id="2" text="Here you go!" trigger="+0.1 Oxygen" trigger2="EndDialog">
+</point>
+<point id="3" text="Have you tried clicking on the cats?" trigger="" trigger2="EndDialog">
+</point>
+</dialog>
+</npc>

@@ -1,0 +1,17 @@
+<npc name="Shirt">
+<spriteset file="Shirt.png">
+<dialog>
+<point id="0" text="What color is this shirt?">
+<response key="G" text="Red." trigger="Point1" trigger2="">
+<response key="R" text="Green." trigger="Point2" trigger2="">
+<response key="ESC" text="I'm colorblind." trigger="Point3" trigger2="">
+<response key="(timeout)" text="" trigger="Point3" trigger2="">
+</point>
+<point id="1" text="Can't put anything past you!" trigger="+0.1 Oxygen" trigger2="EndDialog">
+</point>
+<point id="2" text="You should pay more attention!" trigger="-0.1 Oxygen" trigger2="EndDialog">
+</point>
+<point id="3" text="Nevermind." trigger="" trigger2="EndDialog">
+</point>
+</dialog>
+</npc>

@@ -1,0 +1,35 @@
+<npc name="Gwen">
+<spriteset file="Gwen.png">
+<dialog>
+<point id="0" text="This &#*% is bananas!">
+<response key="B" text="B!" trigger="Point1">
+<response key="(timeout)" text="" trigger="-0.1 Oxygen" trigger2="EndDialog">
+</point>
+<point id="1" text="This &#*% is bananas!">
+<response key="A" text="A!" trigger="Point2">
+<response key="(timeout)" text="" trigger="-0.1 Oxygen" trigger2="EndDialog">
+</point>
+<point id="2" text="This &#*% is bananas!">
+<response key="N" text="N!" trigger="Point3">
+<response key="(timeout)" text="" trigger="-0.1 Oxygen" trigger2="EndDialog">
+</point>
+<point id="3" text="This &#*% is bananas!">
+<response key="A" text="A!" trigger="Point4">
+<response key="(timeout)" text="" trigger="-0.1 Oxygen" trigger2="EndDialog">
+</point>
+<point id="4" text="This &#*% is bananas!">
+<response key="N" text="N!" trigger="Point5">
+<response key="(timeout)" text="" trigger="-0.1 Oxygen" trigger2="EndDialog">
+</point>
+<point id="5" text="This &#*% is bananas!">
+<response key="A" text="A!" trigger="Point6">
+<response key="(timeout)" text="" trigger="-0.1 Oxygen" trigger2="EndDialog">
+</point>
+<point id="6" text="This &#*% is bananas!">
+<response key="S" text="S!" trigger="Point7">
+<response key="(timeout)" text="" trigger="-0.1 Oxygen" trigger2="EndDialog">
+</point>
+<point id="7" text="Aw yeah!" trigger="+0.10 Oxygen" trigger2="EndDialog">
+</point>
+</dialog>
+</npc>

@@ -1,0 +1,74 @@
+<npc name="ChadBro">
+<spriteset file="ChadBro.png">
+<dialog>
+<point id="0" text="What's up, Bro.">
+<response key="A" text="Not much, Broski." trigger="Point1" trigger2="">
+<response key="B" text="I'm not your bro, pal." trigger="Point8" trigger2="">
+<response key="(timeout)" text="" trigger="Point7" trigger2="">
+</point>
+<point id="1" text="Broseph.">
+<response key="C" text="Broseidon." trigger="Point2" trigger2="">
+<response key="D" text="Brometheus." trigger="Point2" trigger2="">
+<response key="(timeout)" text="" trigger="Point7" trigger2="">
+</point>
+<point id="2" text="Bromo sapiens.">
+<response key="E" text="Bro magnon." trigger="Point3" trigger2="">
+<response key="F" text="Bro bono." trigger="Point3" trigger2="">
+<response key="(timeout)" text="" trigger="Point7" trigger2="">
+</point>
+<point id="3" text="Brotato.">
+<response key="G" text="Brobama." trigger="Point4" trigger2="">
+<response key="H" text="Brogaine." trigger="Point4" trigger2="">
+<response key="(timeout)" text="" trigger="Point7" trigger2="">
+</point>
+<point id="4" text="Brotis Redding.">
+<response key="I" text="Bronus Wagner." trigger="Point5" trigger2="">
+<response key="J" text="Broly Ghost." trigger="Point5" trigger2="">
+<response key="(timeout)" text="" trigger="Point7" trigger2="">
+</point>
+<point id="5" text="Brodin Allfather.">
+<response key="K" text="Bro Chang." trigger="Point6" trigger2="">
+<response key="L" text="Marcus Brody." trigger="Point6" trigger2="">
+<response key="(timeout)" text="" trigger="Point7" trigger2="">
+</point>
+<point id="6" text="Yeah, bro!">
+<response key="M" text="Uh, okay." trigger="Point7" trigger2="">
+<response key="N" text="I'm not your bro, pal." trigger="Point8" trigger2="">
+<response key="(timeout)" text="" trigger="Point7" trigger2="">
+</point>
+<point id="7" text="Take it easy." trigger="+0.3 Oxygen" trigger2="EndDialog">
+</point>
+<point id="8" text="I'm not your pal, friend.">
+<response key="O" text="I'm not your friend, man." trigger="Point9" trigger2="">
+<response key="P" text="I'm not your friend, guy." trigger="Point10" trigger2="">
+<response key="(timeout)" text="" trigger="Point7" trigger2="">
+</point>
+<point id="9" text="I'm not your man, buddy.">
+<response key="Q" text="I'm not your buddy, guy." trigger="Point10" trigger2="">
+<response key="R" text="I'm not your buddy, dude." trigger="Point11" trigger2="">
+<response key="(timeout)" text="" trigger="Point7" trigger2="">
+</point>
+<point id="0" text="I'm not your guy, chief.">
+<response key="S" text="I'm not your chief, dude." trigger="Point11" trigger2="">
+<response key="T" text="I'm not your chief, lady." trigger="Point12" trigger2="">
+<response key="(timeout)" text="" trigger="Point7" trigger2="">
+</point>
+<point id="1" text="I'm not your dude, chum.">
+<response key="U" text="I'm not your chum, lady." trigger="Point12" trigger2="">
+<response key="V" text="I'm not your chum, comrade." trigger="Point13" trigger2="">
+<response key="(timeout)" text="" trigger="Point7" trigger2="">
+</point>
+<point id="2" text="I'm not your lady, partner.">
+<response key="W" text="I'm not your partner, cousin." trigger="Point13" trigger2="">
+<response key="X" text="I'm not your partner, comrade." trigger="Point14" trigger2="">
+<response key="(timeout)" text="" trigger="Point7" trigger2="">
+</point>
+<point id="3" text="I'm not your cousin, bro.">
+<response key="Y" text="Didn't we do this already?" trigger="Point6" trigger2="">
+<response key="Z" text="Bro shizzle." trigger="Point1" trigger2="">
+<response key="(timeout)" text="" trigger="Point7" trigger2="">
+</point>
+<point id="4" text="Comrade? Really?" trigger="" trigger2="EndDialog">
+</point>
+</dialog>
+</npc>
