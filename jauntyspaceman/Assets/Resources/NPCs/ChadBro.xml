@@ -48,27 +48,27 @@
 <response key="R" text="I'm not your buddy, dude." trigger="Go To 11"/>
 <response key="(timeout)" text="" trigger="Go To 7"/>
 </point>
-<point id="0" text="I'm not your guy, chief.">
+<point id="10" text="I'm not your guy, chief.">
 <response key="S" text="I'm not your chief, dude." trigger="Go To 11"/>
 <response key="T" text="I'm not your chief, lady." trigger="Go To 12"/>
 <response key="(timeout)" text="" trigger="Go To 7"/>
 </point>
-<point id="1" text="I'm not your dude, chum.">
+<point id="11" text="I'm not your dude, chum.">
 <response key="U" text="I'm not your chum, lady." trigger="Go To 12"/>
 <response key="V" text="I'm not your chum, comrade." trigger="Go To 13"/>
 <response key="(timeout)" text="" trigger="Go To 7"/>
 </point>
-<point id="2" text="I'm not your lady, partner.">
+<point id="12" text="I'm not your lady, partner.">
 <response key="W" text="I'm not your partner, cousin." trigger="Go To 13"/>
 <response key="X" text="I'm not your partner, comrade." trigger="Go To 14"/>
 <response key="(timeout)" text="" trigger="Go To 7"/>
 </point>
-<point id="3" text="I'm not your cousin, bro.">
+<point id="13" text="I'm not your cousin, bro.">
 <response key="Y" text="Didn't we do this already?" trigger="Go To 6"/>
 <response key="Z" text="Bro shizzle." trigger="Go To 1"/>
 <response key="(timeout)" text="" trigger="Go To 7"/>
 </point>
-<point id="4" text="Comrade? Really?" trigger="EndDialog">
+<point id="14" text="Comrade? Really?" trigger="EndDialog">
 </point>
 </dialog>
 </npc>

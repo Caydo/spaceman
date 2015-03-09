@@ -68,7 +68,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
       }
     }
     LoadNpcEncounter(possibleLevels[Random.Range(0, possibleLevels.Count)]);
-//		LoadNpcEncounter ("Punk");
+	//	LoadNpcEncounter ("ChadBro");
 	}
 
 	public void LoadNpcEncounter(string npcName) {
@@ -171,6 +171,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 			match = gotoRegex.Match(triggerPart);
 			if(match.Success) { 
 				string pointId = match.Groups["point"].Value;
+				Debug.Log("point Id serach {" + "//point[@id=" + pointId + "]}");
 				XmlNode thePoint = currentTrigger.SelectSingleNode("//point[@id=" + pointId + "]");
 				if(thePoint != null) { 
 					parsePoint (thePoint);
