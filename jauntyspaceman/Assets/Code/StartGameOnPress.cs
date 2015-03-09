@@ -3,6 +3,7 @@ using UnityEngine;
 public class StartGameOnPress : MonoBehaviour
 {
   public Animator OtherText;
+  public Animator OtherOtherText;
   public string LevelToLoad;
   Animator myText;
 
@@ -17,6 +18,10 @@ public class StartGameOnPress : MonoBehaviour
     {
       myText.SetTrigger("FadeOut");
       OtherText.SetTrigger("FadeOut");
+      if(OtherOtherText != null)
+      {
+        OtherOtherText.SetTrigger("FadeOut");
+      }
     }
   }
 

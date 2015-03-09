@@ -148,7 +148,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 			}
 		} 
 
-        textPanelExpander.DoExpand();
+    textPanelExpander.DoExpand();
 		textPanel.StartCrawl();
 	}
 	

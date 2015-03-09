@@ -1,10 +1,15 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ExpandingItem : MonoBehaviour
 {
   // how quickly the item should expands. Smaller is slower.
   public float scaleSpeedPerFrame;
+  public Text NPCText;
+
+  bool open;
+  bool shouldUpdateExpand = false;
   RectTransform rect;
   bool doneScaling;
 
@@ -30,6 +35,16 @@ public class ExpandingItem : MonoBehaviour
       rect.localScale += new Vector3(scaleSpeedPerFrame, scaleSpeedPerFrame, scaleSpeedPerFrame);
       yield return null;
     }
+
+    open = true;
+  }
+
+  void Update()
+  {
+    if(NPCText.text == string.Empty && open)
+    {
+      DoShrink();
+    }
   }
 
   IEnumerator Shrink()
@@ -39,5 +54,7 @@ public class ExpandingItem : MonoBehaviour
       yield return null;
       rect.localScale -= new Vector3(scaleSpeedPerFrame, scaleSpeedPerFrame, scaleSpeedPerFrame);
     }
+
+    open = false;
   }
 }
