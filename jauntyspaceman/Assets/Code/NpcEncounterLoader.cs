@@ -67,8 +67,8 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
         possibleLevels.Add(randomPath);
       }
     }
-    //LoadNpcEncounter(possibleLevels[Random.Range(0, possibleLevels.Count)]);
-		LoadNpcEncounter ("Angel");
+    LoadNpcEncounter(possibleLevels[Random.Range(0, possibleLevels.Count)]);
+//		LoadNpcEncounter ("Punk");
 	}
 
 	public void LoadNpcEncounter(string npcName) {
@@ -122,24 +122,30 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 		string text = mainPoint.Attributes.GetNamedItem("text").InnerText;
 		textPanel.TextToAdd += text; 
 
-		XmlNode trigger = mainPoint.Attributes.GetNamedItem("trigger"); 
-		if(trigger != null) { 
-			StartCoroutine(TriggerPointCoroutine(trigger.InnerText));
-		} else { 
-			Debug.Log ("Looking for responses");
-			XmlNodeList responses = mainPoint.SelectNodes("response");
-			foreach(XmlNode response in responses) { 
-				string responseKey = response.Attributes.GetNamedItem("key").InnerText;
-				if(responseKey.Equals("(timeout)")) { 
-					// TODO set up the bad thing that happens if you don't handle it 
-				} else { 
-					string responseText = response.Attributes.GetNamedItem ("text").InnerText;
-					string triggerText = response.Attributes.GetNamedItem ("trigger").InnerText;
-					ParseTrigger(responseKey, triggerText);
-					textPanel.AdditionalText += "\n " + responseKey + ":  " + responseText; 
-				}
+
+
+		Debug.Log ("Looking for responses");
+		XmlNodeList responses = mainPoint.SelectNodes("response");
+		foreach(XmlNode response in responses) { 
+			string responseKey = response.Attributes.GetNamedItem("key").InnerText;
+			if(responseKey.Equals("(timeout)")) { 
+				// TODO set up the bad thing that happens if you don't handle it 
+			} else { 
+				string responseText = response.Attributes.GetNamedItem ("text").InnerText;
+				string triggerText = response.Attributes.GetNamedItem ("trigger").InnerText;
+				ParseTrigger(responseKey, triggerText);
+				textPanel.AdditionalText += "\n " + responseKey + ":  " + responseText; 
 			}
 		}
+
+		XmlNode trigger = mainPoint.Attributes.GetNamedItem("trigger"); 
+		if(trigger != null) { 
+			if(responses.Count > 0) { 
+				ProcessTrigger (null, trigger.InnerText);
+			} else { 
+				StartCoroutine(TriggerPointCoroutine(trigger.InnerText));
+			}
+		} 
 
         textPanelExpander.DoExpand();
 		textPanel.StartCrawl();
@@ -150,7 +156,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 	}
 
 	private Regex gotoRegex = new Regex("Go To (?<point>\\w+)");
-	private Regex giveO2Regex = new Regex("Grant (?<amt>[\\.\\d]+) O2");
+	private Regex giveO2Regex = new Regex("Gain (?<amt>[\\.\\d]+) O2");
 	private Regex takeO2Regex = new Regex("Take (?<amt>[\\.\\d]+) O2");
 	private Regex endRegex = new Regex("EndDialog");
 
@@ -188,6 +194,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 			match = endRegex.Match (triggerPart); 
 			if(match.Success) { 
 				textPanel.Reset();
+				GameObject.Destroy(gameObject);
 			}
 		}
 	}

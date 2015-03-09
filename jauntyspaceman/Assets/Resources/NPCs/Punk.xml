@@ -1,13 +1,13 @@
 <npc name="Punk">
-<spriteset file="Punk.png">
+<spriteset file="Punk.png"/>
 <dialog>
 <point id="0" text="You got a problem with me, space man?">
-<response key="A" text="It's pronounced 'spacemin'" trigger="Go To 1"/>
+<response key="A" text="It's pronounced 'spacemin'" trigger="Gain .5 O2, Go To 1"/>
 <response key="B" text="Nope, no problem here." trigger="Go To 2"/>
 <response key="C" text="Banana." trigger="Go To 3"/>
 <response key="(timeout)" text="" trigger="Go To 4"/>
 </point>
-<point id="1" text="So you think you're clever?" trigger="Give 0.1 O2">
+<point id="1" text="So you think you're clever?">
 <response key="A" text="Clever like a cleaver." trigger="Go To 4"/>
 <response key="B" text="Sharp like an axe." trigger="Go To 4"/>
 <response key="C" text="Banana." trigger="Go To 3"/>
