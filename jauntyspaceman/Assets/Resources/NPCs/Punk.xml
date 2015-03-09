@@ -1,5 +1,5 @@
 <npc name="Punk">
-<spriteset file="Punk.png"/>
+<spriteset file="Male"/>
 <dialog>
 <point id="0" text="You got a problem with me, space man?">
 <response key="A" text="It's pronounced 'spacemin'" trigger="Gain .5 O2, Go To 1"/>
