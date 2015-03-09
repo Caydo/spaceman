@@ -11,6 +11,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 	private const string modulePath = "NPCs/";
 	private const string moduleSuffix = ".xml";
 	private List<string> possibleLevels = new List<string>();
+	
 
   public Sprite FollowerSprite;
 	public TextCrawl textPanel; 
@@ -50,6 +51,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 		// TODO do bad thing?
 		Debug.Log ("Hit fail case for npc encounter loader");
 		responseTriggers.Clear();
+		o2Controller.LoseDefaultO2();
 	}
 
 	public void LoadRandomNpcEncounter() {

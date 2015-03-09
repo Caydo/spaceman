@@ -5,11 +5,16 @@ public class OxygenBarController : MonoBehaviour
 {
   public Slider OxygenSlider;
   public float OxygenToLoseEachFrame;
+	public float defaultO2Loss = 0.0f;
 
   void Awake()
   {
     OxygenSlider = GetComponent<Slider>();
   }
+
+	public void LoseDefaultO2() { 
+		LoseOxygen (defaultO2Loss);
+	}
 
   public void LoseOxygen(float amount)
   {
