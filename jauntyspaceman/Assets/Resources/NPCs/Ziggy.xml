@@ -1,5 +1,5 @@
 <npc name="Ziggy">
-<spriteset file="Ziggy.png"/>
+<spriteset file="Male.png"/>
 <dialog>
 <point id="0" text="Ground Control to Major Tom…">
 <response key="Q" text="Commencing countdown, engines on…" trigger="Go To 1"/>

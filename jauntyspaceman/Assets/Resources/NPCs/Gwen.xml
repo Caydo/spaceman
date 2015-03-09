@@ -1,5 +1,5 @@
 <npc name="Gwen">
-<spriteset file="Gwen.png"/>
+<spriteset file="Female.png"/>
 <dialog>
 <point id="0" text="This &#*% is bananas!">
 <response key="B" text="B!" trigger="Go To 1"/>

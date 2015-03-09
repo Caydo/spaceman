@@ -1,5 +1,5 @@
 <npc name="Shirt">
-<spriteset file="Shirt.png"/>
+<spriteset file="Male.png"/>
 <dialog>
 <point id="0" text="What color is this shirt?">
 <response key="G" text="Red." trigger="Go To 1"/>

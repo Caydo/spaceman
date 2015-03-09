@@ -1,5 +1,5 @@
 <npc name="Dress">
-<spriteset file="Dress.png"/>
+<spriteset file="Female.png"/>
 <dialog>
 <point id="0" text="What color is this dress?" trigger="">
 <response key="O" text="White and Gold." trigger="Go To 1"/>

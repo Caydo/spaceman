@@ -1,5 +1,5 @@
 <npc name="Helper">
-<spriteset file="Helper.png"/>
+<spriteset file="Male.png"/>
 <dialog>
 <point id="0" text="Do you need any help?" trigger="">
 <response key="1" text="Nothing right now." trigger="Go To 1"/>
