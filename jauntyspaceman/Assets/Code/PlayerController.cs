@@ -69,7 +69,6 @@ public class PlayerController : MonoBehaviour
       animator.SetBool("Jump", false);
       animator.SetTrigger("Fall");
     }
-
     else
     {
       // pressing space and grounded, so we're flying and not grounded
@@ -77,8 +76,7 @@ public class PlayerController : MonoBehaviour
       {
         stopMoving = false;
         PlayerDead = false;
-        body2D.velocity = new Vector2(body2D.velocity.x, JumpSpeed);
-        jetFuelMeter.value -= FuelDepletionRateOnActivate;
+        jetFuelMeter.value -= FuelDepletionRateOnActivate * Time.deltaTime;
         isGrounded = false;
         // not grounded, not falling, so we're flying
 
@@ -88,12 +86,6 @@ public class PlayerController : MonoBehaviour
 
     if (!PlayerDead)
     {
-      if(!stopMoving)
-      {
-        // Move the character
-        body2D.velocity = new Vector2(MoveSpeed * Time.deltaTime, body2D.velocity.y);
-      }
-
       if(jetFuelMeter.value <= 0)
       {
         animator.SetBool("Jump", false);
@@ -117,6 +109,29 @@ public class PlayerController : MonoBehaviour
       //{
       //  transform.Translate(transform.right * MoveSpeed * Time.deltaTime);
       //}
+    }
+  }
+
+  void FixedUpdate()
+  {
+    if (!PlayerDead)
+    {
+      if (!stopMoving)
+      {
+        // Move the character
+        body2D.velocity = new Vector2(MoveSpeed * Time.deltaTime, body2D.velocity.y);
+      }
+    }
+
+    bool falling = Input.GetKeyUp(KeyCode.Space) && !isGrounded;
+    
+    if(!falling)
+    {
+      // pressing space and grounded, so we're flying and not grounded
+      if(ShouldAllowJump && Input.GetKey(KeyCode.Space) && jetFuelMeter.value > 0)
+      {
+        body2D.velocity = new Vector2(body2D.velocity.x, JumpSpeed);
+      }
     }
   }
 
