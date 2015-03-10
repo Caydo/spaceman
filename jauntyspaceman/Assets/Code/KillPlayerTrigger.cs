@@ -10,13 +10,12 @@ namespace Assets.Code
 {
   class KillPlayerTrigger : PlayerInteractionTrigger
   {
-    int time = 0;
-    public int TimeToWaitForStuck = 0;
-    int timeToWaitThenKill = 0;
+    float time = 0;
+    public float TimeToWaitForStuck = 0;
+    float timeToWaitThenKill = 0;
 
     protected override void doTriggerStayAction()
     {
-      timeToWaitThenKill = TimeToWaitForStuck * 100;
       StartCoroutine(waitThenUptickTime());
     }
 
@@ -27,11 +26,11 @@ namespace Assets.Code
       {
         // wait a frame then uptick
         yield return null;
-        time++;
+        time += 0.1f;
       }
       
       // assume the player has tried to get out and can't, so kill them
-      if (time >= timeToWaitThenKill)
+      if (time >= TimeToWaitForStuck)
       {
         var player = onTriggerStayObject.gameObject.GetComponent<PlayerController>();
         if(!player.animator.GetBool ("Jump"))
