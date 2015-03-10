@@ -6,7 +6,8 @@ public class OxygenBarController : MonoBehaviour
   public Slider OxygenSlider;
   public float OxygenToLoseEachFrame;
 	public float defaultO2Loss = 0.0f;
-  
+  public ParticleSystem Particles;
+
 	public void LoseDefaultO2() 
   {
 		LoseOxygen (defaultO2Loss);
@@ -19,6 +20,7 @@ public class OxygenBarController : MonoBehaviour
 
   public void GainOxygen(float amount)
   {
+    Particles.Play();
     OxygenSlider.value += amount;
   }
 
