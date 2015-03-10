@@ -27,18 +27,21 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 		LoadRandomNpcEncounter ();
 	}
 
-	private XmlNode pendingPoint = null; 
-	protected override void doTriggeredAction()
-	{	
+	public static void FailActiveNpcs(GameObject thisGo) { 
 		foreach(GameObject go in GameObject.FindGameObjectsWithTag ("NPCTag")) { 
-			if(go.GetInstanceID() != gameObject.GetInstanceID()) { 
+			if(thisGo == null || go.GetInstanceID() != thisGo.GetInstanceID()) { 
 				var nel = go.GetComponent<NpcEncounterLoader>();
 				if( nel != null && nel.responseTriggers.Count > 0 ) { 
 					nel.Fail ();
 				}
 			}
 		}
+	}
 
+	private XmlNode pendingPoint = null; 
+	protected override void doTriggeredAction()
+	{	
+		FailActiveNpcs(gameObject);
 		if(pendingPoint != null) { 
 			var thePoint = pendingPoint; 
 			pendingPoint = null;

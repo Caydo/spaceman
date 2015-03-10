@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
   public bool ShouldRespawn = true;
   public SpriteRenderer FollowerSprite;
   public bool ShouldAllowJump = false;
-
+	
   OxygenBarController oxygenController;
   FollowersController followerController;
   public Animator animator;
@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
   public IEnumerator WaitThenRespawn()
   {
     yield return new WaitForSeconds(RespawnWaitTime);
+
+	NpcEncounterLoader.FailActiveNpcs(null);
     followerController.DisableFollower();
     gameObject.GetComponent<PolygonCollider2D>().enabled = true;
     oxygenController.OxygenSlider.value -= AmountToDepleteOnRespawn;
