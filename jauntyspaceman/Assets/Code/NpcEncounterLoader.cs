@@ -212,7 +212,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 			if(match.Success) { 
 				float amt = float.Parse (match.Groups["amt"].Value);
 				o2Controller.LoseOxygen(amt);
-			}
+      }
 
 			match = endRegex.Match (triggerPart); 
 			if(match.Success) { 
