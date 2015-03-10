@@ -21,6 +21,7 @@ public class SpriteTypes : MonoBehaviour {
 	public Transform bridge;
 	public Transform cat;
 	public Transform npc; 
+	public Transform princess; 
 
 	private void initDict() 
 	{ 
@@ -41,6 +42,7 @@ public class SpriteTypes : MonoBehaviour {
 		dict.Add (6, powerUp);
 		dict.Add (3, cat);
 		dict.Add (24, npc);
+		dict.Add (4, princess);
 	}
 	IDictionary<int, Transform> dict = null; // new Dictionary<int, string>();
 
