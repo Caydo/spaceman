@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
 
   OxygenBarController oxygenController;
   FollowersController followerController;
-  Animator animator;
+  public Animator animator;
   Rigidbody2D body2D;
   Slider jetFuelMeter;
   bool isGrounded;
