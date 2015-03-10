@@ -16,21 +16,21 @@ namespace Assets.Code
     protected override void doTriggerStayAction()
     {
       // while the player is in our collider, increment time
-      if (onTriggerStayObject != null)
-      {
-        time++;
-      }
+    //  if (onTriggerStayObject != null)
+    //  {
+    //    time++;
+    //  }
 
-      // assume the player has tried to get out and can't, so kill them
-      if (time >= TimeToWaitForStuck)
-      {
-		var player = onTriggerStayObject.gameObject.GetComponent<PlayerController>();
-		if(!player.animator.GetBool ("Jump")) {
-			player.PlayerDead = true;
-	        GameObject.FindGameObjectWithTag("JetFuelMeter").GetComponent<Slider>().value = 0;
-	        onTriggerStayObject.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
-		}
-      }
+    //  // assume the player has tried to get out and can't, so kill them
+    //  if (time >= TimeToWaitForStuck)
+    //  {
+    //var player = onTriggerStayObject.gameObject.GetComponent<PlayerController>();
+    //if(!player.animator.GetBool ("Jump")) {
+    //  player.PlayerDead = true;
+    //      GameObject.FindGameObjectWithTag("JetFuelMeter").GetComponent<Slider>().value = 0;
+    //      onTriggerStayObject.gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+    //}
+    //  }
     }
   }
 }

@@ -50,3 +50,16 @@ C:\Users\jsmits\Desktop\Spaceman\trunk\jauntyspaceman\Temp\bin\Debug\Assembly-CS
 C:\Users\jsmits\Desktop\spaceman\trunk\jauntyspaceman\Temp\bin\Debug\UnityEditor.dll
 C:\Users\jsmits\Desktop\spaceman\trunk\jauntyspaceman\Temp\bin\Debug\UnityEngine.dll
 C:\Users\jsmits\Desktop\spaceman\trunk\jauntyspaceman\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\Caydo\Desktop\Projects\spaceman\trunk\jauntyspaceman\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Caydo\Desktop\Projects\spaceman\trunk\jauntyspaceman\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Caydo\Desktop\Projects\spaceman\trunk\jauntyspaceman\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Caydo\Desktop\Projects\spaceman\trunk\jauntyspaceman\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Caydo\Desktop\Projects\spaceman\trunk\jauntyspaceman\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\Caydo\Desktop\Projects\spaceman\trunk\jauntyspaceman\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Caydo\Desktop\Projects\spaceman\trunk\jauntyspaceman\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\Caydo\Desktop\Projects\spaceman\trunk\jauntyspaceman\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Caydo\Desktop\Projects\spaceman\trunk\jauntyspaceman\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Caydo\Desktop\Projects\spaceman\trunk\jauntyspaceman\Temp\bin\Debug\Unity.CecilTools.dll
+C:\Users\Caydo\Desktop\Projects\spaceman\trunk\jauntyspaceman\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Caydo\Desktop\Projects\spaceman\trunk\jauntyspaceman\obj\Debug\Assembly-CSharp.dll
+C:\Users\Caydo\Desktop\Projects\spaceman\trunk\jauntyspaceman\obj\Debug\Assembly-CSharp.pdb
