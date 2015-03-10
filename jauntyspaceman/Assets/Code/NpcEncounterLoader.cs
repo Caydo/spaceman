@@ -33,7 +33,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 		foreach(GameObject go in GameObject.FindGameObjectsWithTag ("NPCTag")) { 
 			if(go.GetInstanceID() != gameObject.GetInstanceID()) { 
 				var nel = go.GetComponent<NpcEncounterLoader>();
-				if( nel != null ) { 
+				if( nel != null && nel.responseTriggers.Count > 0 ) { 
 					nel.Fail ();
 				}
 			}
@@ -46,11 +46,17 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 		}
 	}
 
+	public string timeoutTrigger = string.Empty;
 	public void Fail() { 
 		// TODO do bad thing?
 		Debug.Log ("Hit fail case for npc encounter loader");
-		responseTriggers.Clear();
-		o2Controller.LoseDefaultO2();
+		string tTrigger = timeoutTrigger; 
+		End (); 
+		if(tTrigger == "") { 
+			o2Controller.LoseDefaultO2();
+		} else { 
+			ProcessTrigger (null, tTrigger);
+		}
 	}
 
 	public void LoadRandomNpcEncounter() {
@@ -134,7 +140,9 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 			string responseKey = response.Attributes.GetNamedItem("key").InnerText;
 			if(responseKey.Equals("(timeout)")) { 
 				// TODO set up the bad thing that happens if you don't handle it 
+				timeoutTrigger = response.Attributes.GetNamedItem ("trigger").InnerText;
 			} else { 
+				timeoutTrigger = "";
 				string responseText = response.Attributes.GetNamedItem ("text").InnerText;
 				string triggerText = response.Attributes.GetNamedItem ("trigger").InnerText;
 				ParseTrigger(responseKey, triggerText);
@@ -178,7 +186,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 	}
 
 	private Regex gotoRegex = new Regex("Go To (?<point>\\w+)");
-	private Regex giveO2Regex = new Regex("Gain (?<amt>[\\.\\d]+) O2");
+	private Regex giveO2Regex = new Regex("Give (?<amt>[\\.\\d]+) O2");
 	private Regex takeO2Regex = new Regex("Take (?<amt>[\\.\\d]+) O2");
 	private Regex endRegex = new Regex("EndDialog");
 
@@ -212,15 +220,22 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 			if(match.Success) { 
 				float amt = float.Parse (match.Groups["amt"].Value);
 				o2Controller.LoseOxygen(amt);
-      }
+    		}
 
 			match = endRegex.Match (triggerPart); 
 			if(match.Success) { 
-				textPanel.Reset();
-        GameObject.FindWithTag("Player").GetComponent<FollowersController>().DisableFollower();
-				GameObject.Destroy(gameObject);
+				End ();
 			}
 		}
+	}
+
+	public void End() { 
+		pendingPoint = null;
+		timeoutTrigger = "";
+		responseTriggers.Clear ();
+		textPanel.Reset();
+		GameObject.FindWithTag("Player").GetComponent<FollowersController>().DisableFollower();
+		GameObject.Destroy(gameObject);
 	}
 
 	public void Update() { 

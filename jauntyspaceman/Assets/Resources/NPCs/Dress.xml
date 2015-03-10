@@ -5,7 +5,7 @@
 <response key="O" text="White and Gold." trigger="Go To 1"/>
 <response key="M" text="Blue and Black." trigger="Go To 1"/>
 <response key="G" text="I hate this meme." trigger="Go To 2"/>
-<response key="(timeout)" text="" trigger="Go To 2"/>
+<response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>
 <point id="1" text="I thought so!" trigger="Give 0.1 O2, EndDialog">
 </point>

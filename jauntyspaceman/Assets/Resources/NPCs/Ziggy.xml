@@ -5,7 +5,7 @@
 <response key="Q" text="Commencing countdown, engines on…" trigger="Go To 1"/>
 <response key="W" text="Your circuit's dead, there's something wrong…" trigger="Go To 2"/>
 <response key="E" text="Tell my wife I love her…" trigger="Go To 3"/>
-<response key="(timeout)" text="" trigger="Go To 2"/>
+<response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>
 <point id="1" text="You've really made the grade!" trigger="Give 0.1 O2, EndDialog">
 </point>

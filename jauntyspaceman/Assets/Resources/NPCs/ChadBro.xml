@@ -4,69 +4,69 @@
 <point id="0" text="What's up, Bro.">
 <response key="A" text="Not much, Broski." trigger="Go To 1"/>
 <response key="B" text="I'm not your bro, pal." trigger="Go To 8"/>
-<response key="(timeout)" text="" trigger="Go To 7"/>
+<response key="(timeout)" text="" trigger="Give 0.3 O2, EndDialog"/>
 </point>
 <point id="1" text="Broseph.">
 <response key="C" text="Broseidon." trigger="Go To 2"/>
 <response key="D" text="Brometheus." trigger="Go To 2"/>
-<response key="(timeout)" text="" trigger="Go To 7"/>
+<response key="(timeout)" text="" trigger="Give 0.3 O2, EndDialog"/>
 </point>
 <point id="2" text="Bromo sapiens.">
 <response key="E" text="Bro magnon." trigger="Go To 3"/>
 <response key="F" text="Bro bono." trigger="Go To 3"/>
-<response key="(timeout)" text="" trigger="Go To 7"/>
+<response key="(timeout)" text="" trigger="Give 0.3 O2, EndDialog"/>
 </point>
 <point id="3" text="Brotato.">
 <response key="G" text="Brobama." trigger="Go To 4"/>
 <response key="H" text="Brogaine." trigger="Go To 4"/>
-<response key="(timeout)" text="" trigger="Go To 7"/>
+<response key="(timeout)" text="" trigger="Give 0.3 O2, EndDialog"/>
 </point>
 <point id="4" text="Brotis Redding.">
 <response key="I" text="Bronus Wagner." trigger="Go To 5"/>
 <response key="J" text="Broly Ghost." trigger="Go To 5"/>
-<response key="(timeout)" text="" trigger="Go To 7"/>
+<response key="(timeout)" text="" trigger="Give 0.3 O2, EndDialog"/>
 </point>
 <point id="5" text="Brodin Allfather.">
 <response key="K" text="Bro Chang." trigger="Go To 6"/>
 <response key="L" text="Marcus Brody." trigger="Go To 6"/>
-<response key="(timeout)" text="" trigger="Go To 7"/>
+<response key="(timeout)" text="" trigger="Give 0.3 O2, EndDialog"/>
 </point>
 <point id="6" text="Yeah, bro!">
 <response key="M" text="Uh, okay." trigger="Go To 7"/>
 <response key="N" text="I'm not your bro, pal." trigger="Go To 8"/>
-<response key="(timeout)" text="" trigger="Go To 7"/>
+<response key="(timeout)" text="" trigger="Give 0.3 O2, EndDialog"/>
 </point>
 <point id="7" text="Take it easy." trigger="Give 0.3 O2, EndDialog">
 </point>
 <point id="8" text="I'm not your pal, friend.">
 <response key="O" text="I'm not your friend, man." trigger="Go To 9"/>
 <response key="P" text="I'm not your friend, guy." trigger="Go To 10"/>
-<response key="(timeout)" text="" trigger="Go To 7"/>
+<response key="(timeout)" text="" trigger="Give 0.3 O2, EndDialog"/>
 </point>
 <point id="9" text="I'm not your man, buddy.">
 <response key="Q" text="I'm not your buddy, guy." trigger="Go To 10"/>
 <response key="R" text="I'm not your buddy, dude." trigger="Go To 11"/>
-<response key="(timeout)" text="" trigger="Go To 7"/>
+<response key="(timeout)" text="" trigger="Give 0.3 O2, EndDialog"/>
 </point>
 <point id="10" text="I'm not your guy, chief.">
 <response key="S" text="I'm not your chief, dude." trigger="Go To 11"/>
 <response key="T" text="I'm not your chief, lady." trigger="Go To 12"/>
-<response key="(timeout)" text="" trigger="Go To 7"/>
+<response key="(timeout)" text="" trigger="Give 0.3 O2, EndDialog"/>
 </point>
 <point id="11" text="I'm not your dude, chum.">
 <response key="U" text="I'm not your chum, lady." trigger="Go To 12"/>
 <response key="V" text="I'm not your chum, comrade." trigger="Go To 13"/>
-<response key="(timeout)" text="" trigger="Go To 7"/>
+<response key="(timeout)" text="" trigger="Give 0.3 O2, EndDialog"/>
 </point>
 <point id="12" text="I'm not your lady, partner.">
 <response key="W" text="I'm not your partner, cousin." trigger="Go To 13"/>
 <response key="X" text="I'm not your partner, comrade." trigger="Go To 14"/>
-<response key="(timeout)" text="" trigger="Go To 7"/>
+<response key="(timeout)" text="" trigger="Give 0.3 O2, EndDialog"/>
 </point>
 <point id="13" text="I'm not your cousin, bro.">
 <response key="Y" text="Didn't we do this already?" trigger="Go To 6"/>
 <response key="Z" text="Bro shizzle." trigger="Go To 1"/>
-<response key="(timeout)" text="" trigger="Go To 7"/>
+<response key="(timeout)" text="" trigger="Give 0.3 O2, EndDialog"/>
 </point>
 <point id="14" text="Comrade? Really?" trigger="EndDialog">
 </point>

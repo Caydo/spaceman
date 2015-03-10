@@ -13,7 +13,7 @@
 <response key="3" text="There is no cow level." trigger="Go To 2"/>
 <response key="(timeout)" text="" trigger="Go To 2"/>
 </point>
-<point id="2" text="I didn't come back for this…" trigger="Take 0.1 O2, EndDialog">
+<point id="2" text="I didn't come back for this…" trigger="Take 0.5 O2, EndDialog">
 </point>
 <point id="3" text="As you command." trigger="Give 0.1 O2, EndDialog">
 </point>

@@ -5,24 +5,24 @@
 <response key="A" text="Let me show you the stars." trigger="Go To 1"/>
 <response key="B" text="I go wherever the action is." trigger="Go To 2"/>
 <response key="C" text="I'm more of a lone space ranger." trigger="Go To 3"/>
-<response key="(timeout)" text="" trigger="Go To 6"/>
+<response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>
 <point id="1" text="I'm ready to blast off!">
 <response key="A" text="I'll rock your universe." trigger="Go To 4"/>
 <response key="B" text="It'll be out of this world." trigger="Go To 4"/>
 <response key="C" text="To infinity and beyond." trigger="Go To 5"/>
-<response key="(timeout)" text="" trigger="Go To 6"/>
+<response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>
 <point id="2" text="I'll show you some action.">
 <response key="A" text="Let's do it." trigger="Go To 1"/>
 <response key="B" text="No thanks." trigger="Go To 3"/>
-<response key="(timeout)" text="" trigger="Go To 6"/>
+<response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>
 <point id="3" text="Don't you want me?">
 <response key="A" text="It's not you, it's me." trigger="Go To 5"/>
 <response key="B" text="I just need some space." trigger="Go To 5"/>
 <response key="C" text="My zipper is stuck." trigger="Go To 5"/>
-<response key="(timeout)" text="" trigger="Go To 6"/>
+<response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>
 <point id="4" text="Rock me, rocket man!" trigger="Give 0.2 O2, EndDialog">
 </point>

@@ -5,7 +5,7 @@
 <response key="G" text="Red." trigger="Go To 1"/>
 <response key="R" text="Green." trigger="Go To 2"/>
 <response key="C" text="I'm colorblind." trigger="Go To 3"/>
-<response key="(timeout)" text="" trigger="Go To 3"/>
+<response key="(timeout)" text="" trigger="EndDialog"/>
 </point>
 <point id="1" text="Can't put anything past you!" trigger="Give 0.1 O2, EndDialog">
 </point>
