@@ -17,7 +17,6 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
   public Sprite FollowerSprite;
 	public TextCrawl textPanel; 
 	public OxygenBarController o2Controller;
-  ExpandingItem textPanelExpander;
 
 	private IDictionary<string, string> responseTriggers = new Dictionary<string, string>();
 	private XmlDocument currentTrigger; 
@@ -25,7 +24,6 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 	void Start() { 
 		textPanel = GameObject.FindWithTag("TextCrawl").GetComponent<TextCrawl>();
 		o2Controller = GameObject.FindWithTag ("OxygenController").GetComponent<OxygenBarController>();
-		textPanelExpander = GameObject.FindWithTag("TextPanel").GetComponent<ExpandingItem>();
 		LoadRandomNpcEncounter ();
 	}
 
@@ -168,7 +166,6 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 		}
 
 		textPanel.StartCrawl();
-    	textPanelExpander.DoExpand();
 	}
 
 	public float stringToFloat(string input) { 
@@ -220,7 +217,6 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 			match = endRegex.Match (triggerPart); 
 			if(match.Success) { 
 				textPanel.Reset();
-        textPanelExpander.DoShrink();
         GameObject.FindWithTag("Player").GetComponent<FollowersController>().DisableFollower();
 				GameObject.Destroy(gameObject);
 			}
