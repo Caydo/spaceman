@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq; 
 using System.Text.RegularExpressions;
 using System.Collections;
+using UnityEngine.UI;
 
 public class NpcEncounterLoader : PlayerInteractionTrigger {
 
@@ -71,7 +72,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 		string level = possibleLevels[selectedLevel]; 
 		possibleLevels.Remove (level);
 		LoadNpcEncounter(level);
-		//	LoadNpcEncounter ("ChadBro");
+		//LoadNpcEncounter ("Fenix");
 	}
 
 	public void LoadNpcEncounter(string npcName) {
@@ -115,6 +116,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 		ProcessTrigger (null, coroutineTrigger);
 	}
 
+	private Regex colorRegex = new Regex("#(?<r>\\w\\w)(?<g>\\w\\w)(?<b>\\w\\w)(?<a>\\w\\w)");
 	public void parsePoint(XmlNode mainPoint) { 
 		Debug.Log ("parsePoint entereted {" + mainPoint.Attributes + "}");
 
@@ -138,7 +140,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 				string responseText = response.Attributes.GetNamedItem ("text").InnerText;
 				string triggerText = response.Attributes.GetNamedItem ("trigger").InnerText;
 				ParseTrigger(responseKey, triggerText);
-				textPanel.AdditionalText += "\n " + responseKey + ":  " + responseText; 
+				textPanel.AdditionalText += "\n <b>" + responseKey + ":</b>  " + responseText; 
 			}
 		}
 
@@ -151,10 +153,29 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 			}
 		} 
 
+		XmlNode colorNode = mainPoint.Attributes.GetNamedItem ("color");
+		if(colorNode != null && colorNode.InnerText != null) { 
+			Match colorMatch = colorRegex.Match (colorNode.InnerText);
+			if(colorMatch.Success) { 
+				Text tp = textPanel.textToCrawl.GetComponent<Text>();
+				tp.color = new Color(
+					stringToFloat(colorMatch.Groups["r"].Value),
+					stringToFloat(colorMatch.Groups["g"].Value),
+					stringToFloat(colorMatch.Groups["b"].Value),
+					stringToFloat(colorMatch.Groups["a"].Value)
+				);
+			}
+		}
+
 		textPanel.StartCrawl();
-    textPanelExpander.DoExpand();
+    	textPanelExpander.DoExpand();
 	}
-	
+
+	public float stringToFloat(string input) { 
+		int value = int.Parse(input, System.Globalization.NumberStyles.HexNumber);
+		return ((float) value) / 15;
+	}
+
 	public void ParseTrigger(string responseKey, string triggerString) { 
 		responseTriggers.Add(responseKey, triggerString); 
 	}
