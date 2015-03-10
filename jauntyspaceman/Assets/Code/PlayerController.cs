@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
   public Transform MostRecentSpawnPoint;
   public bool ShouldRespawn = true;
   public SpriteRenderer FollowerSprite;
+  public bool ShouldAllowJump = false;
 
   OxygenBarController oxygenController;
   FollowersController followerController;
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
   Rigidbody2D body2D;
   Slider jetFuelMeter;
   bool isGrounded;
+  bool stopMoving = false;
 
   void Awake()
   {
@@ -71,8 +73,9 @@ public class PlayerController : MonoBehaviour
     else
     {
       // pressing space and grounded, so we're flying and not grounded
-      if (Input.GetKey(KeyCode.Space) && jetFuelMeter.value > 0)
+      if (ShouldAllowJump && Input.GetKey(KeyCode.Space) && jetFuelMeter.value > 0)
       {
+        stopMoving = false;
         PlayerDead = false;
         body2D.velocity = new Vector2(body2D.velocity.x, JumpSpeed);
         jetFuelMeter.value -= FuelDepletionRateOnActivate;
@@ -85,8 +88,11 @@ public class PlayerController : MonoBehaviour
 
     if (!PlayerDead)
     {
-      // Move the character
-      body2D.velocity = new Vector2(MoveSpeed * Time.deltaTime, body2D.velocity.y);
+      if(!stopMoving)
+      {
+        // Move the character
+        body2D.velocity = new Vector2(MoveSpeed * Time.deltaTime, body2D.velocity.y);
+      }
 
       if(jetFuelMeter.value <= 0)
       {
@@ -123,6 +129,11 @@ public class PlayerController : MonoBehaviour
       // running
       animator.SetBool("Jump", false);
       animator.SetTrigger("Run");
+    }
+    else if (coll.gameObject.tag == "KillCollider")
+    {
+      stopMoving = true;
+      body2D.velocity = Vector2.zero;
     }
   }
 }
