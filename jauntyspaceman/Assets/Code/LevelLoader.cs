@@ -11,6 +11,12 @@ public class LevelLoader : MonoBehaviour {
 	public Transform playerRef; 
 	public NpcEncounterLoader npcLoader; 
 
+  private string[] tilesets = { 
+    "tileset1",
+    "tileset2"
+  };
+  private string currentTileset = "";
+
 //	public Transform spriteLoader;
 	private int spritesMade = 0;
 	private const int SPRITES_RIGHT_OFFSET = 20; // how many sprites we should show to the right of our character
@@ -138,6 +144,8 @@ public class LevelLoader : MonoBehaviour {
 			
 			levelGridSize += width;
 		}
+
+    currentTileset = tilesets[Random.Range (0, tilesets.Count())];
 	}
 	
 	// Update is called once per frame
@@ -160,15 +168,33 @@ public class LevelLoader : MonoBehaviour {
 					foreach(int thisTileType in thisTileTypes) { 
 						if(thisTileType != 0) { 					
 							Transform spriteLoader = null; 
-							if(spriteTypes.tryGetSpriteAsset(thisTileType, out spriteLoader)) { 
+              string spriteName = "";
+							if(spriteTypes.tryGetSpriteAsset(thisTileType, out spriteLoader, out spriteName)) { 
 								Transform newItem = (Transform) Instantiate(
 									spriteLoader, 
 									gameObject.transform.position,
 									Quaternion.identity
 								);
+
 								if(thisTileType == 27) { 
 									newItem.gameObject.tag = "Respawn";
 								}
+
+                if(spriteName != "") { 
+                  SpriteRenderer sr = newItem.gameObject.GetComponent<SpriteRenderer>(); 
+                  if (sr != null) {                     
+                    Texture2D texture = Resources.Load ("tilesets/" + currentTileset + "/" + spriteName.Replace(".png", "")) as Texture2D;
+                    Sprite newSprite = Sprite.Create (
+                      texture, 
+                      new Rect(0f, 0f, 70f, 70f),  // use whole sprite
+                      new Vector2(.5f, .5f),   // pivot = center
+                      70f);                    // 70 pixels per unity unit 
+                    Debug.Log ("Assigning sprite " + newSprite + " :: " + texture + " :: " + spriteName);
+                    newSprite.name = spriteName.Replace (".png", "");
+                    sr.sprite = newSprite;                   
+                  }
+                }
+
 								newItem.transform.parent = gameObject.transform;
 								newItem.Translate(new Vector3(baseX + x , y, 0));
 							}
