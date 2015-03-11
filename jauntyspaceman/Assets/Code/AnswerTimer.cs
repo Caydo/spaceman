@@ -52,7 +52,7 @@ public class AnswerTimer : MonoBehaviour
 
     if(levelLoader.npcLoader != null)
     {
-      levelLoader.npcLoader.End();
+      levelLoader.npcLoader.Fail();
     }
 
     countdownRunning = false;

@@ -14,21 +14,21 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 	private List<string> possibleLevels = new List<string>();
 	
 
-  public Sprite FollowerSprite;
+    public Sprite FollowerSprite;
 	public TextCrawl textPanel; 
 	public OxygenBarController o2Controller;
 
 	private IDictionary<string, string> responseTriggers = new Dictionary<string, string>();
 	private XmlDocument currentTrigger;
-  LevelLoader levelLoader;
-  AnswerTimer answerTimer;
+    LevelLoader levelLoader;
+    AnswerTimer answerTimer;
 
 	void Start()
-  { 
+    { 
 		textPanel = GameObject.FindWithTag("TextCrawl").GetComponent<TextCrawl>();
 		o2Controller = GameObject.FindWithTag ("OxygenController").GetComponent<OxygenBarController>();
-    levelLoader = GameObject.FindWithTag("Level").GetComponent<LevelLoader>();
-    answerTimer = GameObject.FindWithTag("AnswerTimer").GetComponent<AnswerTimer>();
+        levelLoader = GameObject.FindWithTag("Level").GetComponent<LevelLoader>();
+        answerTimer = GameObject.FindWithTag("AnswerTimer").GetComponent<AnswerTimer>();
 		LoadRandomNpcEncounter ();
 	}
 
