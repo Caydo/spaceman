@@ -50,6 +50,7 @@
      <Compile Include="Assets\Code\AnswerTimer.cs" />
      <Compile Include="Assets\Code\BubblePowerup.cs" />
      <Compile Include="Assets\Code\CameraPlayerFollower.cs" />
+     <Compile Include="Assets\Code\CatstellationController.cs" />
      <Compile Include="Assets\Code\ClickableCat.cs" />
      <Compile Include="Assets\Code\ClickableItem.cs" />
      <Compile Include="Assets\Code\Clicky.cs" />
