@@ -12,7 +12,6 @@ namespace Assets.Code
   {
     float time = 0;
     public float TimeToWaitForStuck = 0;
-    float timeToWaitThenKill = 0;
 
     protected override void doTriggerStayAction()
     {

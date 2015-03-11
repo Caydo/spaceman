@@ -12,9 +12,10 @@ public class TextCrawl : MonoBehaviour
   public float DelayBeforeCrawl;
   public bool AllowClickSkip;
   public bool active = false;
-
   public Text textToCrawl;
   public Text textToDisplayFast;
+
+  AnswerTimer answerTimer;
 
   void Awake()
   {
@@ -27,7 +28,7 @@ public class TextCrawl : MonoBehaviour
 
   void Start()
   {
-
+    answerTimer = GameObject.FindGameObjectWithTag("AnswerTimer").GetComponent<AnswerTimer>();
   }
 
 	public void Reset() 
@@ -87,5 +88,7 @@ public class TextCrawl : MonoBehaviour
 		textToCrawl.text = TextToAdd ;
     textToDisplayFast.text = AdditionalText;
 		active = false;
+
+    answerTimer.EnableTimer();
   }
 }

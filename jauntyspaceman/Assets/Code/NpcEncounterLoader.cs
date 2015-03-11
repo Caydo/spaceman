@@ -19,11 +19,16 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 	public OxygenBarController o2Controller;
 
 	private IDictionary<string, string> responseTriggers = new Dictionary<string, string>();
-	private XmlDocument currentTrigger; 
+	private XmlDocument currentTrigger;
+  LevelLoader levelLoader;
+  AnswerTimer answerTimer;
 
-	void Start() { 
+	void Start()
+  { 
 		textPanel = GameObject.FindWithTag("TextCrawl").GetComponent<TextCrawl>();
 		o2Controller = GameObject.FindWithTag ("OxygenController").GetComponent<OxygenBarController>();
+    levelLoader = GameObject.FindWithTag("Level").GetComponent<LevelLoader>();
+    answerTimer = GameObject.FindWithTag("AnswerTimer").GetComponent<AnswerTimer>();
 		LoadRandomNpcEncounter ();
 	}
 
@@ -175,7 +180,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 				);
 			}
 		}
-
+    levelLoader.npcLoader = this;
 		textPanel.StartCrawl();
 	}
 
@@ -232,12 +237,14 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 		}
 	}
 
-	public void End() { 
+	public void End() {
+    levelLoader.npcLoader = null;
 		pendingPoint = null;
 		timeoutTrigger = "";
 		responseTriggers.Clear ();
 		textPanel.Reset();
 		GameObject.FindWithTag("Player").GetComponent<FollowersController>().DisableFollower();
+    answerTimer.DisableTimer();
 		GameObject.Destroy(gameObject);
 	}
 
