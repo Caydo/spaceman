@@ -78,6 +78,8 @@
      <Compile Include="Assets\Code\SpeedPowerup.cs" />
      <Compile Include="Assets\Code\SpriteTypes.cs" />
      <Compile Include="Assets\Code\StartGameOnPress.cs" />
+     <Compile Include="Assets\Code\StatRenderer.cs" />
+     <Compile Include="Assets\Code\StatTracker.cs" />
      <Compile Include="Assets\Code\TextCrawl.cs" />
      <Compile Include="Assets\Code\TopScreenDontRespawn.cs" />
      <None Include="Assets\Resources\Modules\2_Dragon.xml" />

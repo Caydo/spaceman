@@ -7,6 +7,12 @@ public class OxygenBarController : MonoBehaviour
   public float OxygenToLoseEachFrame;
 	public float defaultO2Loss = 0.0f;
   public ParticleSystem Particles;
+  StatTracker statTracker;
+
+  void Start()
+  {
+    statTracker = GameObject.FindWithTag("StatTracker").GetComponent<StatTracker>();
+  }
 
 	public void LoseDefaultO2() 
   {
@@ -22,6 +28,7 @@ public class OxygenBarController : MonoBehaviour
   {
     Particles.Play();
     OxygenSlider.value += amount;
+    statTracker.OxygenUnitsStat++;
   }
 
   void Update()

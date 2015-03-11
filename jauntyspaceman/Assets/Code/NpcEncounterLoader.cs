@@ -22,6 +22,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 	private XmlDocument currentTrigger;
     LevelLoader levelLoader;
     AnswerTimer answerTimer;
+    StatTracker statTracker;
 
 	void Start()
     { 
@@ -29,6 +30,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 		o2Controller = GameObject.FindWithTag ("OxygenController").GetComponent<OxygenBarController>();
         levelLoader = GameObject.FindWithTag("Level").GetComponent<LevelLoader>();
         answerTimer = GameObject.FindWithTag("AnswerTimer").GetComponent<AnswerTimer>();
+        statTracker = GameObject.FindWithTag("StatTracker").GetComponent<StatTracker>();
 		LoadRandomNpcEncounter ();
 	}
 
@@ -245,6 +247,8 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 		textPanel.Reset();
 		GameObject.FindWithTag("Player").GetComponent<FollowersController>().DisableFollower();
     answerTimer.DisableTimer();
+    statTracker.NPCsStat++;
+
 		GameObject.Destroy(gameObject);
 	}
 

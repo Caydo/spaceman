@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
   Slider jetFuelMeter;
   bool isGrounded;
   bool stopMoving = false;
+  StatTracker statTracker;
 
   void Awake()
   {
@@ -35,12 +36,14 @@ public class PlayerController : MonoBehaviour
   {
     jetFuelMeter = GameObject.FindGameObjectWithTag("JetFuelMeter").GetComponent<Slider>();
     oxygenController = GameObject.FindGameObjectWithTag("OxygenController").GetComponent<OxygenBarController>();
+    statTracker = GameObject.FindGameObjectWithTag("StatTracker").GetComponent<StatTracker>();
   }
   
   public IEnumerator WaitThenRespawn()
   {
     yield return new WaitForSeconds(RespawnWaitTime);
 
+    statTracker.RespawnsStat++;
 	NpcEncounterLoader.FailActiveNpcs(null);
     followerController.DisableFollower();
     gameObject.GetComponent<PolygonCollider2D>().enabled = true;
@@ -61,6 +64,7 @@ public class PlayerController : MonoBehaviour
   {
     if (oxygenController.OxygenSlider.value <= 0)
     {
+      statTracker.DeathsStat++;
       Application.LoadLevel("GameOver");
     }
 

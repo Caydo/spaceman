@@ -7,18 +7,21 @@ public class Powerup : PlayerInteractionTrigger
   OxygenBarController oxygenController;
   PlayerController playerController;
   RandomTint tint;
+  StatTracker statTracker;
 
   void Start()
   {
     oxygenController = GameObject.FindGameObjectWithTag("OxygenController").GetComponent<OxygenBarController>();
     playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     tint = GameObject.FindGameObjectWithTag("CrazyColors").GetComponent<RandomTint>();
+    statTracker = GameObject.FindWithTag("StatTracker").GetComponent<StatTracker>();
   }
 
   protected override void doTriggeredAction()
   {
     oxygenController.GainOxygen(OxygenToGain);
 		gameObject.GetComponent<SpriteRenderer>().enabled = false;
+    statTracker.PowerupsStat++;
     if(!tint.ShouldDoCrazy)
     {
       tint.ShouldDoCrazy = true;
