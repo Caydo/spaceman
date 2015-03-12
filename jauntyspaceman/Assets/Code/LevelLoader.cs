@@ -12,10 +12,11 @@ public class LevelLoader : MonoBehaviour {
 	public NpcEncounterLoader npcLoader; 
 
   private string[] tilesets = { 
-    "tileset1",
-    "tileset2"
+    "tileset1"//,
+    //"tileset2"
   };
   private string currentTileset = "";
+  private IDictionary<int, int> levelsAtDifficulty;
 
 //	public Transform spriteLoader;
 	private int spritesMade = 0;
@@ -37,31 +38,59 @@ public class LevelLoader : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+    levelsAtDifficulty = new Dictionary<int, int>(); 
+    levelsAtDifficulty.Add (0, 1); 
+    levelsAtDifficulty.Add (1, 3); 
+    levelsAtDifficulty.Add (2, 3); 
+    levelsAtDifficulty.Add (3, 3); 
 	}
 
 	private Regex levelNameRegex = new Regex("^(?<difficulty>\\d+)_");
 	void LoadRandomLevel() {
-	    if (possibleLevels.Count <= 0)
-	    {
-	      var paths = Resources.LoadAll(modulePath);
+    if (possibleLevels.Count <= 0)
+    {
+      var paths = Resources.LoadAll(modulePath);
 
-	      foreach (var path in paths)
-	      {
-	        string randomPath = path.name.Replace(moduleSuffix, "").Replace(modulePath, "");
+      foreach (var path in paths)
+      {
+        string randomPath = path.name.Replace(moduleSuffix, "").Replace(modulePath, "");
 
-	        Debug.Log("Found item in path {" + path + "}{" + randomPath + "}");
-	        possibleLevels.Add(randomPath);
-	      }
-	    }
+        Debug.Log("Found item in path {" + path + "}{" + randomPath + "}");
+        possibleLevels.Add(randomPath);
+      }
 
-	    if (loadSpecificLevel != "")
-	    {
-	      Debug.Log("loadspecific level!!");
-	      Debug.Log(loadSpecificLevel);
-	      LoadChunk(loadSpecificLevel);
-	    }
-	    else if (loadRandomLevels)
-	    {
+      var levelsByDifficulty = possibleLevels.GroupBy (levelName => { 
+        var m= levelNameRegex.Match (levelName); 
+        if(m.Success) { 
+          return int.Parse (m.Groups["difficulty"].Value);
+        } else { 
+          return ARBITRARY_LEVEL_DIFFICULTY_CUTOFF;
+        }
+      });
+      Debug.LogFormat ("grouped size {0}", levelsByDifficulty.Count ());
+      //possibleLevels.Clear ();
+      List<string> newList = new List<string>(); 
+      foreach(var levelGroup in levelsByDifficulty) { 
+        Debug.LogFormat ("BANANAS");
+        int difficulty = levelGroup.Key;
+        int levelsPerDifficulty = 0; 
+        levelsAtDifficulty.TryGetValue(difficulty, out levelsPerDifficulty);
+        foreach(string level in levelGroup.Take (levelsPerDifficulty)) { 
+          Debug.LogFormat ("Load level {0} @ difficulty {1}", level, difficulty);
+          newList.Add (level);
+        }
+      }
+      possibleLevels = newList;
+    }
+
+    if (loadSpecificLevel != "")
+    {
+      Debug.Log("loadspecific level!!");
+      Debug.Log(loadSpecificLevel);
+      LoadChunk(loadSpecificLevel);
+    }
+    else if (loadRandomLevels)
+    {
 			List<string> levels; 
 			do { 
 				var things = possibleLevels.Where (levelName => { 
@@ -75,21 +104,28 @@ public class LevelLoader : MonoBehaviour {
 				});
 				levels = new List<string>(things);
 			} while ((levels.Count <= 0) && (++levelDifficulty < ARBITRARY_LEVEL_DIFFICULTY_CUTOFF));
-			if(increaseDifficultyEachLevel) { 
-				levelDifficulty++;
-			}
-			int selectedLevel = Random.Range (0, levels.Count);
-			possibleLevels.Remove(levels[selectedLevel]);
-			LoadChunk(levels[selectedLevel]);
-	    }
-	    else
-	    {
-	      LoadChunk("Teeth");
-	    }
+
+      if(levels.Count <= 0) { 
+      // we ran out of levels even after trying higher difficulties; reset to 1!
+        levelDifficulty = 1;
+        //LoadRandomLevel ();
+      } else { 
+  			if(increaseDifficultyEachLevel) { 
+  				levelDifficulty++;
+  			}
+  			int selectedLevel = Random.Range (0, levels.Count);
+  			possibleLevels.Remove(levels[selectedLevel]);
+  			LoadChunk(levels[selectedLevel]);
+      }
+    }
+    else
+    {
+      LoadChunk("Teeth");
+    }
 	}
 
 	void LoadChunk(string filename) { 
-		Debug.Log ("loading chunk @ " + modulePath + filename);
+    Debug.LogFormat ("loading chunk {0} at difficulty {1}", modulePath + filename, levelDifficulty);
     TextAsset asset = Resources.Load(modulePath + filename) as TextAsset;
     Debug.Log((asset == null));
 		if ( asset != null) {
