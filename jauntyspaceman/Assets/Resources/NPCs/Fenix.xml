@@ -1,7 +1,7 @@
 <npc name="Zeratul">
 <spriteset file="Male.png"/>
 <dialog>
-<point id="0" text="En Taro Adun!" color="#00ff00ff">
+	<point id="0" text="En Taro Adun!" ><!--color="#00ff00ff">-->
 <response key="1" text="My life for Aiur!" trigger="Go To 1"/>
 <response key="2" text="En Taro your face!" trigger="Go To 2"/>
 <response key="3" text="Clearly, Tassadar has failed us." trigger="Go To 2"/>

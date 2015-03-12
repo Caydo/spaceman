@@ -1,0 +1,32 @@
+<npc name="Shakespeare">
+<spriteset file="Male.png"/>
+<dialog>
+<point id="0" text="Lo! Forsooth! You wander hither and yon, yet wither wil thy wanderings take thee?">
+<response key="R" text="From forth the fatal loins of these two foes; A pair of star cross'd lover take their life." trigger="Go To 1"/>
+<response key="H" text="'Tis now struck twelve; get thee to bed, Horatio." trigger="Go To 4"/>
+<response key="M" text="All the world is a stage, and them men and women merely players." trigger="Go To 5"/>
+<response key="(timeout)" text="" trigger="Go To 2"/>
+</point>
+<point id="1" text="But soft! What light through yonder window breaks? It is the east, and Juliet is the sun!">
+<response key="C" text="Arise, fair sun, and kill the envious moon!" trigger="Go To 3"/>
+<response key="W" text="Thou dost o'er count me of my father's house!" trigger="Go To 2"/>
+<response key="M" text="..." trigger="Go To 2"/>
+<response key="(timeout)" text="" trigger="Go To 2"/>
+</point>
+<point id="2" text="That's not how it goes!" trigger="Take 0.2 O2, EndDialog">
+</point>
+<point id="3" text="Well played." trigger="Give 0.1 O2, EndDialog">
+</point>
+<point id="4" text="Whether 'tis nobler in the mind to suffer the slings and arrow of outrageous fortune; Or, by opposing them, end them?">
+	<response key="W" text="O, what a rogue and peasant slave am I! Is it not so monstrous to trap this player here?" trigger="Go To 2"/>
+	<response key="C" text="To die; to sleep, no More; and by a sleep to say we end the thousand natural shocks that flesh is heir to." trigger="Go To 3"/>
+	<response key="M" text="..." trigger="Go To 2"/>
+	<response key="(timeout)" text="" trigger="Go To 2"/>
+</point>
+<point id="5" text="Life's but a walking shadow; a poor player that struts and frets his hour upon the stage, and then is heard no more.">
+	<response key="W" text="To the last syllable of recorded time; and all our yesterdays have lighted fools the way to dusty death." trigger="Go To 2"/>
+	<response key="C" text="It is a tale told by an idiot, full of sound and fury, signifying nothing." trigger="Go To 3"/>
+	<response key="M" text="..." trigger="Go To 2"/>
+</point>
+</dialog>
+</npc>
