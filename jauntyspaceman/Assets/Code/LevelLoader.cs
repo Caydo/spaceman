@@ -1,4 +1,5 @@
-using UnityEngine;
+
+	using UnityEngine;
 using System.Collections;
 using System.Xml;
 using System.IO;
@@ -217,7 +218,7 @@ public class LevelLoader : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	public void doUpdate () {
+	void Update () {
     if(playerRef == null) { 
       var playerObj = GameObject.FindGameObjectWithTag("Player");
       if(playerObj != null) { 
