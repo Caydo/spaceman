@@ -90,6 +90,7 @@
      <None Include="Assets\Resources\Modules\1_Simple 4.xml" />
      <None Include="Assets\Resources\NPCs\Punk.xml" />
      <None Include="Assets\Resources\NPCs\Gwen.xml" />
+     <None Include="Assets\Resources\NPCs\Shakespeare.xml" />
      <None Include="Assets\Resources\NPCs\Prince.xml" />
      <None Include="Assets\Resources\Modules\2_Falls Med.xml" />
      <None Include="Assets\Resources\Modules\1_Simple 2.xml" />
@@ -98,6 +99,7 @@
      <None Include="Assets\Resources\NPCs\Helper.xml" />
      <None Include="Assets\Resources\Modules\2_Dire Wolves.xml" />
      <None Include="Assets\Resources\NPCs\OldMan.xml" />
+     <None Include="Assets\Resources\NPCs\Funnybot.xml" />
      <None Include="Assets\Resources\Modules\2_Spike Pit.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity5/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
