@@ -19,8 +19,8 @@ public class LevelLoader : MonoBehaviour {
   private string currentTileset = "";
   private static IDictionary<int, int> levelsAtDifficulty = new Dictionary<int, int>() { 
     {0, 1}, 
-    {1, 3}, 
-    {2, 3}, 
+    {1, 6}, 
+    {2, 4}, 
     {3, 3}
   };
 
