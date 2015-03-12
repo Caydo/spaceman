@@ -1,0 +1,33 @@
+<npc name="The XJ-212 Vudenkrein Funnybot">
+<spriteset file="Female.png"/>
+<dialog>
+	<point id="0" text="I. AM. FUNNYBOT.  PLEASE SELECT JOKE." ><!--color="#00ff00ff">-->
+<response key="1" text="PUN" trigger="Go To 4"/>
+<response key="2" text="NERD" trigger="Go To 5"/>
+<response key="3" text="AWKWARD" trigger="Go To 6"/>
+<response key="(timeout)" text="" trigger="Go To 2"/>
+</point>
+<point id="4" text="WHAT DO YOU SEE WHEN THE PILLSBURY DOUGHBOY BENDS OVER?">
+<response key="1" text="A pill shape." trigger="Go To 2"/>
+<response key="2" text="Doughnuts." trigger="Go To 3"/>
+<response key="3" text="Flour." trigger="Go To 2"/>
+<response key="(timeout)" text="" trigger="Go To 2"/>
+</point>
+<point id="5" text="HOW MANY SOFTWARE ENGINEERS DOES IT TAKE TO SCREW IN A LIGHT BULB?">
+	<response key="1" text="42." trigger="Go To 2"/>
+	<response key="2" text="1 brilliant one to pioneer a lightbulb screwing algorithm and 10 to implement 'enterprise support'." trigger="Go To 3"/>
+		<response key="3" text="'Yeah, um, that sounds like a hardware problem?'" trigger="Go To 3"/>
+		<response key="(timeout)" text="" trigger="Go To 2"/>
+</point>
+<point id="6" text="DID YOU HEAR THAT THE GOVERNOR'S MANSION BURNED DOWN IN [random southern state]?">
+	<response key="1" text="Yeah, it pretty much took out the whole trailer park. AWKWARD!" trigger="Go To 3"/>
+	<response key="2" text="Millions were killed in the grits explosion. AWKWARD!" trigger="Go To 2"/>
+	<response key="3" text="Schlechte Übersetzung von Pointe. AWKWARD!" trigger="Go To 2"/>
+		<response key="(timeout)" text="" trigger="Go To 2"/>
+</point>
+<point id="2" text="404 ERROR: FUNNY NOT FOUND." trigger="Take 0.1 O2, EndDialog">
+</point>
+<point id="3" text="HUMOR ALGORITHM COMPLETE." trigger="Give 0.1 O2, EndDialog">
+</point>
+</dialog>
+</npc>
