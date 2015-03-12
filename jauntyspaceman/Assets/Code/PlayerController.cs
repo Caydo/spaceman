@@ -57,8 +57,8 @@ public class PlayerController : MonoBehaviour
 
       jetFuelMeter.value = 1;
   	  foreach(GameObject go in GameObject.FindGameObjectsWithTag("Power")) {
-	 	go.GetComponent<SpriteRenderer>().enabled = true;
-	  }
+    	 	go.GetComponent<SpriteRenderer>().enabled = true;
+	    }
     }
   }
 

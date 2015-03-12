@@ -16,7 +16,12 @@ public class LevelLoader : MonoBehaviour {
     //"tileset2"
   };
   private string currentTileset = "";
-  private IDictionary<int, int> levelsAtDifficulty;
+  private static IDictionary<int, int> levelsAtDifficulty = new Dictionary<int, int>() { 
+    {0, 1}, 
+    {1, 3}, 
+    {2, 3}, 
+    {3, 3}
+  };
 
 //	public Transform spriteLoader;
 	private int spritesMade = 0;
@@ -36,14 +41,25 @@ public class LevelLoader : MonoBehaviour {
 	public bool increaseDifficultyEachLevel = false;
 	public string loadSpecificLevel = "";
 
-	// Use this for initialization
+  	// Use this for initialization
 	void Start () {
-    levelsAtDifficulty = new Dictionary<int, int>(); 
-    levelsAtDifficulty.Add (0, 1); 
-    levelsAtDifficulty.Add (1, 3); 
-    levelsAtDifficulty.Add (2, 3); 
-    levelsAtDifficulty.Add (3, 3); 
 	}
+
+  public void gameOverCallback() 
+  {
+    IDictionary<int, int> newDifficulties = new Dictionary<int, int>(); 
+    foreach(var kvp in levelsAtDifficulty) 
+    {
+      if(kvp.Key < levelDifficulty) { 
+        newDifficulties.Add (kvp.Key, System.Math.Max(0, kvp.Value - 1));
+      } else { 
+        newDifficulties.Add (kvp.Key, System.Math.Max(0, kvp.Value));
+      }
+    }
+    levelsAtDifficulty = newDifficulties;
+    levelDifficulty = 0; 
+    possibleLevels.Clear ();
+  }
 
 	private Regex levelNameRegex = new Regex("^(?<difficulty>\\d+)_");
 	void LoadRandomLevel() {
@@ -75,9 +91,12 @@ public class LevelLoader : MonoBehaviour {
         int difficulty = levelGroup.Key;
         int levelsPerDifficulty = 0; 
         levelsAtDifficulty.TryGetValue(difficulty, out levelsPerDifficulty);
-        foreach(string level in levelGroup.Take (levelsPerDifficulty)) { 
-          Debug.LogFormat ("Load level {0} @ difficulty {1}", level, difficulty);
-          newList.Add (level);
+        var sorted = levelGroup.ToList();
+        for(int i = 0; i < levelsPerDifficulty; ++i) { 
+          string selected = sorted[Random.Range (0, sorted.Count())];
+          Debug.LogWarningFormat("level {0} @ difficulty {1}", selected, difficulty);
+          newList.Add (selected);
+          sorted.Remove (selected);
         }
       }
       possibleLevels = newList;

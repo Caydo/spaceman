@@ -14,7 +14,8 @@ class GameOverDifficultySetter : MonoBehaviour
     {
       if (GameObject.FindWithTag("Level").GetComponent<LevelLoader>() != null)
       {
-        GameObject.FindWithTag("Level").GetComponent<LevelLoader>().levelDifficulty = 1;
+        LevelLoader loader = GameObject.FindWithTag("Level").GetComponent<LevelLoader>();
+        loader.gameOverCallback();
       }
     }
   }
