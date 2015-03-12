@@ -9,7 +9,8 @@ using System.Text.RegularExpressions;
 public class LevelLoader : MonoBehaviour {
 	public SpriteTypes spriteTypes; 
 	public Transform playerRef; 
-	public NpcEncounterLoader npcLoader; 
+  public GameObject levelObject; 
+  public NpcEncounterLoader npcLoader;
 
   private string[] tilesets = { 
     "tileset1"//,
@@ -45,8 +46,13 @@ public class LevelLoader : MonoBehaviour {
 	void Start () {
 	}
 
+  void Awake () {
+    DontDestroyOnLoad(gameObject);
+  }
+
   public void gameOverCallback() 
   {
+    Debug.Log ("Level Loader rec'd game over cb");
     IDictionary<int, int> newDifficulties = new Dictionary<int, int>(); 
     foreach(var kvp in levelsAtDifficulty) 
     {
@@ -59,6 +65,13 @@ public class LevelLoader : MonoBehaviour {
     levelsAtDifficulty = newDifficulties;
     levelDifficulty = 0; 
     possibleLevels.Clear ();
+    currentTileset = ""; 
+    levelGrid = new List<List<List<int>>>();
+    levelObject = null;
+    playerRef = null;
+    spriteTypes = null; 
+    spritesMade = 0;
+    levelGridSize = 0;
   }
 
 	private Regex levelNameRegex = new Regex("^(?<difficulty>\\d+)_");
@@ -127,7 +140,7 @@ public class LevelLoader : MonoBehaviour {
       if(levels.Count <= 0) { 
       // we ran out of levels even after trying higher difficulties; reset to 1!
         levelDifficulty = 1;
-        //LoadRandomLevel ();
+        LoadRandomLevel ();
       } else { 
   			if(increaseDifficultyEachLevel) { 
   				levelDifficulty++;
@@ -204,59 +217,73 @@ public class LevelLoader : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		int desiredSprites = Mathf.FloorToInt(Mathf.Abs(playerRef.transform.position.x));
-		if(SPRITES_RIGHT_OFFSET + desiredSprites > spritesMade){
-			int numSprites = SPRITES_RIGHT_OFFSET + desiredSprites - spritesMade;
-			if(numSprites > 1000) { 
-				throw new UnityException("bad things!");
-			}
-			float baseX = spritesMade;
-			spritesMade += numSprites;
-			for (int x = 0; x < numSprites; ++x) { 
-				for (int y = 0; y < VERTICAL_SIZE; ++y) { 
-					if(baseX + x >= levelGridSize) { 
-						LoadRandomLevel();
-					}
+	public void doUpdate () {
+    if(playerRef == null) { 
+      var playerObj = GameObject.FindGameObjectWithTag("Player");
+      if(playerObj != null) { 
+        playerRef = playerObj.transform;
+      }
+    }
+    if(playerRef != null) { 
+  		int desiredSprites = Mathf.FloorToInt(Mathf.Abs(playerRef.transform.position.x));
+  		if(SPRITES_RIGHT_OFFSET + desiredSprites > spritesMade){
+        if(levelObject == null) { 
+          levelObject = GameObject.FindGameObjectWithTag("Level");
+        }
+  			int numSprites = SPRITES_RIGHT_OFFSET + desiredSprites - spritesMade;
+  			if(numSprites > 1000) { 
+  				throw new UnityException("bad things!");
+  			}
+  			float baseX = spritesMade;
+  			spritesMade += numSprites;
+  			for (int x = 0; x < numSprites; ++x) { 
+  				for (int y = 0; y < VERTICAL_SIZE; ++y) { 
+  					if(baseX + x >= levelGridSize) { 
+  						LoadRandomLevel();
+  					}
 
-					List<int> thisTileTypes = levelGrid[(int)baseX + x][y];
-					foreach(int thisTileType in thisTileTypes) { 
-						if(thisTileType != 0) { 					
-							Transform spriteLoader = null; 
-              string spriteName = "";
-							if(spriteTypes.tryGetSpriteAsset(thisTileType, out spriteLoader, out spriteName)) { 
-								Transform newItem = (Transform) Instantiate(
-									spriteLoader, 
-									gameObject.transform.position,
-									Quaternion.identity
-								);
-
-								if(thisTileType == 27) { 
-									newItem.gameObject.tag = "Respawn";
-								}
-
-                if(spriteName != "") { 
-                  SpriteRenderer sr = newItem.gameObject.GetComponent<SpriteRenderer>(); 
-                  if (sr != null) {                     
-                    Texture2D texture = Resources.Load ("tilesets/" + currentTileset + "/" + spriteName.Replace(".png", "")) as Texture2D;
-                    Sprite newSprite = Sprite.Create (
-                      texture, 
-                      new Rect(0f, 0f, 70f, 70f),  // use whole sprite
-                      new Vector2(.5f, .5f),   // pivot = center
-                      70f);                    // 70 pixels per unity unit 
-                    Debug.Log ("Assigning sprite " + newSprite + " :: " + texture + " :: " + spriteName);
-                    newSprite.name = spriteName.Replace (".png", "");
-                    sr.sprite = newSprite;                   
-                  }
+  					List<int> thisTileTypes = levelGrid[(int)baseX + x][y];
+  					foreach(int thisTileType in thisTileTypes) { 
+  						if(thisTileType != 0) { 					
+  							Transform spriteLoader = null; 
+                string spriteName = "";
+                if(spriteTypes == null) { 
+                  spriteTypes = GameObject.FindGameObjectWithTag("SpriteTypes").GetComponent<SpriteTypes>(); 
                 }
+  							if(spriteTypes.tryGetSpriteAsset(thisTileType, out spriteLoader, out spriteName)) { 
+  								Transform newItem = (Transform) Instantiate(
+  									spriteLoader, 
+                    levelObject.transform.position,
+  									Quaternion.identity
+  								);
 
-								newItem.transform.parent = gameObject.transform;
-								newItem.Translate(new Vector3(baseX + x , y, 0));
-							}
-						}
-					}
-				}
-			}
-		}
+  								if(thisTileType == 27) { 
+  									newItem.gameObject.tag = "Respawn";
+  								}
+
+                  if(spriteName != "") { 
+                    SpriteRenderer sr = newItem.gameObject.GetComponent<SpriteRenderer>(); 
+                    if (sr != null) {                     
+                      Texture2D texture = Resources.Load ("tilesets/" + currentTileset + "/" + spriteName.Replace(".png", "")) as Texture2D;
+                      Sprite newSprite = Sprite.Create (
+                        texture, 
+                        new Rect(0f, 0f, 70f, 70f),  // use whole sprite
+                        new Vector2(.5f, .5f),   // pivot = center
+                        70f);                    // 70 pixels per unity unit 
+                      Debug.Log ("Assigning sprite " + newSprite + " :: " + texture + " :: " + spriteName);
+                      newSprite.name = spriteName.Replace (".png", "");
+                      sr.sprite = newSprite;                   
+                    }
+                  }
+
+                  newItem.transform.parent = levelObject.transform;
+  								newItem.Translate(new Vector3(baseX + x , y, 0));
+  							}
+  						}
+  					}
+  				}
+  			}
+  		}
+    }
 	}
 }

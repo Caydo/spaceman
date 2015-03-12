@@ -28,7 +28,7 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
     { 
 		textPanel = GameObject.FindWithTag("TextCrawl").GetComponent<TextCrawl>();
 		o2Controller = GameObject.FindWithTag ("OxygenController").GetComponent<OxygenBarController>();
-        levelLoader = GameObject.FindWithTag("Level").GetComponent<LevelLoader>();
+        levelLoader = GameObject.FindWithTag("LevelLoader").GetComponent<LevelLoader>();
         answerTimer = GameObject.FindWithTag("AnswerTimer").GetComponent<AnswerTimer>();
         statTracker = GameObject.FindWithTag("StatTracker").GetComponent<StatTracker>();
 		LoadRandomNpcEncounter ();

@@ -15,7 +15,7 @@ public class AnswerTimer : MonoBehaviour
   void Start()
   {
     timerSlider = TimerGO.GetComponent<Slider>();
-    levelLoader = GameObject.FindWithTag("Level").GetComponent<LevelLoader>();
+    levelLoader = GameObject.FindWithTag("LevelLoader").GetComponent<LevelLoader>();
   }
 
   public void EnableTimer()
