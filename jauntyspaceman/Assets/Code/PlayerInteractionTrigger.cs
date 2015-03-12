@@ -12,6 +12,8 @@ public class PlayerInteractionTrigger : MonoBehaviour
   protected Collider2D onTriggerEnterObject;
   protected Collider2D onTriggerStayObject;
   protected Collider2D onTriggerExitObject;
+  protected Collision2D onCollisionStayObject;
+  
 
   void OnCollisionEnter2D(Collision2D coll)
   {
@@ -20,6 +22,19 @@ public class PlayerInteractionTrigger : MonoBehaviour
       onCollisionObject = coll;
       doCollidedAction();
       if(DestroyOnCollide)
+      {
+        GameObject.Destroy(gameObject);
+      }
+    }
+  }
+
+  void OnCollisionStay2D(Collision2D coll)
+  {
+    if (coll.gameObject.tag == "Player")
+    {
+      onCollisionStayObject = coll;
+      doCollisionStayAction();
+      if (DestroyOnCollide)
       {
         GameObject.Destroy(gameObject);
       }
@@ -59,6 +74,11 @@ public class PlayerInteractionTrigger : MonoBehaviour
 
 
   protected virtual void doCollidedAction()
+  {
+
+  }
+
+  protected virtual void doCollisionStayAction()
   {
 
   }

@@ -12,10 +12,11 @@ public class PlayerController : MonoBehaviour
   public float RespawnWaitTime;
   public float AmountToDepleteOnRespawn;
   public Transform MostRecentSpawnPoint;
-  public bool ShouldRespawn = true;
+  public bool ShouldRespawn;
   public SpriteRenderer FollowerSprite;
   public bool ShouldAllowJump = false;
-	
+  public BoxCollider2D ChildCollider;
+
   OxygenBarController oxygenController;
   FollowersController followerController;
   public Animator animator;
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
     yield return new WaitForSeconds(RespawnWaitTime);
 
     statTracker.RespawnsStat++;
-	NpcEncounterLoader.FailActiveNpcs(null);
+	  NpcEncounterLoader.FailActiveNpcs(null);
     followerController.DisableFollower();
     gameObject.GetComponent<PolygonCollider2D>().enabled = true;
     oxygenController.OxygenSlider.value -= AmountToDepleteOnRespawn;
@@ -141,20 +142,41 @@ public class PlayerController : MonoBehaviour
     }
   }
 
+  bool isChildCollision = false;
   void OnCollisionEnter2D(Collision2D coll)
   {
-    if(coll.gameObject.tag == "GroundObject")
+    isChildCollision = false;
+    foreach(ContactPoint2D contact in coll.contacts)
     {
-      isGrounded = true;
-      jetFuelMeter.value = 1;
-      // running
-      animator.SetBool("Jump", false);
-      animator.SetTrigger("Run");
+      if(contact.otherCollider.gameObject.tag == ChildCollider.gameObject.tag)
+      {
+        isChildCollision = true;
+        break;
+      }
     }
-    else if (coll.gameObject.tag == "KillCollider")
+
+    if(!isChildCollision)
+    {
+      if (coll.gameObject.tag == "GroundObject")
+      {
+        isGrounded = true;
+        jetFuelMeter.value = 1;
+        // running
+        animator.SetBool("Jump", false);
+        animator.SetTrigger("Run");
+      }
+    }
+    
+    if (coll.gameObject.tag == "KillCollider")
     {
       stopMoving = true;
       body2D.velocity = Vector2.zero;
     }
+  }
+  
+  public void TurnOffColliders()
+  {
+    gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+    ChildCollider.enabled = false;
   }
 }
