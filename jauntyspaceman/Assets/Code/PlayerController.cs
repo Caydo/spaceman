@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
   public float MoveSpeed;
   public NPCFollower Follower;
   public float FuelDepletionRateOnActivate;
+  public float FuelDepletionRateOnPress;
   public bool PlayerDead = false;
   public float RespawnWaitTime;
   public float AmountToDepleteOnRespawn;
@@ -63,6 +64,11 @@ public class PlayerController : MonoBehaviour
 
   void Update()
   {
+    if(ShouldAllowJump && Input.GetKeyUp(KeyCode.Space) && jetFuelMeter.value > 0)
+    {
+      jetFuelMeter.value -= FuelDepletionRateOnPress;
+    }
+
     if (oxygenController.OxygenSlider.value <= 0)
     {
       statTracker.DeathsStat++;
@@ -79,7 +85,7 @@ public class PlayerController : MonoBehaviour
     else
     {
       // pressing space and grounded, so we're flying and not grounded
-      if (ShouldAllowJump && Input.GetKey(KeyCode.Space) && jetFuelMeter.value > 0)
+      if(ShouldAllowJump && Input.GetKey(KeyCode.Space) && jetFuelMeter.value > 0)
       {
         stopMoving = false;
         PlayerDead = false;
