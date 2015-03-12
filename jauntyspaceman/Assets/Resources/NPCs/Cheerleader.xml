@@ -1,4 +1,4 @@
-<npc name="Cheerleader">
+<npc name="Mags">
 <spriteset file="Female.png"/>
 <dialog>
 <point id="0" text="Give me a 'J'!">

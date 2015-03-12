@@ -1,4 +1,4 @@
-<npc name="Princess">
+<npc name="Sabrina">
 <spriteset file="Female.png"/>
 <dialog>
 <point id="0" text="Hello, good sir.">

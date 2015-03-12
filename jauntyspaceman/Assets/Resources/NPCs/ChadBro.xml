@@ -1,4 +1,4 @@
-<npc name="ChadBro">
+<npc name="Chad">
 <spriteset file="Male.png"/>
 <dialog>
 <point id="0" text="What's up, Bro.">

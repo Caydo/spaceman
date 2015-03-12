@@ -1,4 +1,4 @@
-<npc name="Shirt">
+<npc name="Kyle">
 <spriteset file="Male.png"/>
 <dialog>
 <point id="0" text="What color is this shirt?">

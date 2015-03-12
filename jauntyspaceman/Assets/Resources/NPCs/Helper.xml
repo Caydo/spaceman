@@ -1,4 +1,4 @@
-<npc name="Helper">
+<npc name="Steve">
 <spriteset file="Male.png"/>
 <dialog>
 <point id="0" text="Do you need any help?">

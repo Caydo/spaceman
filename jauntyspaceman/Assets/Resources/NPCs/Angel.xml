@@ -1,4 +1,4 @@
-<npc name="Angel">
+<npc name="Mordriel">
 <spriteset file="Female.png"/>
 <dialog>
 <point id="0" text="You look like you could use a guide to the afterlife.">

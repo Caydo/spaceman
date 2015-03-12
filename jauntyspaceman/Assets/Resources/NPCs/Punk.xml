@@ -1,4 +1,4 @@
-<npc name="Punk">
+<npc name="Troy">
 <spriteset file="Male.png"/>
 <dialog>
 <point id="0" text="You got a problem with me, space man?">

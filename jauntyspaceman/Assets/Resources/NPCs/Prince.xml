@@ -1,4 +1,4 @@
-<npc name="Prince">
+<npc name="Will">
 <spriteset file="Male.png"/>
 <dialog>
 <point id="0" text="This is a story all about how my life got _____ upside down">

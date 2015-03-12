@@ -1,5 +1,5 @@
-<npc name="Ghost">
-<spriteset file="Male.png"/>
+<npc name="Esmerelda">
+<spriteset file="Female.png"/>
 <dialog>
 <point id="0" text="(Guess what?)">
 <response key="B" text="What is it?" trigger="Go To 2"/>

@@ -1,4 +1,4 @@
-<npc name="Dress">
+<npc name="Tess">
 <spriteset file="Female.png"/>
 <dialog>
 <point id="0" text="What color is this dress?">

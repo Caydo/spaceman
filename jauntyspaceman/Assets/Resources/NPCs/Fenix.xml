@@ -1,4 +1,4 @@
-<npc name="Fenix">
+<npc name="Zeratul">
 <spriteset file="Male.png"/>
 <dialog>
 <point id="0" text="En Taro Adun!" color="#00ff00ff">
