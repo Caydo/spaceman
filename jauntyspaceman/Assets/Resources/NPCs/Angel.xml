@@ -1,7 +1,7 @@
 <npc name="Mordriel">
 <spriteset file="Female.png"/>
 <dialog>
-<point id="0" text="You look like you could use a guide to the afterlife."><!--color="#3498dbff">-->
+<point id="0" text="You look like you could use a guide to the afterlife." color="#3498dbff">
 <response key="A" text="Huh? No, I’m doing just fine, thanks." trigger="Go To 1"/>
 <response key="B" text="Oh? Know anyone that fits that bill?" trigger="Go To 2"/>
 <response key="C" text="Hey, baby. Wanna hook up?" trigger="Go To 3"/>

@@ -1,7 +1,7 @@
 <npc name="Shakespeare">
 <spriteset file="Male.png"/>
 <dialog>
-<point id="0" text="Lo! Forsooth! You wander hither and yon, yet wither wil thy wanderings take thee?"><!--color="#e74c3cff">-->
+<point id="0" text="Lo! Forsooth! You wander hither and yon, yet wither wil thy wanderings take thee?" color="#e74c3cff">
 <response key="R" text="From forth the fatal loins of these two foes; A pair of star cross'd lover take their life." trigger="Go To 1"/>
 <response key="H" text="'Tis now struck twelve; get thee to bed, Horatio." trigger="Go To 4"/>
 <response key="M" text="All the world is a stage, and them men and women merely players." trigger="Go To 5"/>

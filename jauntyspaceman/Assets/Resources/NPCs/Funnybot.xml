@@ -1,7 +1,7 @@
 <npc name="The XJ-212 Vudenkrein Funnybot">
 <spriteset file="Female.png"/>
 <dialog>
-	<point id="0" text="I. AM. FUNNYBOT.  PLEASE SELECT JOKE." ><!--color="#00ff00ff">-->
+	<point id="0" text="I. AM. FUNNYBOT.  PLEASE SELECT JOKE."   color="#00ff00ff">
 <response key="1" text="PUN" trigger="Go To 4"/>
 <response key="2" text="NERD" trigger="Go To 5"/>
 <response key="3" text="AWKWARD" trigger="Go To 6"/>

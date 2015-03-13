@@ -1,7 +1,7 @@
 <npc name="Chad">
 <spriteset file="Male.png"/>
 <dialog>
-<point id="0" text="What's up, Bro."><!--color="#f1c40fff">-->
+<point id="0" text="What's up, Bro." color="#f1c40fff">
 <response key="A" text="Not much, Broski." trigger="Go To 1"/>
 <response key="B" text="I'm not your bro, pal." trigger="Go To 8"/>
 <response key="(timeout)" text="" trigger="Give 0.3 O2, EndDialog"/>

@@ -1,7 +1,7 @@
 <npc name="Sabrina">
 <spriteset file="Female.png"/>
 <dialog>
-<point id="0" text="Hello, good sir."><!--color="#fdff00ff">-->
+<point id="0" text="Hello, good sir." color="#fdff00ff">
 <response key="A" text="I'm here to rescue you!" trigger="Go To 3"/>
 <response key="B" text="How about that local sports team?" trigger="Go To 1"/>
 <response key="C" text="Good day, fair lady." trigger="Go To 2"/>

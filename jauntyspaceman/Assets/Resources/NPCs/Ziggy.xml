@@ -1,7 +1,7 @@
 <npc name="Ziggy">
 <spriteset file="Male.png"/>
 <dialog>
-<point id="0" text="Ground Control to Major Tom…"><!--color="#3498dbff">-->
+<point id="0" text="Ground Control to Major Tom…" color="#3498dbff">
 <response key="Q" text="Commencing countdown, engines on…" trigger="Go To 1"/>
 <response key="W" text="Your circuit's dead, there's something wrong…" trigger="Go To 2"/>
 <response key="E" text="Tell my wife I love her…" trigger="Go To 3"/>
