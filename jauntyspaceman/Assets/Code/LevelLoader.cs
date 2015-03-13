@@ -271,7 +271,7 @@ public class LevelLoader : MonoBehaviour {
                         new Rect(0f, 0f, 70f, 70f),  // use whole sprite
                         new Vector2(.5f, .5f),   // pivot = center
                         70f);                    // 70 pixels per unity unit 
-                      Debug.Log ("Assigning sprite " + newSprite + " :: " + texture + " :: " + spriteName);
+                      //Debug.Log ("Assigning sprite " + newSprite + " :: " + texture + " :: " + spriteName);
                       newSprite.name = spriteName.Replace (".png", "");
                       sr.sprite = newSprite;                   
                     }
