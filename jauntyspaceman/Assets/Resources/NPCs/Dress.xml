@@ -1,7 +1,7 @@
 <npc name="Tess">
 <spriteset file="Female.png"/>
 <dialog>
-<point id="0" text="What color is this dress?">
+<point id="0" text="What color is this dress?"><!--color="#bdc3c7ff">-->
 <response key="O" text="White and Gold." trigger="Go To 1"/>
 <response key="M" text="Blue and Black." trigger="Go To 1"/>
 <response key="G" text="I hate this meme." trigger="Go To 2"/>

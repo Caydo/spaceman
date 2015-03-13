@@ -1,7 +1,7 @@
 <npc name="Gwen">
 <spriteset file="Female.png"/>
 <dialog>
-<point id="0" text="This &amp;#*% is bananas!">
+<point id="0" text="This &amp;#*% is bananas!"><!--color="#3cd876ff">-->
 <response key="B" text="B!" trigger="Go To 1"/>
 <response key="(timeout)" text="" trigger="Take 0.1 O2, EndDialog"/>
 </point>

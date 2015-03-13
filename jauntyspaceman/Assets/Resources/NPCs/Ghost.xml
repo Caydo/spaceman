@@ -1,7 +1,7 @@
 <npc name="Esmerelda">
 <spriteset file="Female.png"/>
 <dialog>
-<point id="0" text="(Guess what?)">
+<point id="0" text="(Guess what?)"><!--color="#8e44adff">-->
 <response key="B" text="What is it?" trigger="Go To 2"/>
 <response key="Z" text="Not right now." trigger="Go To 1"/>
 <response key="(timeout)" text="" trigger="Go To 1"/>

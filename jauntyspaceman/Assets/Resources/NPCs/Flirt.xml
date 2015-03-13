@@ -1,7 +1,7 @@
 <npc name="Tiff =)">
 <spriteset file="Female.png"/>
 <dialog>
-<point id="0" text="Going my way, baby?">
+<point id="0" text="Going my way, baby?"><!--color="#ff2f82ff">-->
 <response key="A" text="Let me show you the stars." trigger="Go To 1"/>
 <response key="B" text="I go wherever the action is." trigger="Go To 2"/>
 <response key="C" text="I'm more of a lone space ranger." trigger="Go To 3"/>

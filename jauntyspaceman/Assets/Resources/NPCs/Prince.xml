@@ -1,7 +1,7 @@
 <npc name="Will">
 <spriteset file="Male.png"/>
 <dialog>
-<point id="0" text="This is a story all about how my life got _____ upside down">
+<point id="0" text="This is a story all about how my life got _____ upside down"><!--color="#e67e22ff">-->
 <response key="A" text="Flip-turned" trigger="Go To 1"/>
 <response key="B" text="Back-traced" trigger="Go To 5"/>
 <response key="C" text="Stir-fried" trigger="Go To 5"/>

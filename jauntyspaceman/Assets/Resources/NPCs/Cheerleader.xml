@@ -1,7 +1,7 @@
 <npc name="Mags">
 <spriteset file="Female.png"/>
 <dialog>
-<point id="0" text="Give me a 'J'!">
+<point id="0" text="Give me a 'J'!"><!--color="#c0392bff">-->
 <response key="J" text="Y" trigger="Go To 4"/>
 <response key="U" text="J" trigger="Go To 1, Give 0.1 O2"/>
 <response key="Z" text="C" trigger="Go To 4"/>

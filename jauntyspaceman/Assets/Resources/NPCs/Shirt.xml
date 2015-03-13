@@ -1,7 +1,7 @@
 <npc name="Kyle">
 <spriteset file="Male.png"/>
 <dialog>
-<point id="0" text="What color is this shirt?">
+<point id="0" text="What color is this shirt?"><!--color="#27ae60ff">-->
 <response key="G" text="Red." trigger="Go To 1"/>
 <response key="R" text="Green." trigger="Go To 2"/>
 <response key="C" text="I'm colorblind." trigger="Go To 3"/>
