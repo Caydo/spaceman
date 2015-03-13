@@ -188,7 +188,8 @@ public class NpcEncounterLoader : PlayerInteractionTrigger {
 
 	public float stringToFloat(string input) { 
 		int value = int.Parse(input, System.Globalization.NumberStyles.HexNumber);
-		return ((float) value) / 15;
+		Debug.LogFormat ("strin to float {0} {1}", input, value, ((float)value) / 255f);
+		return ((float)value) / 255f;
 	}
 
 	public void ParseTrigger(string responseKey, string triggerString) { 
