@@ -22,7 +22,8 @@ public class LevelLoader : MonoBehaviour {
     {0, 1}, 
     {1, 6}, 
     {2, 4}, 
-    {3, 10}
+    {3, 10},
+    {4, 1}
   };
 
 //	public Transform spriteLoader;
