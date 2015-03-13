@@ -8,11 +8,20 @@ class CatstellationController : MonoBehaviour
   int catSelected = 0;
   Animator animator;
   public int MaxCats = 3;
-
+	public Transform player; 
   void Start()
   {
     animator = GetComponent<Animator>();
   }
+
+	void Update() 
+	{
+		gameObject.transform.position = new Vector3(
+			player.position.x, 
+			gameObject.transform.position.y, 
+			gameObject.transform.position.z
+		);
+	}
 
   public void ClickedCat()
   {
